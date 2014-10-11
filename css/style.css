@@ -3,13 +3,14 @@
 ---------------------------------------- VARIABLES ----------------------------------------
 ----------------------------------------           ----------------------------------------
 */
-/*$orange: rgba(211, 104, 104, 1);*/
 /*
 ----------------------------------------         ----------------------------------------
 ---------------------------------------- GENERAL ----------------------------------------
 ----------------------------------------         ----------------------------------------
 */
-body, ul {
+body {
+  color: #333;
+  background: #ececec;
   margin: 0;
   padding: 0;
   -webkit-text-size-adjust: 100%;
@@ -23,339 +24,201 @@ body, ul {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-.wrap {
-  width: 100%; }
-
-.white {
-  background-color: #FFF; }
-
-.grey {
-  background-color: #f6f6f6; }
-
-.image-one {
-  background: url("../img/mon2.jpg"); }
-
-.image-three {
-  background: url("../img/mon3.jpg"); }
-
-.image-four {
-  background: url("../img/mon1.jpg"); }
-
-[class*='image-'] {
-  color: #222;
-  text-align: center;
-  font-size: 36px;
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: 2px;
-  padding-top: 160px;
-  padding-bottom: 160px;
-  background-repeat: no-repeat;
-  background-color: #222;
-  background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-
-.content {
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 130px;
-  padding-bottom: 130px;
-  width: 640px;
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center; }
-
-.mid-text {
-  font-weight: normal; }
-
-.low-text {
-  font-weight: normal; }
-
-.break {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  width: 30px;
-  height: 1px;
-  margin-top: 24px;
-  margin-bottom: 20px;
-  border-top: 1px solid #d9d9d9; }
-
 /*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- TYPOGRAPHY ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 h1 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: normal;
-  font-size: 60px;
-  letter-spacing: 5px;
-  color: #222;
-  line-height: 0; }
-
-h2 {
-  color: #383838;
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: 2px;
-  font-size: 18px;
-  line-height: 20px;
-  font-weight: normal;
-  text-transform: uppercase; }
-
-p {
-  color: #555555;
-  font-size: 15px;
-  line-height: 24px;
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal; }
-
-.content p {
-  text-align: justify; }
-
-a {
-  text-decoration: none;
-  color: #36b3a8;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s; }
-
-.content a {
-  border-bottom: 1px solid #FFF; }
-
-.grey .content a {
+  color: #333333;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  padding-bottom: 20px;
+  font-weight: 300;
   border-bottom: 1px solid #f6f6f6; }
 
-.content a:hover {
-  border-bottom: 1px solid #36b3a8; }
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 18px; }
+
+p {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #333333;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: left; }
+
+a {
+  color: #9fa2a6;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-decoration: none; }
+
+a:hover {
+  color: #333333; }
+
+.dot {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding-top: 16px;
+  padding-bottom: 26px;
+  color: #9fa2a6; }
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?-83a6yj");
-  src: url("../fonts/icomoon.svg?-83a6yj#icomoon") format("svg"), url("../fonts/icomoon.eot?#iefix-83a6yj") format("embedded-opentype"), url("../fonts/icomoon.woff?-83a6yj") format("woff"), url("../fonts/icomoon.ttf?-83a6yj") format("truetype");
+  src: url("../fonts/icomoon.eot?-7h4llh");
+  src: url("../fonts/icomoon.svg?-7h4llh#icomoon") format("svg"), url("../fonts/icomoon.eot?#iefix-7h4llh") format("embedded-opentype"), url("../fonts/icomoon.woff?-7h4llh") format("woff"), url("../fonts/icomoon.ttf?-7h4llh") format("truetype");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
-  font-size: 16px;
-  padding: 14px; }
+  color: #9fa2a6;
+  font-size: 60px;
+  line-height: 1.8; }
 
-.icon-mail:before {
-  content: "\e601"; }
+.icon-umbrella:before {
+  content: "\e060"; }
 
-.icon-twitter:before {
-  content: "\e600"; }
+.icon-moon:before {
+  content: "\e061"; }
 
-.icon-facebook:before {
-  content: "\e602"; }
+.icon-thermometer:before {
+  content: "\e062"; }
 
-.content .icons:hover {
-  border-bottom: 1px solid #FFF;
-  opacity: .7; }
+.icon-drop:before {
+  content: "\e063"; }
 
-/*
-----------------------------------------            ----------------------------------------
----------------------------------------- NAVIGATION ----------------------------------------
-----------------------------------------            ----------------------------------------
-*/
-.nav {
-  position: absolute;
-  z-index: 99;
-  padding-top: 10px;
-  padding-right: 25px;
-  padding-left: 25px; }
+.icon-sun:before {
+  content: "\e064"; }
 
-li {
-  list-style: none;
-  float: right;
-  padding: 25px; }
-
-li a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #222; }
-
-li a:hover {
-  color: #5ec2b9; }
+.icon-cloud:before {
+  content: "\e065"; }
 
 /*
 ----------------------------------------               ----------------------------------------
 ---------------------------------------- COVER SECTION ----------------------------------------
 ----------------------------------------               ----------------------------------------
 */
+/*
+----------------------------------------               ----------------------------------------
+---------------------------------------- COVER SECTION ----------------------------------------
+----------------------------------------               ----------------------------------------
+*/
+/*.bar {
+	width: 100%;
+	height: 40px;
+}*/
 .cover {
-  height: 100vh;
-  /*height: 650px; ONLY IF NO VH*/
-  background-color: #f6f6f6;
-  /* background: url(http://www.squireel.com/assets/img/medias/header-background.jpg); */
-  /*background: url("../img/a.jpg");*/
-  background: url("../img/mon.jpg");
-  background-position: center;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #FFF;
+  background: #00bcd4;
+  background: url(../img/cover2.png);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  position: relative; }
+  background-position: center;
+  /*box-shadow: 0px 1px 2px #666;*/ }
 
-.welcome {
-  /*padding-top: 220px; ONLY IF NO VH*/
-  /*padding-top: 250px;*/
-  padding-top: 30px;
+/*
+----------------------------------------                  ----------------------------------------
+---------------------------------------- CONTENT SECTIION ----------------------------------------
+----------------------------------------                  ----------------------------------------
+*/
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  width: 740px;
+  padding-top: 50px;
+  padding-bottom: 140px; }
+
+[class*='col-'] {
+  text-align: center;
+  float: left;
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #FFF;
+  padding: 32px;
+  padding-top: 16px;
+  margin: 8px;
+  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
+
+.start {
+  margin-left: 0; }
+
+.end {
+  margin-right: 0; }
+
+.col-half {
+  width: 362px; }
+
+.col-full {
+  width: 740px;
+  margin: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px; }
+
+.content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+[class*='col-']:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 11px 3px; }
+
+.image {
+  height: 250px;
+  background: url(../img/city.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.image:hover {
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px; }
+
+/*
+----------------------------------------                 ----------------------------------------
+---------------------------------------- FOOTER SECTIION ----------------------------------------
+----------------------------------------                 ----------------------------------------
+*/
+footer {
+  color: #9fa2a6;
+  font-size: 12px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   width: 100%;
   text-align: center;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
-
-.date {
-  font-size: 14px; }
-
-.sub {
-  padding-top: 5px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: normal;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #222; }
-
-.final-letter {
-  letter-spacing: 0; }
-
-.top-text {
-  font-family: "Montserrat", sans-serif;
-  font-weight: normal;
-  letter-spacing: 2px;
-  color: #5ec2b9;
-  font-size: 14px; }
-
-.button {
-  margin: 0 auto;
-  color: #FFF;
-  font-size: 12px;
-  font-family: "Montserrat", sans-serif;
-  line-height: 2.5;
-  border-radius: 25px;
-  background: #36b3a8;
-  width: 100px;
-  height: 30px;
-  display: block;
-  margin-top: 60px; }
-
-/* HOVER EFFECT - WIP */
-.button .hide {
-  display: none; }
-
-.button:hover .show {
-  display: none; }
-
-.button:hover .hide {
-  display: inline; }
+  padding-bottom: 20px; }
 
 /*
-----------------------------------------               ----------------------------------------
----------------------------------------- ABOUT SECTION ----------------------------------------
-----------------------------------------               ----------------------------------------
+----------------------------------------            ----------------------------------------
+---------------------------------------- RESPONSIVE ----------------------------------------
+----------------------------------------            ----------------------------------------
 */
-/*
-----------------------------------------                 ----------------------------------------
----------------------------------------- STUDENT SECTION ----------------------------------------
-----------------------------------------                 ----------------------------------------
-*/
-/*
-----------------------------------------             ----------------------------------------
----------------------------------------- MAP SECTION ----------------------------------------
-----------------------------------------             ----------------------------------------
-*/
-/*
-----------------------------------------                 ----------------------------------------
----------------------------------------- CONNECT SECTION ----------------------------------------
-----------------------------------------                 ----------------------------------------
-*/
-.connect p {
-  text-align: center; }
-
-.connect, .content {
-  padding-bottom: 110px; }
-
-/*
-----------------------------------------                ----------------------------------------
----------------------------------------- FOOTER SECTION ----------------------------------------
-----------------------------------------                ----------------------------------------
-*/
-.footer {
-  color: #919191;
-  font-size: 12px;
-  padding-top: 20px;
-  padding-bottom: 16px;
-  margin-top: 0;
-  margin-bottom: 0;
-  background: #222;
-  text-align: center; }
-
-.footer a {
-  color: #919191; }
-
-.footer a:hover {
-  color: #36b3a8; }
-
-/*
-----------------------------------------                    ----------------------------------------
----------------------------------------- RESPONSIVE SECTION ----------------------------------------
-----------------------------------------                    ----------------------------------------
-*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 760px) {
   .content {
-    padding-left: 5%;
-    padding-right: 5%;
-    width: 90%; }
+    width: 100%; }
 
-  h1 {
-    font-size: 40px; }
-
-  .welcome {
-    /*padding-top: 230px; flexbox */ } }
-@media only screen and (max-width: 600px) {
-  .welcome {
-    /*padding-top: 170px; ONLY IF NO VH*/
-    /*padding-top: 250px; flexbox*/ }
-
-  .year {
-    display: none; }
-
-  .mobile {
-    letter-spacing: 0;
-    font-weight: normal; }
-
-  h1 {
-    font-size: 28px;
-    letter-spacing: 6px; }
-
-  .sub {
-    font-size: 10px;
-    letter-spacing: 1px; }
-
-  .nav {
-    padding-right: 0px;
-    padding-left: 0px; }
-
-  .cover {
-    /*height: 480px; ONLY IF NO VH*/ }
-
-  .content {
-    padding-top: 80px;
-    padding-bottom: 80px; }
-
-  [class*='image-'] {
-    font-size: 28px; } }
+  .col-half, .col-full {
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 24px; } }
 /*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- ANIMATIONS ----------------------------------------
