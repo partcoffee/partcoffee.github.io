@@ -61,15 +61,15 @@ body, ul {
 }
 
 .image-one {
-	background: url(../img/mon2.jpg);
+	background: url("../img/mon2.jpg");
 }
 
 .image-three {
-	background: url(../img/mon3.jpg);
+	background: url("../img/mon3.jpg");
 }
 
 .image-four {
-	background: url(../img/mon1.jpg);
+	background: url("../img/mon1.jpg");
 }
 
 [class*='image-'] {
@@ -192,7 +192,7 @@ a {
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
 	font-size: 16px;
-	letter-spacing: 20px;
+	padding: 14px;
 
 }
 
@@ -258,8 +258,8 @@ li a:hover {
 	/*height: 650px; ONLY IF NO VH*/
 	background-color: #f6f6f6;
 	/* background: url(http://www.squireel.com/assets/img/medias/header-background.jpg); */
-	/*background: url(../img/a.jpg);*/
-	background: url(../img/mon.jpg);
+	/*background: url("../img/a.jpg");*/
+	background: url("../img/mon.jpg");
     background-position: center;
 	-webkit-background-size: cover;
     -moz-background-size: cover;
