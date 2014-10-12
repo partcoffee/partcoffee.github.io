@@ -332,6 +332,10 @@ footer {
 	[class^="icon-"], [class*=" icon-"] {
 		line-height: 2.2;
 	}
+
+	.image:hover {
+		height: 250px;
+	}
 }
 
 @media only screen and (max-width: 639px) {
@@ -345,10 +349,6 @@ footer {
 		margin-left: 2%;
 		margin-right: 2%;
 		padding: 24px;
-	}
-
-	.image:hover {
-		height: 250px;
 	}
 
 	[class^="icon-"], [class*=" icon-"] {

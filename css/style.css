@@ -254,7 +254,10 @@ footer {
     width: 560px; }
 
   [class^="icon-"], [class*=" icon-"] {
-    line-height: 2.2; } }
+    line-height: 2.2; }
+
+  .image:hover {
+    height: 250px; } }
 @media only screen and (max-width: 639px) {
   .content {
     padding-top: 2%;
@@ -265,9 +268,6 @@ footer {
     margin-left: 2%;
     margin-right: 2%;
     padding: 24px; }
-
-  .image:hover {
-    height: 250px; }
 
   [class^="icon-"], [class*=" icon-"] {
     display: none; }
