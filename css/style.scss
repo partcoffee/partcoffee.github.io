@@ -310,6 +310,10 @@ footer {
 		text-align: center;
 		padding-right: 0px;
 	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		line-height: 2.8;
+	}
 }
 
 @media only screen and (max-width: 760px) {
@@ -323,6 +327,10 @@ footer {
 
 	.col-full {
 		width: 560px;
+	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		line-height: 2.2;
 	}
 }
 

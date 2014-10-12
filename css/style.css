@@ -239,7 +239,10 @@ footer {
 
   .bar {
     text-align: center;
-    padding-right: 0px; } }
+    padding-right: 0px; }
+
+  [class^="icon-"], [class*=" icon-"] {
+    line-height: 2.8; } }
 @media only screen and (max-width: 760px) {
   .content {
     width: 560px; }
@@ -248,7 +251,10 @@ footer {
     width: 272px; }
 
   .col-full {
-    width: 560px; } }
+    width: 560px; }
+
+  [class^="icon-"], [class*=" icon-"] {
+    line-height: 2.2; } }
 @media only screen and (max-width: 639px) {
   .content {
     padding-top: 2%;
