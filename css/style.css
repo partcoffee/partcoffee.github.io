@@ -9,7 +9,6 @@
 ----------------------------------------         ----------------------------------------
 */
 body {
-  color: #333;
   background: #ececec;
   margin: 0;
   padding: 0;
@@ -73,7 +72,7 @@ a {
   font-family: 'icomoon';
   color: #9fa2a6;
   font-size: 60px;
-  line-height: 1.8; }
+  line-height: 3; }
 
 .icon-umbrella:before {
   content: "\e060"; }
@@ -226,6 +225,16 @@ footer {
 ---------------------------------------- RESPONSIVE ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
+@media only screen and (max-width: 1000px) {
+  .content {
+    padding-top: 4%;
+    width: 640px; }
+
+  .col-half {
+    width: 312px; }
+
+  .col-full {
+    width: 640px; } }
 @media only screen and (max-width: 760px) {
   .content {
     padding-top: 2%;
@@ -238,7 +247,14 @@ footer {
     padding: 24px; }
 
   .image:hover {
-    height: 250px; } }
+    height: 250px; }
+
+  [class^="icon-"], [class*=" icon-"] {
+    display: none; }
+
+  .col-half h1 {
+    border-bottom: none;
+    padding-bottom: 0; } }
 /*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- ANIMATIONS ----------------------------------------

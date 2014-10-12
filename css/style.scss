@@ -26,7 +26,6 @@ $inactive: #9fa2a6;
 */
 
 body {
-	color: #333;
 	background: #ececec;
 	margin: 0;
 	padding: 0;
@@ -105,7 +104,7 @@ a {
 	font-family: 'icomoon';
 	color: $inactive;
 	font-size: 60px;
-	line-height: 1.8;
+	line-height: 3;
 }
 
 .icon-umbrella:before {
@@ -292,6 +291,21 @@ footer {
 ----------------------------------------            ----------------------------------------
 */
 
+@media only screen and (max-width: 1000px) {
+	.content {
+		padding-top: 4%;
+		width: 640px;
+	}
+
+	.col-half {
+		width: 312px;
+	}
+
+	.col-full {
+		width: 640px;
+	}
+}
+
 @media only screen and (max-width: 760px) {
 	.content {
 		padding-top: 2%;
@@ -307,6 +321,15 @@ footer {
 
 	.image:hover {
 		height: 250px;
+	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		display: none;
+	}
+
+	.col-half h1 {
+		border-bottom: none;
+		padding-bottom: 0;
 	}
 }
 
