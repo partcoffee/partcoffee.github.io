@@ -100,13 +100,14 @@ a {
 .bar {
   position: absolute;
   width: 100%;
-  z-index: 99; }
+  z-index: 99;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 16px; }
 
 .bar a {
-  float: right;
   color: #FFF;
   padding: 20px;
-  padding-right: 30px;
   font-size: 14px;
   opacity: .6;
   -webkit-transition: .3s;
@@ -234,8 +235,21 @@ footer {
     width: 312px; }
 
   .col-full {
-    width: 640px; } }
+    width: 640px; }
+
+  .bar {
+    text-align: center;
+    padding-right: 0px; } }
 @media only screen and (max-width: 760px) {
+  .content {
+    width: 560px; }
+
+  .col-half {
+    width: 272px; }
+
+  .col-full {
+    width: 560px; } }
+@media only screen and (max-width: 639px) {
   .content {
     padding-top: 2%;
     width: 100%; }
@@ -252,7 +266,7 @@ footer {
   [class^="icon-"], [class*=" icon-"] {
     display: none; }
 
-  .col-half h1 {
+  .category {
     border-bottom: none;
     padding-bottom: 0; } }
 /*
@@ -308,10 +322,18 @@ footer {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp; }
 
-.delay {
+.delay-a {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s; }
+
+.delay-b {
   -webkit-animation-delay: .3s;
   animation-delay: .3s; }
 
-.delay-2 {
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s; }
+.delay-c {
+  -webkit-animation-delay: .38s;
+  animation-delay: .38s; }
+
+.delay-d {
+  -webkit-animation-delay: .42s;
+  animation-delay: .42s; }
