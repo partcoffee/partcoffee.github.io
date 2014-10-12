@@ -55,7 +55,11 @@ p {
 a {
   color: #9fa2a6;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s; }
 
 .dot {
   display: inline-block;
@@ -112,11 +116,7 @@ a {
   color: #FFF;
   padding: 20px;
   font-size: 14px;
-  opacity: .6;
-  -webkit-transition: .3s;
-  -moz-transition: .3s;
-  -o-transition: .3s;
-  transition: .3s; }
+  opacity: .6; }
 
 .bar a:hover {
   opacity: 1; }
@@ -198,9 +198,12 @@ a {
 a [class*='col-']:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 11px 3px; }
 
+[class*='col-'] a:hover {
+  color: #333333; }
+
 .image {
   height: 250px;
-  background: url(../img/city.png);
+  background-image: url(../img/city.png);
   background-repeat: no-repeat;
   background-position: center;
   -webkit-background-size: cover;
@@ -210,6 +213,11 @@ a [class*='col-']:hover {
 
 .image:hover {
   height: 500px; }
+
+/*Implement this in a better way later..*/
+img {
+  max-width: 100%;
+  padding-top: 16px; }
 
 /*
 ----------------------------------------                 ----------------------------------------

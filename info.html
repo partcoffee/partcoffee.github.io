@@ -54,7 +54,7 @@ Copyright 2014 - The University of Winchester
 
   <div class="col-full">
 
-    <h1>Something</h1>
+    <h1>Subject</h1>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
@@ -62,13 +62,15 @@ Copyright 2014 - The University of Winchester
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem aperiam vitae reprehenderit nemo fugiat dignissimos quibusdam nesciunt ullam consectetur tenetur, modi cum, officia aspernatur voluptatibus, reiciendis quae rerum cumque corrupti.</p>
 
+    <p><a href="#summary">Scroll to summary</a></p>
+
   </div>
 
   <div class="col-full image"></div>
 
   <div class="col-full">
     
-    <h1>Anything</h1>
+    <h1>Impact</h1>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ea provident mollitia corporis impedit maiores delectus natus, quasi exercitationem, beatae suscipit quia error omnis commodi, eos facilis alias ad quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores labore necessitatibus beatae et maiores amet, laborum officia, ipsa reprehenderit dignissimos libero ea at. Error quidem porro, laborum quam id saepe.</p>
 
@@ -98,7 +100,7 @@ Copyright 2014 - The University of Winchester
 
   <div class="col-full">
     
-    <h1>Something</h1>
+    <h1>Advice</h1>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ea provident mollitia corporis impedit maiores delectus natus, quasi exercitationem, beatae suscipit quia error omnis commodi, eos facilis alias ad quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores labore necessitatibus beatae et maiores amet, laborum officia, ipsa reprehenderit dignissimos libero ea at. Error quidem porro, laborum quam id saepe.</p>
 
@@ -110,10 +112,19 @@ Copyright 2014 - The University of Winchester
 
   <div class="col-full">
     
-    <h1>Conclusion</h1>
+    <h1>Best practice</h1>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui repellendus debitis, dolorum fugiat nisi similique molestiae voluptate. Excepturi facere maiores minima, velit porro voluptatibus ex perspiciatis mollitia, alias nisi recusandae.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid earum nulla deserunt quos voluptatem molestiae sed repudiandae voluptas minus at, recusandae asperiores consectetur, dolor dolorem ex temporibus harum modi error.</p>
 
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui repellendus debitis, dolorum fugiat nisi similique molestiae voluptate. Excepturi facere maiores minima, velit porro voluptatibus ex perspiciatis mollitia, alias nisi recusandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid similique, sunt totam cum, delectus ipsum inventore laudantium officia ab dolorum, iure, obcaecati cumque aspernatur! Quaerat aliquid autem velit ullam quos?</p>
+
+  </div>
+
+  <div id="summary" class="col-full">
+    
+    <h1>Summary</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, veniam ea accusantium quasi aperiam deleniti odio eaque delectus illo minus eveniet quisquam. Voluptatibus, itaque veniam pariatur.</p>
   </div>
 
   <div class="dot">. . .</div>
@@ -141,6 +152,8 @@ Copyright 2014 - The University of Winchester
 =====================================================
   WIZARDRY
 =====================================================
+  Consider using J and K to go through content like Facebook. Highlight images when you get to them through this, and highlight the "Summary" when you use the shortcut to it.
+=====================================================
 -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -149,6 +162,23 @@ Copyright 2014 - The University of Winchester
 <script>
   $(function() {
       FastClick.attach(document.body);
+  });
+</script>
+
+<script>
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 500);
+          return false;
+        }
+      }
+    });
   });
 </script>
 
