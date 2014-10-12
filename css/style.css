@@ -155,7 +155,7 @@ a {
   margin-left: auto;
   width: 740px;
   padding-top: 50px;
-  padding-bottom: 140px; }
+  padding-bottom: 10%; }
 
 [class*='col-'] {
   text-align: center;
@@ -192,11 +192,8 @@ a {
   display: table;
   clear: both; }
 
-[class*='col-']:hover {
+a [class*='col-']:hover {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 11px 3px; }
-
-.col-full:hover {
-  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px; }
 
 .image {
   height: 250px;
@@ -209,8 +206,7 @@ a {
   background-size: cover; }
 
 .image:hover {
-  height: 500px;
-  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px; }
+  height: 500px; }
 
 /*
 ----------------------------------------                 ----------------------------------------
@@ -232,13 +228,17 @@ footer {
 */
 @media only screen and (max-width: 760px) {
   .content {
+    padding-top: 2%;
     width: 100%; }
 
   .col-half, .col-full {
     width: 96%;
     margin-left: 2%;
     margin-right: 2%;
-    padding: 24px; } }
+    padding: 24px; }
+
+  .image:hover {
+    height: 250px; } }
 /*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- ANIMATIONS ----------------------------------------

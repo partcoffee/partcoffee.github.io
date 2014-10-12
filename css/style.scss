@@ -204,7 +204,7 @@ a {
 	@include center;
 	width: 740px;
 	padding-top: 50px;
-	padding-bottom: 140px;
+	padding-bottom: 10%;
 }
 
 [class*='col-'] {
@@ -248,12 +248,8 @@ a {
 	clear: both;
 }
 
-[class*='col-']:hover {
+a [class*='col-']:hover {
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 11px 3px;
-}
-
-.col-full:hover {
-	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 3px 0px;
 }
 
 .image {
@@ -269,7 +265,6 @@ a {
 
 .image:hover {
 	height: 500px;
-	box-shadow: rgba(0, 0, 0, 0.0470588) 0px 2px 3px 0px;
 }
 
 
@@ -299,6 +294,7 @@ footer {
 
 @media only screen and (max-width: 760px) {
 	.content {
+		padding-top: 2%;
 		width: 100%;
 	}
 
@@ -307,6 +303,10 @@ footer {
 		margin-left: 2%;
 		margin-right: 2%;
 		padding: 24px;
+	}
+
+	.image:hover {
+		height: 250px;
 	}
 }
 
