@@ -9,7 +9,7 @@
 ---------------------------------------- GENERAL ----------------------------------------
 ----------------------------------------         ----------------------------------------
 */
-body, ul {
+body {
   margin: 0;
   padding: 0;
   -webkit-text-size-adjust: 100%;
@@ -160,23 +160,20 @@ a {
 .nav {
   position: absolute;
   z-index: 99;
-  padding-top: 10px;
+  padding-top: 34px;
   padding-right: 25px;
-  padding-left: 25px; }
+  padding-left: 25px;
+  text-align: right; }
 
-li {
-  list-style: none;
-  float: right;
-  padding: 25px; }
-
-li a {
+.nav a {
   font-family: "Montserrat", sans-serif;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #222; }
+  color: #222;
+  padding: 25px; }
 
-li a:hover {
+.nav a:hover {
   color: #5ec2b9; }
 
 /*
@@ -321,7 +318,10 @@ li a:hover {
     font-size: 40px; }
 
   .welcome {
-    /*padding-top: 230px; flexbox */ } }
+    /*padding-top: 230px; flexbox */ }
+
+  .nav {
+    text-align: center; } }
 @media only screen and (max-width: 600px) {
   .welcome {
     /*padding-top: 170px; ONLY IF NO VH*/
@@ -345,6 +345,9 @@ li a:hover {
   .nav {
     padding-right: 0px;
     padding-left: 0px; }
+
+  .nav a {
+    padding: 14px; }
 
   .cover {
     /*height: 480px; ONLY IF NO VH*/ }
