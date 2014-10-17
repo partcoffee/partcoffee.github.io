@@ -320,7 +320,13 @@ a {
 */
 @media only screen and (min-width: 1400px) {
   .content {
+    padding-top: 160px;
+    padding-bottom: 160px;
     width: 800px; }
+
+  .break {
+    margin-top: 34px;
+    margin-bottom: 30px; }
 
   h2 {
     font-size: 20px; }
