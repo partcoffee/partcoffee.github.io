@@ -107,7 +107,7 @@ p {
   color: #555555;
   font-size: 14.5px;
   /* Stop looking at it, it works, okay? */
-  line-height: 24px;
+  line-height: 1.6;
   font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-style: normal; }
@@ -318,6 +318,15 @@ a {
 ---------------------------------------- RESPONSIVE SECTION ----------------------------------------
 ----------------------------------------                    ----------------------------------------
 */
+@media only screen and (max-width: 1400px) {
+  .content {
+    width: 900px; }
+
+  h2 {
+    font-size: 20px; }
+
+  p {
+    font-size: 16px; } }
 @media only screen and (max-width: 768px) {
   .content {
     padding-left: 5%;
