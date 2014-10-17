@@ -9,9 +9,13 @@
 ---------------------------------------- GENERAL ----------------------------------------
 ----------------------------------------         ----------------------------------------
 */
-body {
-  margin: 0;
+html, body {
+  width: 100%;
+  height: 100%;
   padding: 0;
+  margin: 0; }
+
+body {
   -webkit-text-size-adjust: 100%;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
@@ -182,7 +186,9 @@ a {
 ----------------------------------------               ----------------------------------------
 */
 .cover {
-  height: 100vh;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   /*height: 650px; ONLY IF NO VH*/
   background-color: #f6f6f6;
   /* background: url(http://www.squireel.com/assets/img/medias/header-background.jpg); */
@@ -192,7 +198,11 @@ a {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; }
+
+.relative {
+  width: 100%;
+  height: 100%;
   position: relative; }
 
 .welcome {
@@ -317,16 +327,9 @@ a {
   h1 {
     font-size: 40px; }
 
-  .welcome {
-    /*padding-top: 230px; flexbox */ }
-
   .nav {
     text-align: center; } }
 @media only screen and (max-width: 600px) {
-  .welcome {
-    /*padding-top: 170px; ONLY IF NO VH*/
-    /*padding-top: 250px; flexbox*/ }
-
   .year {
     display: none; }
 
@@ -348,9 +351,6 @@ a {
 
   .nav a {
     padding: 14px; }
-
-  .cover {
-    /*height: 480px; ONLY IF NO VH*/ }
 
   .content {
     padding-top: 80px;
@@ -384,32 +384,6 @@ a {
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
-
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none; } }
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp; }
 
 .delay {
   -webkit-animation-delay: .3s;
