@@ -319,6 +319,23 @@ a {
 ----------------------------------------                    ----------------------------------------
 */
 @media only screen and (min-width: 1400px) {
+  .nav a {
+    font-size: 12px; }
+
+  h1 {
+    font-size: 70px; }
+
+  .sub {
+    font-size: 12px; }
+
+  .top-text {
+    font-size: 15px; }
+
+  .button {
+    width: 140px;
+    height: 40px;
+    font-size: 15px; }
+
   .content {
     padding-top: 160px;
     padding-bottom: 160px;
