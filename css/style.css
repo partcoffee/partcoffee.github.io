@@ -318,15 +318,16 @@ a {
 ---------------------------------------- RESPONSIVE SECTION ----------------------------------------
 ----------------------------------------                    ----------------------------------------
 */
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 1400px) {
   .content {
-    width: 900px; }
+    width: 800px; }
 
   h2 {
     font-size: 20px; }
 
   p {
-    font-size: 16px; } }
+    font-size: 16px;
+    line-height: 1.8; } }
 @media only screen and (max-width: 768px) {
   .content {
     padding-left: 5%;
