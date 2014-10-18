@@ -3,6 +3,7 @@
 ---------------------------------------- VARIABLES ----------------------------------------
 ----------------------------------------           ----------------------------------------
 */
+@import url(map.css);
 /*$orange: rgba(211, 104, 104, 1);*/
 /*
 ----------------------------------------         ----------------------------------------
@@ -20,6 +21,7 @@ body {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #222;
   backface-visibility: hidden; }
 
 *, *:after, *:before {
@@ -140,8 +142,8 @@ a {
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
-  font-size: 16px;
-  padding: 14px; }
+  font-size: 18px;
+  padding: 16px; }
 
 .icon-mail:before {
   content: "\e601"; }
@@ -203,7 +205,8 @@ a {
 .relative {
   width: 100%;
   height: 100%;
-  position: relative; }
+  position: relative;
+  background-color: #f6f6f6; }
 
 .welcome {
   /*padding-top: 220px; ONLY IF NO VH*/
@@ -298,6 +301,7 @@ a {
 ----------------------------------------                ----------------------------------------
 */
 .footer {
+  line-height: 1.8;
   color: #919191;
   font-size: 12px;
   padding-top: 20px;
@@ -351,7 +355,11 @@ a {
 
   p {
     font-size: 16px;
-    line-height: 1.8; } }
+    line-height: 1.8; }
+
+  [class^="icon-"], [class*=" icon-"] {
+    font-size: 24px;
+    padding: 30px; } }
 @media only screen and (max-width: 768px) {
   .content {
     padding-left: 5%;
