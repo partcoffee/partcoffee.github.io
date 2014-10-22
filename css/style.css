@@ -3,15 +3,20 @@
 ---------------------------------------- VARIABLES ----------------------------------------
 ----------------------------------------           ----------------------------------------
 */
+@import url(map.css);
+/*$orange: rgba(211, 104, 104, 1);*/
 /*
 ----------------------------------------         ----------------------------------------
 ---------------------------------------- GENERAL ----------------------------------------
 ----------------------------------------         ----------------------------------------
 */
-body {
-  background: #ececec;
-  margin: 0;
+html, body {
+  width: 100%;
+  height: 100%;
   padding: 0;
+  margin: 0; }
+
+body {
   -webkit-text-size-adjust: 100%;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
@@ -23,269 +28,377 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.wrap {
+  width: 100%; }
+
+.white {
+  background-color: #FFF; }
+
+.grey {
+  background-color: #f6f6f6; }
+
+.image-one {
+  background: url("../img/mon2.jpg"); }
+
+.image-three {
+  background: url("../img/mon3.jpg"); }
+
+.image-four {
+  background: url("../img/mon1.jpg"); }
+
+[class*='image-'] {
+  color: #222;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  background-repeat: no-repeat;
+  background-color: #222;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 130px;
+  padding-bottom: 130px;
+  width: 640px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center; }
+
+.break {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 30px;
+  height: 1px;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  border-top: 1px solid #d9d9d9; }
+
 /*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- TYPOGRAPHY ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 h1 {
-  color: #333333;
-  font-family: "Roboto", sans-serif;
-  font-size: 22px;
-  padding-bottom: 20px;
-  font-weight: 300;
-  border-bottom: 1px solid #f6f6f6; }
-
-.category {
-  border-bottom: 1px solid #f6f6f6; }
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 60px;
+  letter-spacing: 5px;
+  color: #222;
+  line-height: 0; }
 
 h2 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 18px; }
+  color: #383838;
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: normal;
+  text-transform: uppercase; }
 
 p {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  color: #333333;
-  font-weight: 300;
-  font-size: 14px;
+  color: #555555;
+  font-size: 14.5px;
+  /* Stop looking at it, it works, okay? */
   line-height: 1.6;
-  text-align: left; }
+  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal; }
+
+.content p {
+  text-align: justify; }
 
 a {
-  color: #9fa2a6;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-decoration: none;
+  color: #36b3a8;
   -webkit-transition: .3s;
   -moz-transition: .3s;
   -o-transition: .3s;
   transition: .3s; }
 
-.dot {
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-  padding-top: 16px;
-  padding-bottom: 26px;
-  color: #9fa2a6; }
+.content a {
+  border-bottom: 1px solid #FFF; }
+
+.grey .content a {
+  border-bottom: 1px solid #f6f6f6; }
+
+.content a:hover {
+  border-bottom: 1px solid #36b3a8; }
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?-7h4llh");
-  src: url("../fonts/icomoon.svg?-7h4llh#icomoon") format("svg"), url("../fonts/icomoon.eot?#iefix-7h4llh") format("embedded-opentype"), url("../fonts/icomoon.woff?-7h4llh") format("woff"), url("../fonts/icomoon.ttf?-7h4llh") format("truetype");
+  src: url("../fonts/icomoon.eot?-83a6yj");
+  src: url("../fonts/icomoon.svg?-83a6yj#icomoon") format("svg"), url("../fonts/icomoon.eot?#iefix-83a6yj") format("embedded-opentype"), url("../fonts/icomoon.woff?-83a6yj") format("woff"), url("../fonts/icomoon.ttf?-83a6yj") format("truetype");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
-  color: #9fa2a6;
-  font-size: 60px;
-  line-height: 3; }
+  font-size: 18px;
+  padding: 16px; }
 
-.icon-umbrella:before {
-  content: "\e060"; }
+.icon-mail:before {
+  content: "\e601"; }
 
-.icon-moon:before {
-  content: "\e061"; }
+.icon-twitter:before {
+  content: "\e600"; }
 
-.icon-thermometer:before {
-  content: "\e062"; }
+.icon-facebook:before {
+  content: "\e602"; }
 
-.icon-drop:before {
-  content: "\e063"; }
-
-.icon-sun:before {
-  content: "\e064"; }
-
-.icon-cloud:before {
-  content: "\e065"; }
+.content .icons:hover {
+  border-bottom: 1px solid #FFF;
+  opacity: .7; }
 
 /*
-----------------------------------------             ----------------------------------------
----------------------------------------- NAV SECTION ----------------------------------------
-----------------------------------------             ----------------------------------------
+----------------------------------------            ----------------------------------------
+---------------------------------------- NAVIGATION ----------------------------------------
+----------------------------------------            ----------------------------------------
 */
-.bar {
+.nav {
   position: absolute;
-  width: 100%;
   z-index: 99;
-  text-align: right;
-  padding-top: 20px;
-  padding-right: 16px; }
+  padding-top: 34px;
+  padding-right: 25px;
+  padding-left: 25px;
+  text-align: right; }
 
-.bar a {
-  color: #FFF;
-  padding: 20px;
-  font-size: 14px;
-  opacity: .6; }
+.nav a {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222;
+  padding: 25px; }
 
-.bar a:hover {
-  opacity: 1; }
+.nav a:hover {
+  color: #5ec2b9; }
 
 /*
 ----------------------------------------               ----------------------------------------
 ---------------------------------------- COVER SECTION ----------------------------------------
 ----------------------------------------               ----------------------------------------
 */
-/*.bar {
-	width: 100%;
-	height: 40px;
-}*/
 .cover {
-  position: relative;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  text-align: center;
-  font-size: 36px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  color: #FFF;
-  background: #00bcd4;
-  background: url(../img/img.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-position: center;
-  /*box-shadow: 0px 1px 2px #666;*/ }
-
-/*
-----------------------------------------                  ----------------------------------------
----------------------------------------- CONTENT SECTIION ----------------------------------------
-----------------------------------------                  ----------------------------------------
-*/
-.content {
-  margin-right: auto;
-  margin-left: auto;
-  width: 740px;
-  padding-top: 50px;
-  padding-bottom: 10%; }
-
-[class*='col-'] {
-  text-align: center;
-  float: left;
-  display: inline-block;
-  border-radius: 2px;
-  background-color: #FFF;
-  padding: 32px;
-  padding-top: 16px;
-  margin: 8px;
-  box-shadow: rgba(0, 0, 0, 0.04706) 0px 2px 3px 0px;
-  -webkit-transition: .3s ease-out;
-  -moz-transition: .3s ease-out;
-  -o-transition: .3s ease-out;
-  transition: .3s ease-out; }
-
-.start {
-  margin-left: 0; }
-
-.end {
-  margin-right: 0; }
-
-.col-half {
-  width: 362px; }
-
-.col-full {
-  width: 740px;
-  margin: 0px;
-  margin-top: 8px;
-  margin-bottom: 8px; }
-
-.content:after {
-  content: "";
-  display: table;
-  clear: both; }
-
-a [class*='col-']:hover {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 11px 3px; }
-
-[class*='col-'] a:hover {
-  color: #333333; }
-
-.image {
-  height: 250px;
-  background-image: url(../img/city.png);
-  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*height: 650px; ONLY IF NO VH*/
+  background-color: #f6f6f6;
+  /* background: url(http://www.squireel.com/assets/img/medias/header-background.jpg); */
+  /*background: url("../img/a.jpg");*/
+  background: url("../img/mon.jpg");
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
 
-.image:hover {
-  height: 500px; }
+.relative {
+  width: 100%;
+  height: 100%;
+  position: relative; }
 
-/*Implement this in a better way later..*/
-img {
-  max-width: 100%;
-  padding-top: 16px; }
-
-/*
-----------------------------------------                 ----------------------------------------
----------------------------------------- FOOTER SECTIION ----------------------------------------
-----------------------------------------                 ----------------------------------------
-*/
-footer {
-  color: #9fa2a6;
-  font-size: 12px;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+.welcome {
+  /*padding-top: 220px; ONLY IF NO VH*/
+  /*padding-top: 250px;*/
+  padding-top: 30px;
   width: 100%;
   text-align: center;
-  padding-bottom: 20px; }
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.date {
+  font-size: 14px; }
+
+.sub {
+  padding-top: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #222; }
+
+.final-letter {
+  letter-spacing: 0;
+  font-weight: normal; }
+
+.top-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: normal;
+  letter-spacing: 2px;
+  color: #5ec2b9;
+  font-size: 14px; }
+
+.button {
+  margin: 0 auto;
+  color: #FFF;
+  font-size: 12px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 2.5;
+  border-radius: 25px;
+  background: #36b3a8;
+  width: 100px;
+  height: 30px;
+  display: block;
+  margin-top: 60px; }
+
+/* HOVER EFFECT - WIP */
+.button .hide {
+  display: none; }
+
+.button:hover .show {
+  display: none; }
+
+.button:hover .hide {
+  display: inline; }
 
 /*
-----------------------------------------            ----------------------------------------
----------------------------------------- RESPONSIVE ----------------------------------------
-----------------------------------------            ----------------------------------------
+----------------------------------------               ----------------------------------------
+---------------------------------------- ABOUT SECTION ----------------------------------------
+----------------------------------------               ----------------------------------------
 */
-@media only screen and (max-width: 1000px) {
+/*
+----------------------------------------                 ----------------------------------------
+---------------------------------------- STUDENT SECTION ----------------------------------------
+----------------------------------------                 ----------------------------------------
+*/
+/*
+----------------------------------------             ----------------------------------------
+---------------------------------------- MAP SECTION ----------------------------------------
+----------------------------------------             ----------------------------------------
+*/
+/*
+----------------------------------------                 ----------------------------------------
+---------------------------------------- CONNECT SECTION ----------------------------------------
+----------------------------------------                 ----------------------------------------
+*/
+.connect p {
+  text-align: center; }
+
+.connect, .content {
+  padding-bottom: 110px; }
+
+.socials {
+  padding-top: 10px; }
+
+/*
+----------------------------------------                ----------------------------------------
+---------------------------------------- FOOTER SECTION ----------------------------------------
+----------------------------------------                ----------------------------------------
+*/
+.footer {
+  position: absolute;
+  line-height: 1.8;
+  color: #919191;
+  font-size: 12px;
+  padding-top: 20px;
+  padding-bottom: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #222;
+  text-align: center; }
+
+.footer a {
+  color: #919191; }
+
+.footer a:hover {
+  color: #36b3a8; }
+
+/*
+----------------------------------------                    ----------------------------------------
+---------------------------------------- RESPONSIVE SECTION ----------------------------------------
+----------------------------------------                    ----------------------------------------
+*/
+@media only screen and (min-width: 1400px) {
+  .nav a {
+    font-size: 12px; }
+
+  h1 {
+    font-size: 70px; }
+
+  .sub {
+    font-size: 12px; }
+
+  .top-text {
+    font-size: 15px; }
+
+  .button {
+    line-height: 2.6;
+    width: 140px;
+    height: 40px;
+    font-size: 15px; }
+
   .content {
-    padding-top: 4%;
-    width: 640px; }
+    padding-top: 160px;
+    padding-bottom: 160px;
+    width: 800px; }
 
-  .col-half {
-    width: 312px; }
+  .break {
+    margin-top: 30px;
+    margin-bottom: 30px; }
 
-  .col-full {
-    width: 640px; }
+  h2 {
+    font-size: 20px; }
 
-  .bar {
-    text-align: center;
-    padding-right: 0px; }
+  p {
+    font-size: 16px;
+    line-height: 1.8; }
 
   [class^="icon-"], [class*=" icon-"] {
-    line-height: 2.8; } }
-@media only screen and (max-width: 760px) {
+    font-size: 24px;
+    padding: 30px; } }
+@media only screen and (max-width: 768px) {
   .content {
-    width: 560px; }
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%; }
 
-  .col-half {
-    width: 272px; }
+  h1 {
+    font-size: 40px; }
 
-  .col-full {
-    width: 560px; }
-
-  [class^="icon-"], [class*=" icon-"] {
-    line-height: 2.2; }
-
-  .image:hover {
-    height: 250px; } }
-@media only screen and (max-width: 639px) {
-  .content {
-    padding-top: 2%;
-    width: 100%; }
-
-  .col-half, .col-full {
-    width: 96%;
-    margin-left: 2%;
-    margin-right: 2%;
-    padding: 24px; }
-
-  [class^="icon-"], [class*=" icon-"] {
+  .nav {
+    text-align: center; } }
+@media only screen and (max-width: 600px) {
+  .year {
     display: none; }
 
-  .category {
-    border-bottom: none;
-    padding-bottom: 0; } }
+  .mobile {
+    letter-spacing: 0;
+    font-weight: normal; }
+
+  h1 {
+    font-size: 28px;
+    letter-spacing: 6px; }
+
+  .sub {
+    font-size: 10px;
+    letter-spacing: 1px; }
+
+  .nav {
+    padding-right: 0px;
+    padding-left: 0px; }
+
+  .nav a {
+    padding: 14px; }
+
+  .content {
+    padding-top: 80px;
+    padding-bottom: 80px; }
+
+  [class*='image-'] {
+    font-size: 28px; } }
 /*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- ANIMATIONS ----------------------------------------
@@ -313,44 +426,10 @@ footer {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn; }
 
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none; } }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    -ms-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0); }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none; } }
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp; }
-
-.delay-a {
-  -webkit-animation-delay: .2s;
-  animation-delay: .2s; }
-
-.delay-b {
+.delay {
   -webkit-animation-delay: .3s;
   animation-delay: .3s; }
 
-.delay-c {
-  -webkit-animation-delay: .38s;
-  animation-delay: .38s; }
-
-.delay-d {
-  -webkit-animation-delay: .42s;
-  animation-delay: .42s; }
+.delay-2 {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s; }
