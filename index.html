@@ -28,9 +28,9 @@ Coded in SASS.
 -->
 
 
-<div class="navigation module-1"><a href="about.html">Get the app</a> <a href="#">Info</a></div>
+<div class="navigation main"><a href="#">Download app</a> <a href="about.html">Info</a></div>
 
-<div id="splash" class="relative module-1">
+<div id="splash" class="relative main">
 	<div class="wrap">
 
 		<div class="splash">1 minute of Britain<br><a id="play"><span class="icon-play"></span> Play a minute</a></div>
@@ -39,7 +39,7 @@ Coded in SASS.
 	</div>
 </div>
 
-<div id="video-container" class="visible" style="display:none;">
+<div id="video-container" class="playing" style="display:none;">
 
 		<video id="video">
 		  <source src="film.mp4">
@@ -51,7 +51,7 @@ Coded in SASS.
 
 		<div id="video-controls" class="video-controls">
 			<button type="button" id="play-pause">Play</button>
-			<input type="range" class="videos" id="seek-bar" value="0">
+			<input type="range" class="seeker" id="seek-bar" value="0">
 		</div>
 
 </div>
@@ -68,13 +68,17 @@ Coded in SASS.
 
 <script>
 	$('#play').click(function() {
-		$('.visible').fadeToggle(300),
-		$('.module-1').fadeToggle(300);
+		$('.playing').fadeToggle(300),
+		$('.main').fadeToggle(300),
+		video.play(),
+		$('#play-pause').html("Pause");
 	});
 
 	$('.video-close').click(function() {
-		$('.visible').fadeToggle(300),
-		$('.module-1').fadeToggle(300);
+		$('.playing').fadeToggle(300),
+		$('.main').fadeToggle(300),
+		video.pause(),
+		$('#play-pause').html("Play");
 	})
 </script>
 

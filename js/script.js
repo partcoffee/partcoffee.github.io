@@ -38,13 +38,9 @@ window.onload = function() {
 	// FIX THIS.
 
 
-
-	//Stop video on X-ing out
-	//Play video on play-button from front-page instead of pressing play twice
 	//Exit video on value == 100
 	//Hide controls after 4 seconds of inactivity
 	//Show controls on mouseover, do not fade even though inactive
-
 
 
 
@@ -79,3 +75,4 @@ window.onload = function() {
 		video.play();
 	});
 }
+
