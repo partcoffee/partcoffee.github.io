@@ -71,7 +71,8 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: url('../w8.jpg');
+	/*background: url('../w8.jpg');*/
+	background: url('../gray.jpg');
 	background-color: #222;
 	background-size: cover;
 	background-position: center center;
@@ -105,7 +106,7 @@ body {
 	padding-bottom: 20px;
 	font-family: $links;
 	text-align: center;
-	color: rgba(250, 250, 250, .4);
+	color: rgba(250, 250, 250, .6);
 	text-transform: uppercase;
 	font-size: 11px;
 }
@@ -245,6 +246,10 @@ input[type='range']::-webkit-slider-thumb {
 	padding-bottom: 130px;
 	text-align: center;
 	background-color: #222;
+	background: url('../gray.jpg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .cover a, .splash a {
@@ -257,7 +262,7 @@ input[type='range']::-webkit-slider-thumb {
 	text-transform: uppercase;
 	background: #FFF;
 	border-radius: 25px;
-	padding: 10px;
+	padding: 11px;
 	padding-right: 26px;
 	padding-left: 26px;
 	cursor: pointer;
@@ -270,7 +275,7 @@ input[type='range']::-webkit-slider-thumb {
 .content {
 	margin-right: auto;
 	margin-left: auto;
-	width: 720px;
+	width: 540px;
 }
 
 .content:last-of-type {
@@ -286,11 +291,15 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 footer {
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
+	width: 320px;
 	font-size: 12px;
 	font-family: $bodytext;
 	line-height: 1.6;
 	text-align: center;
 	color: $inactive;
+	margin: 0 auto;
+	padding-top: 16px;
 	padding-bottom: 26px;
 }
 
@@ -322,7 +331,8 @@ p {
 }
 
 p a {
-	border-bottom: 1px solid #222;
+	color: #3b5998;
+	font-weight: bold;
 }
 
 p a:hover {
@@ -331,7 +341,7 @@ p a:hover {
 
 a {
 	text-decoration: none;
-	color: #222;
+	color: #3b5998;
 	-webkit-transition: .3s;
 	-moz-transition: .3s;
 	-o-transition: .3s;
@@ -349,8 +359,7 @@ a {
 	font-size: 42px;
 }
 
-/*Fix this later.*/
-.number {
+.attention {
 	font-weight: bold;
 }
 
@@ -392,15 +401,61 @@ footer .icon-heart {
 
 
 /*
+----------------------------------------             ----------------------------------------
+---------------------------------------- STYLE GUIDE ----------------------------------------
+----------------------------------------             ----------------------------------------
+*/
+
+.example {
+	border-left: 2px solid rgba(0,0,0,0.1); /* Subject to change? */
+	padding-left: 10px;
+	font-size: 20px;
+}
+
+.roboto {
+	font-family: $headlines;
+}
+
+.montserrat {
+	font-family: $links;
+	text-transform: uppercase;
+}
+
+.font-image {
+	width: 440px;
+	border-left: 2px solid rgba(0,0,0,0.1); /* Subject to change? */
+}
+
+[class^="block-"], [class*=" block-"] {
+	width: 50%;
+	height: 10px;
+	display: block;
+}
+
+.block-1 {
+	background-color: #222;
+}
+
+.block-2 {
+	background-color: #555;
+}
+
+.block-3 {
+	background-color: #de7373;	
+}
+
+
+
+/*
 ----------------------------------------            ----------------------------------------
 ---------------------------------------- RESPONSIVE ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 
 @media only screen and (max-width: 1000px) {
-	.content {
+	/*.content {
 		width: 640px;
-	}
+	}*/
 
 	.navigation {
 		padding-right: 1.5%;
@@ -437,8 +492,16 @@ footer .icon-heart {
 		padding-left: 2%;
 	}
 
+	.font-image {
+		width: 100%;
+	}
+
 	.splash {
 		font-size: 40px;
+	}
+
+	footer {
+		width: 70%;
 	}
 }
 
