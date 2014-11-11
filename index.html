@@ -89,6 +89,12 @@ Coded in SASS.
 		video.pause(),
 		$('#play-pause').html("Play");
 	})
+
+	$('#video').on('ended',function() {
+    	$('.playing, .main').fadeToggle(300),
+		video.pause(),
+		$('#play-pause').html("Play");
+    });
 </script>
 
 </body>

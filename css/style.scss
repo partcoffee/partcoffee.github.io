@@ -71,8 +71,7 @@ body {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	/*background: url('../w8.jpg');*/
-	background: url('../gray.jpg');
+	background: url('../w8.jpg');
 	background-color: #222;
 	background-size: cover;
 	background-position: center center;
@@ -197,8 +196,9 @@ button:hover {
 input[type='range']::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	outline: none;
-	background: #222;
-    height: 14px;
+	background: #FFF;
+	border-radius: 50%;
+    height: 6px;
     width: 6px;
 	cursor: pointer;
 }
@@ -246,7 +246,7 @@ input[type='range']::-webkit-slider-thumb {
 	padding-bottom: 130px;
 	text-align: center;
 	background-color: #222;
-	background: url('../gray.jpg');
+	background: url('../w8.jpg');
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -331,7 +331,7 @@ p {
 }
 
 p a {
-	color: #3b5998;
+	color: #555;
 	font-weight: bold;
 }
 
@@ -341,7 +341,7 @@ p a:hover {
 
 a {
 	text-decoration: none;
-	color: #3b5998;
+	color: #555;
 	-webkit-transition: .3s;
 	-moz-transition: .3s;
 	-o-transition: .3s;
@@ -382,12 +382,15 @@ a {
 	content: "\e600";
 }
 
-footer .icon-heart {
+footer .icon-heart:before {
 	color: #de7373;
 }
 
 .icon-cross:before {
 	content: "\e601";
+}
+
+.video-close .icon-cross:before {
 	color: #FFF;
 	cursor: pointer;
 	font-size: 18px;
