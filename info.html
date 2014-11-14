@@ -34,13 +34,16 @@ Copyright 2014 - The University of Winchester
 =====================================================
 -->
 
-<div class="bar"> <!-- Fix this. -->
+<div class="sidebar">
+  <span>Application name</span>
+  <br>
   <a href="index.html">Categories</a>
+  <br>
   <a href="about.html">About</a>
+  <br>
   <a href="#">Contact</a>
+  <footer>© Credits and all that</footer>
 </div>
-
-<div class="cover animated fadeIn"><span>Category name</span></div>
 
 
 <!--
@@ -50,7 +53,11 @@ Copyright 2014 - The University of Winchester
 -->
 
 <div class="wrap">
-<div class="content animated fadeIn">
+<div class="content information animated fadeIn">
+
+  <div class="col-full animated fadeIn one">
+    <span class="icon-umbrella"></span>
+  </div>
 
   <div class="col-full">
 
@@ -60,13 +67,11 @@ Copyright 2014 - The University of Winchester
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis cumque quae dignissimos dolore itaque dolorum ad qui aperiam pariatur eius molestias, voluptatibus necessitatibus autem nobis doloremque obcaecati aliquam tempore iste! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur sunt accusamus, in esse nisi eligendi quidem, repudiandae impedit explicabo quod voluptatem delectus odio nulla quam animi numquam, eveniet, accusantium nihil.</p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem aperiam vitae reprehenderit nemo fugiat dignissimos quibusdam nesciunt ullam consectetur tenetur, modi cum, officia aspernatur voluptatibus, reiciendis quae rerum cumque corrupti.</p>
-
-    <p><a href="#summary">Scroll to summary</a></p>
+    <p><a href="#summary">Scroll to summary</a> (I'll make this a button or something)</p>
 
   </div>
 
-  <div class="col-full image"></div>
+  <div class="col-full image"><p>img with point of interest plugin</p></div>
 
   <div class="col-full">
     
@@ -74,15 +79,13 @@ Copyright 2014 - The University of Winchester
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ea provident mollitia corporis impedit maiores delectus natus, quasi exercitationem, beatae suscipit quia error omnis commodi, eos facilis alias ad quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores labore necessitatibus beatae et maiores amet, laborum officia, ipsa reprehenderit dignissimos libero ea at. Error quidem porro, laborum quam id saepe.</p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate consequuntur, voluptates doloremque quia itaque molestiae, optio maxime! Maiores cupiditate id perspiciatis! Eveniet ea maiores deleniti saepe nesciunt esse doloremque explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum ab placeat facilis et illum eum minima obcaecati itaque, numquam inventore, rem harum, repellat aut quos accusamus dolores ratione rerum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum magni voluptatibus quod doloremque, sunt blanditiis, iure ad aspernatur autem impedit quasi sed reiciendis modi temporibus optio tempore magnam, perferendis? Incidunt?</p>
-
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptatibus sit necessitatibus ipsam dolorum! Architecto ex eius dolorem perferendis nostrum, quisquam, excepturi sapiente odit voluptatibus pariatur accusamus illum neque eaque.</p>
 
   </div>
 
   <div class="col-half start">
     
-    <h1>Arguement A</h1>
+    <h1>Argument A</h1>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, commodi nostrum quas? Placeat nesciunt, consequatur ab praesentium minima fugiat hic doloribus error, magni quam nostrum molestias recusandae cupiditate reiciendis voluptatum.</p>
   
@@ -90,21 +93,19 @@ Copyright 2014 - The University of Winchester
 
   <div class="col-half end">
     
-    <h1>Arguement B</h1>
+    <h1>Argument B</h1>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit, commodi nostrum quas? Placeat nesciunt, consequatur ab praesentium minima fugiat hic doloribus error, magni quam nostrum molestias recusandae cupiditate reiciendis voluptatum.</p>
   
   </div>
 
-  <div class="col-full image"></div>
+  <div class="col-full image"><p>img with point of interest plugin</p></div>
 
   <div class="col-full">
     
     <h1>Advice</h1>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus ea provident mollitia corporis impedit maiores delectus natus, quasi exercitationem, beatae suscipit quia error omnis commodi, eos facilis alias ad quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores labore necessitatibus beatae et maiores amet, laborum officia, ipsa reprehenderit dignissimos libero ea at. Error quidem porro, laborum quam id saepe.</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate consequuntur, voluptates doloremque quia itaque molestiae, optio maxime! Maiores cupiditate id perspiciatis! Eveniet ea maiores deleniti saepe nesciunt esse doloremque explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laborum ab placeat facilis et illum eum minima obcaecati itaque, numquam inventore, rem harum, repellat aut quos accusamus dolores ratione rerum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum magni voluptatibus quod doloremque, sunt blanditiis, iure ad aspernatur autem impedit quasi sed reiciendis modi temporibus optio tempore magnam, perferendis? Incidunt?</p>
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptatibus sit necessitatibus ipsam dolorum! Architecto ex eius dolorem perferendis nostrum, quisquam, excepturi sapiente odit voluptatibus pariatur accusamus illum neque eaque.</p>
 
@@ -114,9 +115,11 @@ Copyright 2014 - The University of Winchester
     
     <h1>Best practice</h1>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid earum nulla deserunt quos voluptatem molestiae sed repudiandae voluptas minus at, recusandae asperiores consectetur, dolor dolorem ex temporibus harum modi error.</p>
+    <p><span>Good</span><br>Imagine these "good, better, best" things to be colour-coded. So from red to green or whatever. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cum quod temporibus.</p>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui repellendus debitis, dolorum fugiat nisi similique molestiae voluptate. Excepturi facere maiores minima, velit porro voluptatibus ex perspiciatis mollitia, alias nisi recusandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid similique, sunt totam cum, delectus ipsum inventore laudantium officia ab dolorum, iure, obcaecati cumque aspernatur! Quaerat aliquid autem velit ullam quos?</p>
+    <p><span>Better</span><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui repellendus debitis, dolorum fugiat nisi similique molestiae voluptate. Excepturi facere maiores minima, velit porro voluptatibus ex perspiciatis mollitia, alias nisi recusandae. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+
+    <p><span>Best</span><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet tempora dolorem, veritatis, at quos nam magnam impedit quo reiciendis quaerat iusto magni voluptate, quidem nemo voluptas explicabo fugit minus sint aliquam assumenda. Dicta quae tenetur cum qui rerum labore animi sint, fuga laudantium.</p>
 
   </div>
 
@@ -130,24 +133,21 @@ Copyright 2014 - The University of Winchester
   <div class="dot">. . .</div>
 
   <a href="info.html">
-    <div class="col-half start">
-      <h1 class="category">Something</h1>
+    <div class="col-half start one">
       <span class="icon-umbrella"></span>
+      <h1 class="category">Something</h1>
     </div>
   </a>
 
   <a href="info.html">
-    <div class="col-half end">
-      <h1 class="category">Anything</h1>
+    <div class="col-half end three">
       <span class="icon-moon"></span>
+      <h1 class="category">Anything</h1>
     </div>
   </a>
 
 </div>
 </div>
-
-
-<footer>© Credits and all that</footer>
 
 <!--
 =====================================================
