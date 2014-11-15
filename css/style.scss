@@ -188,15 +188,15 @@ p span {
 */
 
 .sidebar {
-	-webkit-transition: .3s ease-out;
-	-moz-transition: .3s ease-out;
-	-o-transition: .3s ease-out;
-	transition: .3s ease-out;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
 	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 240px;
-	height: 100;
+	height: 100%;
 	text-align: center;
 
 	background: url('../img/skyline-2.jpg');
