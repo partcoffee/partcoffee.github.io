@@ -188,10 +188,6 @@ p span {
 */
 
 .sidebar {
-	-webkit-transition: .3s;
-	-moz-transition: .3s;
-	-o-transition: .3s;
-	transition: .3s;
 	position: fixed;
 	left: 0;
 	bottom: 0;
@@ -537,6 +533,46 @@ footer {
 .delay-d {
 	-webkit-animation-delay: .42s;
     animation-delay: .42s;
+}
+
+.super {
+	-webkit-animation: 14s infinite;
+    animation: 14s infinite;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes fun {
+	0% {
+		background-position: top right;
+	}
+
+	50% {
+		background-position: top left;
+	}
+
+	100% {
+		background-position: top right;
+	}
+}
+
+@keyframes fun {
+	0% {
+		background-position: top right;
+	}
+
+	50% {
+		background-position: top left;
+	}
+
+	100% {
+		background-position: top right;
+	}
+}
+
+.fun {
+	-webkit-animation-name: fun;
+	animation-name: fun;
 }
 
 
