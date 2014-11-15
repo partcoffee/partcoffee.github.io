@@ -322,7 +322,8 @@ footer {
 @media only screen and (max-width: 800px) {
   .sidebar {
     width: 100%;
-    position: relative; }
+    position: relative;
+    background-position: top; }
 
   .sidebar span {
     margin-top: 0;
