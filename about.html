@@ -122,23 +122,6 @@ Copyright 2014 - The University of Winchester
 <script type='application/javascript' src='js/fastclick.js'></script>
 
 <script>
-  var sidebar = function() {
-    if ($(window).width() < 800) {
-      $('.sidebar').height('auto');
-    }
-    else {
-       $('.sidebar').height($(window).height() + 60);
-    }
-  };
-
-  $(document).ready(function () {
-    sidebar();
-  });
-
-  $(window).resize(function() {
-    sidebar();
-  });
-
   $(function() {
       FastClick.attach(document.body);
   });
