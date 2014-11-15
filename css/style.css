@@ -156,6 +156,8 @@ p span {
 }*/
 .sidebar {
   position: fixed;
+  left: 0;
+  bottom: 0;
   width: 240px;
   height: 100%;
   text-align: center;
