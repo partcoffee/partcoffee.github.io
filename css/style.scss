@@ -217,13 +217,15 @@ p span {
 
 .sidebar {
 	position: fixed;
+	left: 0;
+	bottom: 0;
 	width: 240px;
-	height: 100%;
 	text-align: center;
 
 	background: url('../img/skyline-2.jpg');
+	background-size: auto;
 	background-color: #88a8b7;
-	background-position: bottom center;
+	background-position: bottom;
 	background-repeat: no-repeat;
 }
 
@@ -433,6 +435,7 @@ footer {
 	.sidebar {
 		width: 100%;
 		position: relative;
+		background-position: top;
 	}
 
 	.sidebar span {

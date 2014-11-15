@@ -75,7 +75,7 @@ Copyright 2014 - The University of Winchester
 
     <div class="cd-product cd-container">
     <div class="cd-product-wrapper">
-        <img src="img/cover.png"><!-- image of our product -->
+        <img src="img/cover.png" alt="Information"><!-- image of our product -->
         <ul>
             <li class="cd-single-point">
                 <a class="cd-img-replace" href="#0">More</a>
@@ -123,7 +123,7 @@ Copyright 2014 - The University of Winchester
 
     <div class="cd-product cd-container">
     <div class="cd-product-wrapper">
-        <img src="img/cover.png"><!-- image of our product -->
+        <img src="img/cover.png" alt="Information"><!-- image of our product -->
         <ul>
             <li class="cd-single-point">
                 <a class="cd-img-replace" href="#0">More</a>
@@ -207,6 +207,8 @@ Copyright 2014 - The University of Winchester
 </div>
 </div>
 
+<footer>© Credits and all that</footer>
+
 <!--
 =====================================================
   WIZARDRY
@@ -223,6 +225,15 @@ Copyright 2014 - The University of Winchester
   $(function() {
       FastClick.attach(document.body);
   });
+</script>
+
+<script>
+  var bg = $(".sidebar");
+  $(window).resize("resizeBackground");
+  function resizeBackground() {
+      bg.height($(window).height());
+  }
+  resizeBackground();
 </script>
 
 <script>

@@ -143,9 +143,12 @@ Copyright 2014 - The University of Winchester
 <script type='application/javascript' src='js/fastclick.js'></script>
 
 <script>
-  $('#start').click(function() {
-    $('.intro').slideUp(300);
-  });
+  var bg = $(".sidebar");
+  $(window).resize("resizeBackground");
+  function resizeBackground() {
+      bg.height($(window).height());
+  }
+  resizeBackground();
 </script>
 
 <script>
