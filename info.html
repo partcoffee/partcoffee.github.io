@@ -222,21 +222,23 @@ Copyright 2014 - The University of Winchester
 <script src='js/main.js'></script>
 
 <script>
-  $(function() {
-      FastClick.attach(document.body);
+  var sidebar = function() {
+    if ($(window).width() < 800) {
+      $('.sidebar').height('auto');
+    }
+    else {
+       $('.sidebar').height($(window).height() + 60);
+    }
+  };
+
+  $(document).ready(function () {
+    sidebar();
   });
-</script>
 
-<script>
-  var bg = $(".sidebar");
-  $(window).resize("resizeBackground");
-  function resizeBackground() {
-      bg.height($(window).height());
-  }
-  resizeBackground();
-</script>
+  $(window).resize(function() {
+    sidebar();
+  });
 
-<script>
   $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -250,6 +252,10 @@ Copyright 2014 - The University of Winchester
         }
       }
     });
+  });
+
+  $(function() {
+      FastClick.attach(document.body);
   });
 </script>
 
