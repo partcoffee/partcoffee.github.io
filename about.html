@@ -122,6 +122,10 @@ Copyright 2014 - The University of Winchester
 <script type='application/javascript' src='js/fastclick.js'></script>
 
 <script>
+  if ($(window).width() < 800) {
+    $('.sidebar').addClass("super fun")
+  }
+
   $(function() {
       FastClick.attach(document.body);
   });

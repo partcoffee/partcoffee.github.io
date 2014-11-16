@@ -55,7 +55,7 @@ Copyright 2014 - The University of Winchester
 <div class="wrap">
 <div class="content information animated fadeIn">
 
-  <div class="col-full animated fadeIn one">
+  <div class="col-full fadeIn one">
     <span class="icon-umbrella"></span>
   </div>
 
@@ -222,6 +222,11 @@ Copyright 2014 - The University of Winchester
 <script src='js/main.js'></script>
 
 <script>
+  if ($(window).width() < 800) {
+    $('.sidebar').addClass("super fun")
+    $('.icon-umbrella').addClass("bounceIn delay-c")
+  }
+
   $(function() {
     $('a[href*=#]:not([href=#])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
