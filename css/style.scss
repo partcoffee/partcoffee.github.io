@@ -4,14 +4,16 @@
 ----------------------------------------           ----------------------------------------
 */
 
-$headlines: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$bodytext: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-$links: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@import "map.css";
 
+$headlines: 'Montserrat', sans-serif;
+$bodytext: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+/*$orange: rgba(211, 104, 104, 1);*/
+$teal: #36b3a8;
+$teal-light: #5ec2b9;
 $titles: #383838;
-$text: #FFF;
-$inactive: rgba(black, .6);
-$dark: #222;
+$text: #555;
 
 
 
@@ -20,11 +22,9 @@ $dark: #222;
 	margin-left: auto;
 }
 
-@mixin animate {
-	-webkit-transition: .3s;
-	-moz-transition: .3s;
-	-o-transition: .3s;
-	transition: .3s;
+@mixin space {
+	padding-top: 80px;
+	padding-bottom: 130px;
 }
 
 
@@ -35,7 +35,7 @@ $dark: #222;
 ----------------------------------------         ----------------------------------------
 */
 
-html, body {
+html,body{
 	width: 100%;
 	height: 100%;
 	padding: 0;
@@ -43,16 +43,11 @@ html, body {
 }
 
 body {
-	background-color: $dark;
 	-webkit-text-size-adjust: 100%;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	backface-visibility: hidden;
-}
-
-.white {
-	background-color: #FFF;
 }
 
 *, *:after, *:before {
@@ -61,311 +56,66 @@ body {
 	box-sizing: border-box;
 }
 
-h1, p, .splash {
-	text-rendering: optimizeLegibility;
-}
-
-
-
-/*
-----------------------------------------           ----------------------------------------
----------------------------------------- MAIN PAGE ----------------------------------------
-----------------------------------------           ----------------------------------------
-*/
-
-.relative {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	overflow: hidden;
-}
-
 .wrap {
-	position: absolute;
 	width: 100%;
-	height: 100%;
-	background: url('../img/w7.jpg');
-	background: url('../img/skye.jpg');
-	background-color: $dark;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
 }
 
-.splash {
-	line-height: 1.2;
-	padding-right: 30px;
-	padding-left: 30px;
-	width: 100%;
+.white {
+	background-color: #FFF;
+}
+
+.grey {
+	background-color: #f6f6f6;
+}
+
+.image-one {
+	background: url("../img/mon2.jpg");
+}
+
+.image-three {
+	background: url("../img/mon3.jpg");
+}
+
+.image-four {
+	background: url("../img/mon1.jpg");
+}
+
+[class*='image-'] {
+	color: #222;
 	text-align: center;
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-}
-
-.byline {
-	font-family: serif;
-	font-size: 20px;
-	line-height: 0;
-	font-style: italic;
-}
-
-.handmade {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	padding-bottom: 20px;
-	font-family: $links;
-	text-align: center;
-	color: rgba(white, .6);
-	text-transform: uppercase;
-	font-size: 11px;
-}
-
-
-
-/*
-----------------------------------------        ----------------------------------------
----------------------------------------- VIDEO  ----------------------------------------
-----------------------------------------        ----------------------------------------
-*/
-
-.playing {
-	display: none;
-	overflow: hidden;
-}
-
-#video-container {
-	background-color: #000;
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-#video {
-	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
-	width: 100%;
-}
-
-.video-controls {
-	position: fixed;
-	margin: 0 auto;
-	z-index: 999;
-	left: 50%;
-	margin-left: -117px;
-	bottom: 70px;
-	text-align: center;
-	background: #222;
-	padding: 7px 25px 10px;
-	font-size: 0;
-	border-radius: 999px;
-}
-
-.video-close, .video-mute {
-	position: fixed;
-	top: 50px;
-	z-index: 999;
-	padding: 10px;
-	cursor: pointer;
-}
-
-.video-close {
-	right: 5%;
-}
-
-.video-mute {
-	left: 5%;
-	font-family: $links;
-	text-transform: uppercase;
+	font-size: 36px;
+	font-family: $bodytext;
 	letter-spacing: 2px;
-	font-size: 10px;
-	color: #FFF;
-	line-height: 1.2;
 
-}
-
-button {
-	outline: none;
-	line-height: 1.2;
-	font-family: $headlines;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	cursor: pointer;
-	font-size: 10px;
-	color: #FFF;
-	background: none;
-	border: 0;
-}
-
-button:hover {
-	opacity: .75;
-}
-
-.seeker {
-	-webkit-appearance: none;
-	outline: none;
-	width: 180px;
-    background: #656565;
-    height: 2px;
-	cursor: pointer;
-	margin-top: 6px;
-	margin-bottom: 6px;
-	display: block;
-}
-
-input[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	outline: none;
-	background: #FFF;
-	border-radius: 50%;
-    height: 6px;
-    width: 6px;
-	cursor: pointer;
-}
-
-
-
-/*
-----------------------------------------            ----------------------------------------
----------------------------------------- ABOUT PAGE ----------------------------------------
-----------------------------------------            ----------------------------------------
-*/
-
-.navigation {
-	position: absolute;
-	width: 100%;
-	background-color: rgba(black, .1);
-	padding-top: 18px;
-	padding-bottom: 18px;
-	padding-right: 36px;
-	text-align: right;
-	z-index: 999;
-}
-
-.navigation a {
-	padding: 20px;
-	color: rgba(white, .8);
-	font-family: $links;
-	text-transform: uppercase;
-	font-size: 11px;
-}
-
-.navigation a:hover {
-	color: #FFF;
-}
-
-.icon {
-	float: left;
-	height: 20px;
-	padding-left: 36px;
-}
-
-.cover {
-	position: relative;
-	padding-top: 150px;
-	padding-bottom: 130px;
-	text-align: center;
-	background-color: $dark;
-	background: url('../img/w7.jpg');
-	background: url('../img/bridge.jpg');
-	background-size: cover;
-	background-position: center center;
+	padding-top: 160px;
+	padding-bottom: 160px;
 	background-repeat: no-repeat;
-}
-
-.cover a, .splash a, .call-to-action, .call-to-action-hover {
-	text-align: center;
-	font-family: $links;
-	display: inline-block;
-	margin-top: 30px;
-	font-size: 13px;
-	line-height: 1.6;
-	letter-spacing: 1px;
-	color: #FFF;
-	text-transform: uppercase;
-	background: #d66460;
-	border-radius: 30px;
-	padding: 10px;
-	padding-right: 28px;
-	padding-left: 28px;
-	cursor: pointer;
-}
-
-.call-to-action, .call-to-action-hover {
-	width: 120px;
-	display: block;
-	margin: 0 auto;
-	margin-top: 10px;
-	background-color: #d66460;
-	color: #FFF;
-}
-
-.call-to-action a, .call-to-action-hover a {
-	color: #FFF;
-}
-
-.call-to-action:hover {
-	background-color: rgba(black, .7);
-}
-
-[id='4.1'] .call-to-action:hover {
-	background-color: #d66460;
-}
-
-[id='4.1'] .call-to-action, [id='4.1'] .call-to-action-hover {
-	width: auto;
-	display: inline-block;
-	margin-bottom: 10px;
-}
-
-.call-to-action-hover {
-	background-color: lighten(#d66460, 5%);
-}
-
-.cover a:hover, .splash a:hover {
-	/*background: rgba(210, 101, 93, .7);*/
-	background-color: lighten(#d66460, 5%);
+	background-color: #222;
+    background-position: center center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
 }
 
 .content {
-	margin-right: auto;
-	margin-left: auto;
-	width: 540px;
-}
-
-.content:last-of-type {
-	margin-bottom: 80px;
-}
-
-.first {
-	padding-top: 50px;
-}
-
-.text {
-	padding: 24px;
-}
-
-footer {
-	border-top: 1px solid rgba(black, .3);
-	width: 320px;
-	font-size: 12px;
-	font-family: $bodytext;
-	line-height: 1.6;
+	@include center;
+	@include space;
+	width: 640px;
+	padding-left: 15px;
+	padding-right: 15px;
 	text-align: center;
-	color: $inactive;
-	margin: 0 auto;
-	padding-top: 16px;
-	padding-bottom: 26px;
 }
 
+.break {
+	@include center;
+	display: block;
+	width: 30px;
+	height: 1px;
+	margin-top: 22px;
+	margin-bottom: 22px;
+	border-top: 1px solid #d9d9d9;
+}
 
 
 
@@ -376,206 +126,402 @@ footer {
 */
 
 h1 {
-	color: #222;
 	font-family: $headlines;
-	font-size: 22px;
-	padding-bottom: 10px;
-	font-weight: 300;
-	text-align: left;
+	font-weight: normal;
+	font-size: 60px;
+	letter-spacing: 5px;
+	color: #222;
+	line-height: 0;
+}
+
+h2 {
+	color: $titles;
+	font-family: $bodytext;
+	letter-spacing: 2px;
+	font-size: 18px;
+	line-height: 1.4;
+	font-weight: normal;
+	text-transform: uppercase;
 }
 
 p {
-	font-family: $bodytext;
-	color: #555;
-	font-weight: 300;
-	font-size: 14px;
+	color: $text;
+	font-size: 14.5px; /* Stop looking at it, it works, okay? */
 	line-height: 1.6;
-	text-align: left;
+	font-family: $bodytext;
+	font-weight: 400;
+	font-style: normal;
 }
 
-p a {
-	color: #555;
-	font-weight: bold;
-}
-
-p a:hover {
-	opacity: .7;
+.content p {
+	text-align: justify;
 }
 
 a {
 	text-decoration: none;
-	color: #555;
-	@include animate;
+	color: $teal;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
 }
 
-.cover, .splash {
-	font-size: 54px;
-	font-family: $headlines;
-	font-weight: 300;
-	color: #FFF;
+.content a {
+	border-bottom: 1px solid #FFF;
 }
 
-.cover {
-	font-size: 42px;
+.grey .content a {
+	border-bottom: 1px solid #f6f6f6;
 }
 
-.attention {
-	font-weight: bold;
+.content a:hover {
+	border-bottom: 1px solid $teal;
 }
 
 @font-face {
 	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?6fxur0');
-	src:url('../fonts/icomoon.svg?-skliw4#icomoon') format('svg'),
-		url('../fonts/icomoon.eot?#iefix-skliw4') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-skliw4') format('woff'),
-		url('../fonts/icomoon.ttf?-skliw4') format('truetype');
+	src:url('../fonts/icomoon.eot?-bxl1a9');
+	src:url('../fonts/icomoon.svg?-bxl1a9#icomoon') format('svg'),
+		url('../fonts/icomoon.eot?#iefix-bxl1a9') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-bxl1a9') format('woff'),
+		url('../fonts/icomoon.ttf?-bxl1a9') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
 	font-family: 'icomoon';
+	font-size: 30px;
+	padding: 16px;
 }
-
-.icon-heart:before {
+.icon-twitter:before {
 	content: "\e600";
+	color: #4099FF;
 }
-
-footer .icon-heart:before {
-	color: #de7373;
-}
-
-.icon-cross:before {
+.icon-facebook:before {
 	content: "\e601";
+	color: #3b5998;
 }
 
-.video-close .icon-cross:before {
-	color: #FFF;
-	cursor: pointer;
-	font-size: 18px;
-}
-
-.icon-play:before {
-	content: "\e602";
-	padding-right: 2px;
+.content .icons:hover {
+	border-bottom: 1px solid #FFF;
+	opacity: .7;
 }
 
 
 
 /*
-----------------------------------------             ----------------------------------------
----------------------------------------- STYLE GUIDE ----------------------------------------
-----------------------------------------             ----------------------------------------
+----------------------------------------            ----------------------------------------
+---------------------------------------- NAVIGATION ----------------------------------------
+----------------------------------------            ----------------------------------------
 */
 
-.example {
-	border-left: 2px solid rgba(black, .1); /* Subject to change? */
-	padding-left: 10px;
-	font-size: 20px;
+.nav {
+	position: absolute;
+	z-index: 99;
+	padding-top: 34px;
+	padding-right: 25px;
+	padding-left: 25px;
+	text-align: right;
 }
 
-.roboto {
+.nav a {
 	font-family: $headlines;
-}
-
-.montserrat {
-	font-family: $links;
+	font-size: 10px;
+	letter-spacing: 2px;
 	text-transform: uppercase;
+	color: #222;
+	padding: 25px;
 }
 
-.font-image {
-	width: 440px;
-	border-left: 2px solid rgba(black, .1); /* Subject to change? */
-}
-
-[class^="block-"], [class*=" block-"] {
-	width: 50%;
-	height: 10px;
-	display: block;
-}
-
-.block-1 {
-	background-color: #222;
-}
-
-.block-2 {
-	background-color: #555;
-}
-
-.block-3 {
-	background-color: #d66460;	
+.nav a:hover {
+	color: $teal-light;
 }
 
 
 
 /*
-----------------------------------------            ----------------------------------------
----------------------------------------- RESPONSIVE ----------------------------------------
-----------------------------------------            ----------------------------------------
+----------------------------------------               ----------------------------------------
+---------------------------------------- COVER SECTION ----------------------------------------
+----------------------------------------               ----------------------------------------
 */
 
-@media only screen and (max-width: 1000px) {
-	.navigation {
-		padding-right: 1.5%;
-		padding-left: 1.5%;
-	}
-
-	.icon {
-		padding-left: 20px;
-	}
+.cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*height: 650px; ONLY IF NO VH*/
+	background-color: #f6f6f6;
+	/* background: url(http://www.squireel.com/assets/img/medias/header-background.jpg); */
+	/*background: url("../img/a.jpg");*/
+	background: url("../img/mon.jpg");
+    background-position: center;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+	background-size: cover;
 }
 
-@media only screen and (max-width: 760px) {
-	.content {
-		width: 560px;
-	}
+.relative {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
 
-	.splash {
-		font-size: 48px;
-	}
+.welcome {
+	padding-top: 30px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
 
-	.cover a, .splash a, .call-to-action, .call-to-action-hover {
+.date {
+	font-size: 14px;
+}
+
+.sub {
+	padding-top: 5px;
+	font-family: $headlines;
+	font-weight: normal;
+	font-size: 11px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #222;
+}
+
+.final-letter {
+	letter-spacing: 0;
+	font-weight: normal;
+}
+
+.top-text {
+	font-family: $headlines;
+	font-weight: normal;
+	letter-spacing: 2px;
+	color: $teal-light;
+	font-size: 14px;
+}
+
+.button {
+	margin: 0 auto;
+	color: #FFF;
+	font-size: 12px;
+	font-family: $headlines;
+	line-height: 2.5;
+	border-radius: 25px;
+	background: $teal;
+	width: 100px;
+	height: 30px;
+	display: block;
+	margin-top: 60px;
+}
+
+
+/* HOVER EFFECT - WIP */
+
+.button .hide {
+	display: none;
+}
+
+.button:hover .show {
+	display: none;
+}
+
+.button:hover .hide {
+	display: inline;
+}
+
+
+
+/*
+----------------------------------------               ----------------------------------------
+---------------------------------------- ABOUT SECTION ----------------------------------------
+----------------------------------------               ----------------------------------------
+*/
+
+
+
+
+/*
+----------------------------------------                 ----------------------------------------
+---------------------------------------- STUDENT SECTION ----------------------------------------
+----------------------------------------                 ----------------------------------------
+*/
+
+
+
+
+/*
+----------------------------------------             ----------------------------------------
+---------------------------------------- MAP SECTION ----------------------------------------
+----------------------------------------             ----------------------------------------
+*/
+
+
+
+
+/*
+----------------------------------------                 ----------------------------------------
+---------------------------------------- CONNECT SECTION ----------------------------------------
+----------------------------------------                 ----------------------------------------
+*/
+
+.connect p {
+	text-align: center;
+}
+
+.connect, .content {
+	padding-bottom: 90px;
+}
+
+.socials {
+	padding-top: 10px;
+}
+
+
+
+/*
+----------------------------------------                ----------------------------------------
+---------------------------------------- FOOTER SECTION ----------------------------------------
+----------------------------------------                ----------------------------------------
+*/
+
+.footer {
+	position: absolute;
+	line-height: 1.8;
+	color: #919191;
+	font-size: 12px;
+	padding-top: 20px;
+	padding-bottom: 16px;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #222;
+	text-align: center;
+}
+
+.footer a {
+	color: #919191;
+}
+
+.footer a:hover {
+	color: $teal;
+}
+
+
+
+/*
+----------------------------------------                    ----------------------------------------
+---------------------------------------- RESPONSIVE SECTION ----------------------------------------
+----------------------------------------                    ----------------------------------------
+*/
+
+@media only screen and (min-width: 1400px) {
+	.nav a {
 		font-size: 12px;
-		line-height: 1.2;
-		padding-right: 24px;
-		padding-left: 24px;
 	}
 
-	.cover {
-		font-size: 38px;
+	h1 {
+		font-size: 70px;
 	}
 
-	.byline {
-		font-size: 18px;
+	.sub {
+		font-size: 12px;
+	}
+
+	.top-text {
+		font-size: 15px;
+	}
+
+	.button {
+		line-height: 2.6;
+		width: 140px;
+		height: 40px;
+		font-size: 15px;
+	}
+
+	.content {
+		padding-top: 160px;
+		padding-bottom: 160px;
+		width: 800px;
+	}
+
+	.break {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	h2 {
+		font-size: 20px;
+	}
+
+	p {
+		font-size: 16px;
+		line-height: 1.8;
+	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		font-size: 24px;
+		padding: 30px;
 	}
 }
 
-@media only screen and (max-width: 639px) {
+@media only screen and (max-width: 768px) {
 	.content {
-		width: 96%;
-		padding-right: 2%;
-		padding-left: 2%;
+		padding-left: 5%;
+		padding-right: 5%;
+		width: 90%
 	}
 
-	.font-image {
-		width: 100%;
-	}
-
-	.splash {
+	h1 {
 		font-size: 40px;
 	}
 
-	.cover a, .splash a, .call-to-action, .call-to-action-hover {
-		line-height: 1;
-		padding-left: 20px;
-		padding-right: 20px;
-		font-size: 11px;
+	.nav {
+		text-align: center;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.year {
+		display: none;
 	}
 
-	footer {
-		width: 70%;
+	.mobile {
+		letter-spacing: 0;
+		font-weight: normal;
 	}
+
+	h1 {
+		font-size: 28px;
+		letter-spacing: 6px;
+	}
+
+	.sub {
+		font-size: 10px;
+		letter-spacing: 1px;
+	}
+
+	.nav {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	.nav a {
+		padding: 14px;
+	}
+
+	.content {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	[class*='image-'] {
+		font-size: 28px;
+	}	
 }
 
 
@@ -587,8 +533,8 @@ footer .icon-heart:before {
 */
 
 .animated {
-	-webkit-animation-duration: .6s;
-	animation-duration: .6s;
+	-webkit-animation-duration: .8s;
+	animation-duration: .8s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
@@ -616,6 +562,16 @@ footer .icon-heart:before {
 .fadeIn {
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
+}
+
+.delay {
+	-webkit-animation-delay: .3s;
+    animation-delay: .3s;
+}
+
+.delay-2 {
+	-webkit-animation-delay: .5s;
+    animation-delay: .5s;
 }
 
 
