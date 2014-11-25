@@ -507,6 +507,77 @@ footer .icon-heart:before {
 
 /*
 ----------------------------------------            ----------------------------------------
+---------------------------------------- RESPONSIVE ----------------------------------------
+----------------------------------------            ----------------------------------------
+*/
+
+@media only screen and (max-width: 1000px) {
+	.navigation {
+		padding-right: 1.5%;
+		padding-left: 1.5%;
+	}
+
+	.icon {
+		padding-left: 20px;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.content {
+		width: 560px;
+	}
+
+	.splash {
+		font-size: 48px;
+	}
+
+	.cover a, .splash a, .call-to-action, .call-to-action-hover {
+		font-size: 12px;
+		line-height: 1.2;
+		padding-right: 24px;
+		padding-left: 24px;
+	}
+
+	.cover {
+		font-size: 38px;
+	}
+
+	.byline {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (max-width: 639px) {
+	.content {
+		width: 96%;
+		padding-right: 2%;
+		padding-left: 2%;
+	}
+
+	.font-image {
+		width: 100%;
+	}
+
+	.splash {
+		font-size: 40px;
+	}
+
+	.cover a, .splash a, .call-to-action, .call-to-action-hover {
+		line-height: 1;
+		padding-left: 20px;
+		padding-right: 20px;
+		font-size: 11px;
+	}
+
+	footer {
+		width: 70%;
+	}
+}
+
+
+
+/*
+----------------------------------------            ----------------------------------------
 ---------------------------------------- ANIMATIONS ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
@@ -586,160 +657,6 @@ footer .icon-heart:before {
 	-webkit-animation-name: fadeInUp;
 	animation-name: fadeInUp;
 }
-
-
-@-webkit-keyframes scale {
-
-	0% {
-		font-size: 10px;
-	}
-
-	100% {
-   		font-size: 13px;
-	}
-
-}
-
-@keyframes scale {
-
-	0% {
-		font-size: 10px;
-	}
-
-	100% {
-		font-size: 13px;
-	}
-
-}
-
-.scale {
-	-webkit-animation-name: scale;
-	animation-name: scale;
-}
-
-
-
-/*
-----------------------------------------            ----------------------------------------
----------------------------------------- RESPONSIVE ----------------------------------------
-----------------------------------------            ----------------------------------------
-*/
-
-@media only screen and (max-width: 1000px) {
-	.navigation {
-		padding-right: 1.5%;
-		padding-left: 1.5%;
-	}
-
-	.icon {
-		padding-left: 20px;
-	}
-}
-
-@media only screen and (max-width: 760px) {
-	.content {
-		width: 560px;
-	}
-
-	.splash {
-		font-size: 48px;
-	}
-
-	.cover a, .splash a, .call-to-action, .call-to-action-hover {
-		font-size: 12px;
-		line-height: 1.2;
-		padding-right: 24px;
-		padding-left: 24px;
-	}
-
-	@-webkit-keyframes scale {
-
-		0% {
-			font-size: 10px;
-		}
-
-		100% {
-	   		font-size: 12px;
-		}
-
-	}
-
-	@keyframes scale {
-
-		0% {
-			font-size: 10px;
-		}
-
-		100% {
-			font-size: 12px;
-		}
-
-	}
-
-	.cover {
-		font-size: 38px;
-	}
-
-	.byline {
-		font-size: 18px;
-	}
-}
-
-@media only screen and (max-width: 639px) {
-	.content {
-		width: 96%;
-		padding-right: 2%;
-		padding-left: 2%;
-	}
-
-	.font-image {
-		width: 100%;
-	}
-
-	.splash {
-		font-size: 40px;
-	}
-
-	.cover a, .splash a, .call-to-action, .call-to-action-hover {
-		line-height: 1;
-		padding-left: 20px;
-		padding-right: 20px;
-		font-size: 11px;
-	}
-
-	@-webkit-keyframes scale {
-
-		0% {
-			font-size: 8px;
-		}
-
-		100% {
-	   		font-size: 11px;
-		}
-
-	}
-
-	@keyframes scale {
-
-		0% {
-			font-size: 8px;
-		}
-
-		100% {
-			font-size: 11px;
-		}
-
-	}
-
-	footer {
-		width: 70%;
-	}
-}
-
-
-
-
-
 
 
 
