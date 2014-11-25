@@ -548,6 +548,10 @@ footer .icon-heart:before {
 }
 
 @media only screen and (max-width: 639px) {
+	.mobile {
+		display: none;
+	}
+	
 	.content {
 		width: 96%;
 		padding-right: 2%;
