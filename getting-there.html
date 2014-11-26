@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+wwww.transmedia-show.co.uk
+=====================================================
+
+Design and build: Conor Cresswell & Magnus Skare
+Coded in SASS.
+
+Thank you for your interest in the source code.
+As you've gotten this far, I'm assuming you're
+interested in how it was made:
+
+wwww.transmedia-show.co.uk/getting-there
+
+=====================================================
+
+Copyright 2014 - The University of Winchester
+
+=====================================================
+-->
+
+<html lang="en-GB">
+
+<head>
+<meta charset="UTF-8">
+<title>Transmedia - Workflow</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Behind the website.">
+<link rel="stylesheet" href="css/style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<!--
+=====================================================
+  NAVIGATION
+=====================================================
+-->
+
+<div class="wrap nav animated fadeIn delay-2"> <!-- Fix this. -->
+  <a href="index.html">Back to home</a>
+</div>
+
+<!--
+=====================================================
+  COVER
+=====================================================
+-->
+
+<div id="splash" class="relative">
+<div class="wrap cover animated fadeIn delay">
+
+  <div class="welcome">
+
+    <p class="top-text">13/03/201<span class="final-letter top-text">5</span></p>
+
+    <h1>WORKFLO<span class="final-letter">W</span></h1>
+
+    <p class="sub">This website - from start to finis<span class="final-letter">h</span></p>
+
+    <div class="button">
+      <a href="http://mailchimp.com/" target="_blank" class="button">
+
+        <span class="show">RSVP</span>
+        <span class="hide">Yayy!</span>
+
+      </a>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+<!--
+=====================================================
+  ABOUT
+=====================================================
+-->
+
+<div class="wrap white">
+<div id="about" class="content workflow">
+
+  <h2>Planning</h2>
+
+  <span class="break"></span>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#">Save the date</a> neque quidem, recusandae nemo totam, beatae obcaecati quis corrupti sit inventore! Qui a nihil minima deserunt minus numquam sapiente ad non amet <a href="http://www.winchester.ac.uk/" target="_blank">University of Winchester</a>. Nostrum et molestiae autem, temporibus, repudiandae perferendis velit quidem ipsum placeat odit tempore</p>
+
+  <p>Tools worth mentioning: <a href="#">Koala</a>, <a href="#">Sublime Text</a>, <a href="#">Emmet</a>, <a href="#">GitHub</a>, <a href="#">SASS language</a>, <a href="#">Mailchimp</a>, </p>
+
+  <p>Defined CSS variables.</p>
+
+  <div class="code">
+    <p>$headlines: 'Montserrat', sans-serif;<br>$bodytext: 'Helvetica Neue', Helvetica, Arial, sans-serif;</p>
+
+    <p>$titles: #383838;<br>$text: #555;<br>$teal: #36b3a8;<br>$teal-light: #5ec2b9;</p>
+  </div>
+
+  <p>The next section defines SASS variables, making my life a hella lot easier.</p>
+
+  <div class="code">
+    <p>@mixin font($size) {
+      <br>
+      <span class="highlight-blue indent">font-size</span>: $size;
+      <br>
+      <span class="highlight-blue indent">font-size</span>: ($size / <span class="highlight-yellow">16</span><span class="highlight-orange">px</span>) * <span class="highlight-yellow">1</span><span class="highlight-orange">rem</span>;
+      <br>
+      }
+    </p>
+  </div>
+
+  <p>This section allows us to split the CSS document into smaller documents. Easier to manage before compiling and minifying. It's as simple as that. Yolo.</p>
+
+  <div class="code">
+    <p><span class="highlight-yellow">@import</span> "map.css";</p>
+  </div>
+
+  <p>I should write something about the fade-in animations, and how it's just a clever illusion to make the content fade in - even though it's not loading any faster than normal. We're using parts of <a href="http://daneden.github.io/animate.css/">Animate.css</a> and animation delays to fade our content in.</p>
+
+  <div class="code">
+    <p><span class="highlight-green">.animated</span> {
+      <br>
+      <span class="indent">animation-duration:</span> <span class="highlight-yellow">.8</span><span class="highlight-orange">s</span>;
+      <br>
+      <span class="indent">animation-fill-mode:</span> <span class="highlight-yellow">both</span>;
+      <br>
+      }
+    </p>
+  </div>
+
+  <div class="code">
+    <p>
+      animation-delay: <span class="highlight-yellow">.3</span><span class="highlight-orange">s</span>;
+      <br>
+      animation-delay: <span class="highlight-yellow">.5</span><span class="highlight-orange">s</span>;
+    </p>
+  </div>
+
+</div>
+
+<div class="content workflow">
+
+  <h2>Tools</h2>
+
+  <span class="break"></span>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nihil odio ipsa ea quam quibusdam sequi voluptates officiis quod ad.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam alias, voluptatum veritatis, debitis magni optio laboriosam eaque sunt impedit! Odit veritatis, cum laboriosam ab consectetur. Facilis quasi itaque illum?</p>
+
+  <div class="code">
+    <p>
+      animation-delay: <span class="highlight-yellow">.3</span><span class="highlight-orange">s</span>;
+      <br>
+      animation-delay: <span class="highlight-yellow">.5</span><span class="highlight-orange">s</span>;
+    </p>
+  </div>
+
+  <span class="break"></span>
+
+</div>
+
+<div class="content workflow">
+
+  <h2>Deployment</h2>
+
+  <span class="break"></span>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium nihil odio ipsa ea quam quibusdam sequi voluptates officiis quod ad.</p>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero numquam alias, voluptatum veritatis, debitis magni optio laboriosam eaque sunt impedit! Odit veritatis, cum laboriosam ab consectetur. Facilis quasi itaque illum?</p>
+
+  <div class="code">
+    <p>
+      animation-delay: <span class="highlight-yellow">.3</span><span class="highlight-orange">s</span>;
+      <br>
+      animation-delay: <span class="highlight-yellow">.5</span><span class="highlight-orange">s</span>;
+    </p>
+  </div>
+
+  <span class="break"></span>
+
+</div>
+
+</div>
+
+
+<!--
+=====================================================
+  FOOTER
+=====================================================
+-->
+
+<p class="wrap footer"><a href="#splash">Scroll to top</a> - <a target="_blank" href="#">Mail</a> - <a target="_blank" href="https://www.facebook.com/transmedia2015">Facebook</a> - <a target="_blank" href="#">Twitter</a><br>© 2014-2015 Winchester Univeristy</p>
+
+
+<!--
+=====================================================
+  WIZARDRY
+=====================================================
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type='application/javascript' src='js/fastclick.js'></script>
+
+<script>
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 500);
+          return false;
+        }
+      }
+    });
+  });
+</script>
+
+<script>
+  $(function() {
+      FastClick.attach(document.body);
+  });
+</script>
+
+</body>
+</html>
