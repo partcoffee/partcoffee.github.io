@@ -1,6 +1,6 @@
 /*
 ----------------------------------------           ----------------------------------------
----------------------------------------- VARIABLES ----------------------------------------
+---------------------------------------- Variables ----------------------------------------
 ----------------------------------------           ----------------------------------------
 */
 
@@ -27,11 +27,16 @@ $dark: #222;
 	transition: .3s;
 }
 
+@mixin font($size) {
+	font-size: $size;
+	font-size: ($size / 16px) * 1rem;
+}
+
 
 
 /*
 ----------------------------------------         ----------------------------------------
----------------------------------------- GENERAL ----------------------------------------
+---------------------------------------- General ----------------------------------------
 ----------------------------------------         ----------------------------------------
 */
 
@@ -69,7 +74,7 @@ h1, p, .splash {
 
 /*
 ----------------------------------------           ----------------------------------------
----------------------------------------- MAIN PAGE ----------------------------------------
+---------------------------------------- Main page ----------------------------------------
 ----------------------------------------           ----------------------------------------
 */
 
@@ -107,7 +112,7 @@ h1, p, .splash {
 
 .byline {
 	font-family: serif;
-	font-size: 20px;
+	@include font(20px);
 	line-height: 2.4;
 	font-style: italic;
 	letter-spacing: 0;
@@ -122,14 +127,14 @@ h1, p, .splash {
 	text-align: center;
 	color: rgba(white, .6);
 	text-transform: uppercase;
-	font-size: 11px;
+	@include font(11px);
 }
 
 
 
 /*
 ----------------------------------------        ----------------------------------------
----------------------------------------- VIDEO  ----------------------------------------
+---------------------------------------- Video  ----------------------------------------
 ----------------------------------------        ----------------------------------------
 */
 
@@ -166,7 +171,7 @@ h1, p, .splash {
 	text-align: center;
 	background: #222;
 	padding: 7px 25px 10px;
-	font-size: 0;
+	@include font(0px);
 	border-radius: 999px;
 }
 
@@ -187,7 +192,7 @@ h1, p, .splash {
 	font-family: $links;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 10px;
+	@include font(10px);
 	color: #FFF;
 	line-height: 1.2;
 
@@ -200,7 +205,7 @@ button {
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	cursor: pointer;
-	font-size: 10px;
+	@include font(10px);
 	color: #FFF;
 	background: none;
 	border: 0;
@@ -236,7 +241,7 @@ input[type='range']::-webkit-slider-thumb {
 
 /*
 ----------------------------------------            ----------------------------------------
----------------------------------------- ABOUT PAGE ----------------------------------------
+---------------------------------------- About page ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 
@@ -247,6 +252,7 @@ input[type='range']::-webkit-slider-thumb {
 	padding-top: 8px;
 	padding-bottom: 8px;
 	padding-right: 36px;
+	padding-left: 36px;
 	text-align: right;
 	z-index: 999;
 }
@@ -256,7 +262,7 @@ input[type='range']::-webkit-slider-thumb {
 	color: rgba(white, .8);
 	font-family: $links;
 	text-transform: uppercase;
-	font-size: 11px;
+	@include font(11px);
 	line-height: 3.7;
 }
 
@@ -267,7 +273,6 @@ input[type='range']::-webkit-slider-thumb {
 .icon {
 	float: left;
 	height: 36px;
-	padding-left: 36px;
 }
 
 .cover {
@@ -288,7 +293,7 @@ input[type='range']::-webkit-slider-thumb {
 	font-family: $links;
 	display: inline-block;
 	margin-top: 30px;
-	font-size: 13px;
+	@include font(13px);
 	line-height: 1.6;
 	letter-spacing: 1px;
 	color: #FFF;
@@ -354,7 +359,7 @@ input[type='range']::-webkit-slider-thumb {
 footer {
 	border-top: 1px solid rgba(black, .3);
 	width: 320px;
-	font-size: 12px;
+	@include font(12px);
 	font-family: $bodytext;
 	line-height: 1.6;
 	text-align: center;
@@ -369,14 +374,14 @@ footer {
 
 /*
 ----------------------------------------            ----------------------------------------
----------------------------------------- TYPOGRAPHY ----------------------------------------
+---------------------------------------- Typography ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 
 h1 {
 	color: #222;
 	font-family: $headlines;
-	font-size: 22px;
+	@include font(22px);
 	padding-bottom: 10px;
 	font-weight: 300;
 	text-align: left;
@@ -386,7 +391,7 @@ p {
 	font-family: $bodytext;
 	color: #555;
 	font-weight: 300;
-	font-size: 14px;
+	@include font(14px);
 	line-height: 1.6;
 	text-align: left;
 }
@@ -407,14 +412,14 @@ a {
 }
 
 .cover, .splash {
-	font-size: 54px;
+	@include font(54px);
 	font-family: $headlines;
 	font-weight: 300;
 	color: #FFF;
 }
 
 .cover {
-	font-size: 42px;
+	@include font(42px);
 }
 
 .attention {
@@ -451,7 +456,7 @@ footer .icon-heart:before {
 .video-close .icon-cross:before {
 	color: #FFF;
 	cursor: pointer;
-	font-size: 18px;
+	@include font(18px);
 }
 
 .icon-play:before {
@@ -463,7 +468,7 @@ footer .icon-heart:before {
 
 /*
 ----------------------------------------             ----------------------------------------
----------------------------------------- STYLE GUIDE ----------------------------------------
+---------------------------------------- Style guide ----------------------------------------
 ----------------------------------------             ----------------------------------------
 */
 
@@ -471,7 +476,7 @@ footer .icon-heart:before {
 	margin-left: -2px;
 	border-left: 2px solid #3fbcc5; /* Subject to change? */
 	padding-left: 10px;
-	font-size: 20px;
+	@include font(20px);
 }
 
 .roboto {
@@ -518,7 +523,7 @@ footer .icon-heart:before {
 
 /*
 ----------------------------------------            ----------------------------------------
----------------------------------------- RESPONSIVE ----------------------------------------
+---------------------------------------- Responsive ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 
@@ -529,7 +534,7 @@ footer .icon-heart:before {
 	}
 
 	.icon {
-		padding-left: 20px;
+		padding-left: 12px;
 	}
 }
 
@@ -552,22 +557,22 @@ footer .icon-heart:before {
 	}
 
 	.splash {
-		font-size: 48px;
+		@include font(48px);
 	}
 
 	.cover a, .splash a, .call-to-action, .call-to-action-hover {
-		font-size: 12px;
+		@include font(12px);
 		line-height: 1.2;
 		padding-right: 24px;
 		padding-left: 24px;
 	}
 
 	.cover {
-		font-size: 38px;
+		@include font(38px);
 	}
 
 	.byline {
-		font-size: 18px;
+		@include font(18px);
 	}
 }
 
@@ -587,14 +592,14 @@ footer .icon-heart:before {
 	}
 
 	.splash {
-		font-size: 40px;
+		@include font(40px);
 	}
 
 	.cover a, .splash a, .call-to-action, .call-to-action-hover {
 		line-height: 1;
 		padding-left: 20px;
 		padding-right: 20px;
-		font-size: 11px;
+		@include font(11px);
 	}
 
 	footer {
@@ -608,7 +613,7 @@ footer .icon-heart:before {
 
 @media only screen and (max-width: 420px) {
 	.splash {
-		font-size: 34px;
+		@include font(34px);
 	}
 }
 
@@ -616,7 +621,7 @@ footer .icon-heart:before {
 
 /*
 ----------------------------------------            ----------------------------------------
----------------------------------------- ANIMATIONS ----------------------------------------
+---------------------------------------- Animations ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
 
