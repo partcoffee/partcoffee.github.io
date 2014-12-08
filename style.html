@@ -15,6 +15,8 @@ Coded in SASS.
 <head>
 <meta charset="UTF-8">
 <title>Style Guide</title>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
 <link href='http://fonts.googleapis.com/css?family=Roboto:300|Montserrat' rel='stylesheet' type='text/css'>
@@ -35,7 +37,7 @@ Coded in SASS.
 
 <div class="white">
 <div class="content first">
-	<div class="text">
+	<div class="text" id="menu">
 
 		<h1>Design guidelines</h1>
 
@@ -277,6 +279,14 @@ Coded in SASS.
 	</div>
 </div>
 
+<div class="content">
+	<div class="text">
+
+		<a class="call-to-action" href="#menu">Nav</a>
+
+	</div>
+</div>
+
 
 
 <footer>Coded with <span class="icon-heart"></span> in Winchester by<br>Magnus Skare</footer>
@@ -296,9 +306,7 @@ Coded in SASS.
 	$(function() {
     	FastClick.attach(document.body);
   	});
-</script>
 
-<script>
 	$(function() {
 	    $('a[href*=#]:not([href=#])').click(function() {
 	      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
