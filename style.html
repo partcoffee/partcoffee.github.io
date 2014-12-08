@@ -41,10 +41,12 @@ Coded in SASS.
 
 		<h1>Design guidelines</h1>
 
-		<p>This section covers the general areas of the style guide for the <strong>One Minute England</strong> project. The project roots back to Google's Material Design guidelines for certain elements. The following sections will cover the following subjects:</p>
+		<p>This section covers the general areas of the style guide for the <strong>One Minute England</strong> project. The project roots back to Google's Material Design guidelines for certain elements. This page covers the following subjects:</p>
 
 		<p>
 			<a href="#one">1.0 - Typography</a>
+			<br>
+			<a href="#one-one">1.1 - Fonts</a>
 			<br>
 			<a href="#one-two">1.2 - Font weight</a>
 			<br>
@@ -93,8 +95,6 @@ Coded in SASS.
 
 		<h1>1.1 - Fonts</h1>
 
-		<p>The primary fonts used are <strong>Roboto</strong>, <strong>Arial</strong>, and <strong>Montserrat</strong>. All with Helvetica Neue, Helvetica and sans-serif as fall-backs - in that order. A standard serif-font is also used as an addition to the main headline.</p>
-
 		<p class="example roboto">Roboto<br>"The quick brown fox jumps over the lazy dog"</p>
 
 		<p class="example">Arial<br>"The quick brown fox jumps over the lazy dog"</p>
@@ -109,7 +109,7 @@ Coded in SASS.
 		
 		<h1>1.2 - Font weight</h1>
 
-		<p>The fonts are using a font-weight of 300, which is light for most fonts. This keeps the legibility without sacrifising the style throughout the project.</p>
+		<p>The fonts are using a font-weight of 300, which is classified as light for most fonts. This keeps the legibility high without sacrificing style throughout the project.</p>
 	</div>
 </div>
 
@@ -134,11 +134,11 @@ Coded in SASS.
 
 		<h1>1.4 - Colour contrast and legibility</h1>
 
-		<p>Text that is the same colour as the background is hard too read, but too much contrast makes reading uncomfortable. Any important text should maintain a minimum contrast ratio of 7.1:1 to pass the AAA contrast level of any sized text. Text of lesser importance can drop to a contrast ratio of 5.7:1.</p>
+		<p>Text that is the same colour as the background is hard too read, but too much contrast makes reading uncomfortable. Any important text should maintain a minimum contrast ratio of <strong>7.1:1</strong> to pass the AAA contrast level of any sized text. Text of lesser importance can drop to a contrast ratio of <strong>5.7:1</strong>.</p>
 
 		<p>As a reference, the body text colour holds a contrast-ratio of <strong>7.5:1</strong> to the background. (#555 to #FFF)</p>
 
-		<p>White text on transparent backgrounds holds a contrast ratio of <strong>13.35:1 - 14.8:1</strong> - depending on the background image underneat.</p>
+		<p>White text on transparent backgrounds (e.g. the navigation) holds a contrast ratio of <strong>13.35:1 - 14.8:1</strong> - depending on the background image underneath.</p>
 
 	</div>
 </div>
@@ -150,7 +150,7 @@ Coded in SASS.
 
 		<p>The user will rarely visit the information-page more than once, but a good reading-experience should be a priority nonetheless.</p>
 
-		<p>The optimal line length for readabilty should consist of 50-75 characters. This particular page uses 70-80 characters per line, including spaces. This is arguably too much, but short paragraphs and repeated use of shorter lines makes up for it.</p>
+		<p>The optimal line length for readability should consist of 50-75 characters. This particular page uses 70-80 characters per line, including spaces. This is arguably too much, but short paragraphs and repeated use of shorter lines makes up for it.</p>
 
 		<p>Important information should be bold and/or coloured to make the page easier to scan for the human eye.</p>
 
@@ -194,7 +194,7 @@ Coded in SASS.
 
 		<h1>3.1 - Speed and responsiveness</h1>
 
-		<p>To speed up the app, <a href="https://github.com/ftlabs/fastclick">fastclick</a> has been included on every page. This removes the 300ms delay between the physical tap and the firing of the click event on touch devices, making the website feel like a native application. This is recommended to keep the website quick and responsive on mobile devices.</p>
+		<p>To speed up the app, <a href="https://github.com/ftlabs/fastclick">FastClick</a> has been implemented on every page, including this one. This removes the 300ms delay between the physical tap and the firing of the click event on touch devices, making the website feel like a native application. This is recommended to keep the website quick and responsive on touch devices.</p>
 
 	</div>
 </div>
@@ -244,7 +244,7 @@ Coded in SASS.
 
 		<h1>5.0 - User content</h1>
 
-		<p>The project is heavy on user content, but the user content should adhere to a certain quality. How strict we are will depend on the amount of content we receive, but the back-facing camera of an iOS device should be the lowest quality we accept. Audio can be included from the users, but should flow with the music playing over the video itself.</p>
+		<p>The project is heavy on user content, but the user content should adhere to a certain quality. How strict we are will depend on the amount of content we receive, but the back-facing camera of an iOS device should be the lowest quality we accept. Audio can be included from the user content, but should flow with the music playing over the video itself.</p>
 
 	</div>
 </div>
@@ -264,7 +264,7 @@ Coded in SASS.
 
 		<h1>6.1 - Motion sickness</h1>
 
-		<p>Users with vestibular disorders can become motion-disoriented, especially when trying to read text in front of a moving image, while users on the autism spectrum can be disturbed by rapid change. This is why the background image on the home-page is static.</p>
+		<p>Users with vestibular disorders can become motion-disoriented, especially when trying to read text in front of a moving image, while users on the autism spectrum can be disturbed by rapid change. This is why the background image on the homepage is static.</p>
 
 	</div>
 </div>
@@ -274,7 +274,7 @@ Coded in SASS.
 
 		<h1>6.2 - General annoyance</h1>
 
-		<p>To avoid the general annoyance that comes with video and audio elements on the web, the user must interact with the video to play it. From there, a mute-button and a pause button is easily accessible, with the option to exit the video itself at any given time. This is expected behaviour on the web and should be a priority.</p>
+		<p>To avoid the general annoyance that comes with video and audio elements on the web, the user must interact with the video to play it. From there, mute-button and pause buttons are easily accessible, with the option to exit the video itself at any given time. This is expected behaviour on the web and should be a priority.</p>
 
 	</div>
 </div>
@@ -282,7 +282,7 @@ Coded in SASS.
 <div class="content">
 	<div class="text">
 
-		<a class="call-to-action" href="#menu">Nav</a>
+		<a class="call-to-action" href="#menu">Top</a>
 
 	</div>
 </div>
