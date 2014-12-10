@@ -1,113 +1,116 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
+
+<!--
+=====================================================
+www.panimated.com
+=====================================================
+
+Design and build: Sonja Langskjær
+Coded in SASS.
+
+=====================================================
+-->
 
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>Panimated</title>
+<meta name="description" content="Personal portfolio of Sonja Langskjær.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Web app"> <!-- Fix this. -->
 <link rel="stylesheet" href="css/style.css">
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
+<script src="http://use.edgefonts.net/source-sans-pro.js"></script>
 </head>
-
 <body>
 
 <!--
 =====================================================
-  NAVIGATION
+  Section
 =====================================================
 -->
 
-<div class="sidebar animated fadeIn delay-a">
-  <span>Resilience Toolkit</span>
-  <br>
-  <a href="index.html" id="active">Categories</a>
-  <br>
-  <a href="about.html">About</a>
-  <br>
-  <a href="mailto:name@email.com">Contact</a>
-  <footer>© University of Winchester</footer>
-</div>
+<article class="splash">
+
+	<div id="parallax">
+		<div class="parallax_layer" id="layer-0"></div>
+		<div class="parallax_layer" id="layer-1"></div>
+		<div class="parallax_layer" id="layer-2"></div>
+		<div class="parallax_layer" id="layer-3"></div>
+		<div class="parallax_layer" id="layer-4"></div>
+	</div>
+
+</article>
+
+
+<article id="information" class="content">
+
+	<h3>This is a headline</h3>
+	<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>
+	<br>
+	<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt!</p>
+
+</article>
+
+
+<article id="portfolio" class="content">
+
+	<div class="grid">
+		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+	</div>
+
+</article>
+
+<article id="social" class="content">
+
+	<h3>This is another headline</h3>
+	<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	<br>
+	<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta laudantium, rem architecto quos illum perspiciatis cupiditate hic aliquid voluptas accusamus amet modi voluptates veritatis. Fuga totam perferendis at praesentium magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magnam provident accusamus, sed similique dolorum molestias temporibus omnis architecto? Soluta nobis itaque voluptatem nemo magni, repudiandae hic cum et dolores!</p>
+
+</article>
+
+<article id="contact" class="content">
+	
+	<div class="grid">
+		<span class="col-25 icon-heart"></span>
+		<span class="col-25 icon-pen"></span>
+		<span class="col-25 icon-study"></span>
+		<span class="col-25 icon-clip"></span>
+	</div>
+
+</article>
+
+<article id="form" class="content">
+
+	<div class="contact">
+
+		<form>
+			<input type="text" name="message" placeholder="Message">
+			<input type="text" name="name" placeholder="Email">
+			<input type="submit" class="button" placeholder="Send">
+		</form>
+
+	</div>
+
+</article>
+
+<footer>© 2014 - Sonja Langskjær</footer>
+
 
 
 <!--
 =====================================================
-  CONTENT
-=====================================================
--->
-
-
-<div class="wrap">
-<div class="content animated fadeIn delay-b">
-
-  <!-- <div class="col-full intro">
-    
-    <h1>Welcome</h1>
-
-    <p>This is what this is, feel free to explore. Explain explain explain. It's like Wikipedia - just sooper specific!</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero quaerat omnis, neque deleniti iure! Esse asperiores, quibusdam, voluptatibus illo laudantium, nam maiores possimus quae consequuntur in perferendis facere earum ratione.</p>
-
-    <br>
-
-    <p class="button"><a id="start">Cool, let's get started!</a></p>
-
-  </div> -->
-
-  <a href="watershortage.html">
-    <div class="col-half start animated fadeIn delay-b one">
-      <span class="icon-umbrella"></span>
-      <h1 class="category">Water shortage</h1>
-    </div>
-  </a>
-
-  <a href="energy.html">
-    <div class="col-half end animated fadeIn delay-c two">
-      <span class="icon-sun"></span>
-      <h1 class="category">Energy</h1>
-    </div>
-  </a>
-
-
-  <a href="heating.html">
-    <div class="col-half start animated fadeIn delay-b three">
-      <span class="icon-thermometer"></span>
-      <h1 class="category">Heating</h1>
-    </div>
-  </a>
-
-  <a href="flooding.html">
-    <div class="col-half end animated fadeIn delay-d four">
-      <span class="icon-drop"></span>
-      <h1 class="category">Flooding</h1>
-    </div>
-  </a>
-
-</div>
-</div>
-
-<footer>© University of Winchester</footer>
-<!--
-=====================================================
-  WIZARDRY
+  Scripts
 =====================================================
 -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type='application/javascript' src='js/jquery.min.js'></script>
-<script type='application/javascript' src='js/fastclick.js'></script>
-
-<script>
-  if ($(window).width() < 801) {
-    $('.sidebar').addClass("super fun");
-  }
-
-  $(function() {
-      FastClick.attach(document.body);
-  });
-</script>
+<script type='application/javascript' src='js/main.js'></script>
 
 </body>
 </html>
