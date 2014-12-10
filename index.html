@@ -29,7 +29,7 @@ Coded in SASS.
 =====================================================
 -->
 
-<article class="splash">
+<article class="splash animated fadeIn delay">
 
 	<div id="parallax">
 		<div class="parallax_layer" id="layer-0"></div>
@@ -41,26 +41,37 @@ Coded in SASS.
 
 </article>
 
-
 <article id="information" class="content">
+	
+	<h3>Sonja Langskjær</h3>
+	<p class="byline">Animator, illustrator and experienced coffee brewer.</p>
 
-	<h3>This is a headline</h3>
-	<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>
-	<br>
-	<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt!</p>
+	<div class="grid">
+		<div class="col-50"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, quam, expedita fuga pariatur, repellat sint aperiam ratione ipsum eligendi esse quas inventore deleniti et. Iure, dolorum cum illum dolorem dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolores quam tenetur cum nemo ipsum sed vel facilis, repellendus eum, officia placeat atque nulla sunt laboriosam veritatis fugit, beatae suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem reprehenderit nobis, voluptas.</p></div>
+		<div class="col-50"><div><img src="img/profile.png" alt="Sonja Langskjær" class="profile"></div></div>
+	</div>
 
 </article>
 
 
 <article id="portfolio" class="content">
 
-	<div class="grid">
-		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
-		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
-		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
-		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
-		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
-		<div class="col-33"><img src="img/grid-img.jpg" alt="Placeholder."></div>
+	<h3>Selected galleries</h3>
+
+	<div class="grid galleries">
+
+		<div class="col-33">
+			<img id="traditional" src="http://placehold.it/700x700" alt="Placeholder.">
+		</div>
+
+		<div class="col-33">
+			<img id="digital" src="http://placehold.it/700x700" alt="Placeholder.">
+		</div>
+
+		<div class="col-33 last">
+			<img id="videos" src="http://placehold.it/700x700" alt="Placeholder.">
+		</div>
+
 	</div>
 
 </article>
@@ -68,7 +79,7 @@ Coded in SASS.
 <article id="social" class="content">
 
 	<h3>This is another headline</h3>
-	<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+	<p class="byline">"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>
 	<br>
 	<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta laudantium, rem architecto quos illum perspiciatis cupiditate hic aliquid voluptas accusamus amet modi voluptates veritatis. Fuga totam perferendis at praesentium magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magnam provident accusamus, sed similique dolorum molestias temporibus omnis architecto? Soluta nobis itaque voluptatem nemo magni, repudiandae hic cum et dolores!</p>
 
@@ -111,6 +122,84 @@ Coded in SASS.
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type='application/javascript' src='js/main.js'></script>
+<script type='application/javascript' src='js/jquery.magnific-popup.min.js'></script>
+
+<script>
+	$('#traditional').magnificPopup({
+	    items: [
+	      {
+	        src: 'img/profile.png',
+	        type: 'image',
+	      },
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image' // this is default type
+	});
+
+	$('#digital').magnificPopup({
+	    items: [
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	      {
+	        src: 'img/profile.png',
+	        type: 'image'
+	      },
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image' // this is default type
+	});
+
+	$('#videos').magnificPopup({
+    items: [
+      {
+        src: 'https://www.youtube.com/watch?v=L4WwDIY1JlA',
+        type: 'iframe'
+      },
+      {
+        src: 'https://www.youtube.com/watch?v=aLFrUH9AVik',
+        type: 'iframe'
+      },
+      {
+        src: 'https://www.youtube.com/watch?v=lIsfPlJASFE',
+        type: 'iframe'
+      },
+      {
+        src: 'https://www.youtube.com/watch?v=cH-SsWJfHec',
+        type: 'iframe'
+      },
+    ],
+    gallery: {
+      enabled: true
+    },
+    type: 'image' // this is default type
+});
+</script>
 
 </body>
 </html>
