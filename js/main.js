@@ -21,16 +21,6 @@ function setup()
 		body.style.backgroundImage = 'none';
 	}
 	
-	else if (platform.indexOf('win32') != -1 || platform.indexOf('linux') != -1)
-	{
-		isTouchscreen = 0;
-						
-		if ($.browser.webkit)
-		{
-			$.srSmoothscroll();
-		}
-	}
-	
 	else
 	{
 		isTouchscreen = 0;
