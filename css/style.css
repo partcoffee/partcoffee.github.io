@@ -32,6 +32,9 @@
 .col-80 {
   width: 80%; }
 
+.col-100 {
+  width: 100%; }
+
 /* General stuff */
 [class*='col-'] {
   float: left;
@@ -70,7 +73,9 @@ img {
   max-width: 100%; }
 
 .profile {
-  padding: 10% 0 0% 10%; }
+  display: block;
+  width: 40%;
+  margin: 0 auto; }
 
 .parallax_layer {
   height: 100%;
@@ -139,8 +144,13 @@ p, footer {
   line-height: 1.6;
   text-align: justify; }
 
-.col-50 p {
-  padding: 5%; }
+a {
+  color: #FFF;
+  font-weight: 700;
+  text-decoration: none; }
+
+.col-100 p {
+  padding: 0, 5%, 0, 5%; }
 
 .byline {
   font-style: italic;
@@ -225,30 +235,20 @@ p, footer {
   padding-top: 80px;
   padding-bottom: 100px;
   width: 60%;
+  text-align: center;
   margin: 0 auto; }
-
-form {
-  text-align: center; }
-
-input {
-  background: #f5f5f5;
-  border: 0;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-  margin: 20px;
-  padding: 5px; }
-
-input:focus {
-  outline: none; }
 
 .button {
   border: none;
   background: #992853;
   color: #FFF;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  width: 120px;
-  height: 40px;
-  border-radius: 999px; }
+  padding: 12px 22px 12px 22px;
+  border-radius: 999px;
+  font-family: "source-sans-pro", Arial, "Helvetica", sans-serif;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: 300; }
 
 .button:hover {
   opacity: .5;
@@ -268,20 +268,16 @@ footer {
 ----------------------------------------            ----------------------------------------
 */
 @media only screen and (min-width: 1400px) {
-  .content {
+  .content, #portfolio {
     max-width: 960px; }
 
   #information {
     padding-top: 40px; }
 
-  .col-50 p {
-    padding-top: 68px; }
-
-  .profile {
-    height: 300px;
-    width: 300px;
-    padding: 0;
-    margin: 6% 0 6% 6%; } }
+  .col-100 p {
+    max-width: 60%;
+    display: block;
+    margin: 0 auto; } }
 @media only screen and (max-width: 700px) {
   h1 {
     font-size: 44px;
@@ -304,11 +300,7 @@ footer {
     -moz-column-gap: 30px;
     column-gap: 30px; } }
 @media only screen and (max-width: 640px) {
-  .col-50 {
-    width: 100%; }
-
-  .col-50 p {
-    padding: 0 0 5% 0;
+  .col-100 p {
     max-width: 400px;
     margin: 0 auto; }
 
