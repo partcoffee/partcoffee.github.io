@@ -30,6 +30,7 @@ Coded in SASS.
 -->
 
 <article class="splash animated fadeIn delay">
+<div class="container">
 
 	<div id="parallax">
 		<div class="parallax_layer" id="layer-0"></div>
@@ -39,12 +40,13 @@ Coded in SASS.
 		<div class="parallax_layer" id="layer-4"></div>
 	</div>
 
+</div>
 </article>
 
 <article id="information" class="content">
 	
 	<h3>Sonja Langskjær</h3>
-	<p class="byline">Animator, illustrator and experienced coffee brewer.</p>
+	<p class="byline">"Animator, illustrator and experienced coffee brewer."</p>
 
 	<div class="grid">
 		<div class="col-50"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, quam, expedita fuga pariatur, repellat sint aperiam ratione ipsum eligendi esse quas inventore deleniti et. Iure, dolorum cum illum dolorem dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolores quam tenetur cum nemo ipsum sed vel facilis, repellendus eum, officia placeat atque nulla sunt laboriosam veritatis fugit, beatae suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem reprehenderit nobis, voluptas.</p></div>
@@ -123,6 +125,7 @@ Coded in SASS.
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script type='application/javascript' src='js/main.js'></script>
 <script type='application/javascript' src='js/jquery.magnific-popup.min.js'></script>
+<script type='application/javascript' src='js/jquery.simplr.smoothscroll.js'></script>
 
 <script>
 	$('#traditional').magnificPopup({
@@ -176,29 +179,29 @@ Coded in SASS.
 	});
 
 	$('#videos').magnificPopup({
-    items: [
-      {
-        src: 'https://www.youtube.com/watch?v=L4WwDIY1JlA',
-        type: 'iframe'
-      },
-      {
-        src: 'https://www.youtube.com/watch?v=aLFrUH9AVik',
-        type: 'iframe'
-      },
-      {
-        src: 'https://www.youtube.com/watch?v=lIsfPlJASFE',
-        type: 'iframe'
-      },
-      {
-        src: 'https://www.youtube.com/watch?v=cH-SsWJfHec',
-        type: 'iframe'
-      },
-    ],
-    gallery: {
-      enabled: true
-    },
-    type: 'image' // this is default type
-});
+	    items: [
+	      {
+	        src: 'https://www.youtube.com/watch?v=L4WwDIY1JlA',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=aLFrUH9AVik',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=lIsfPlJASFE',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=cH-SsWJfHec',
+	        type: 'iframe'
+	      },
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image' // this is default type
+	});
 </script>
 
 </body>

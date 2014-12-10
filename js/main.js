@@ -9,19 +9,6 @@ var layer1 = document.getElementById("layer-1");
 var layer2 = document.getElementById("layer-2");
 var layer3 = document.getElementById("layer-3");
 
-function unloadTrailer()
-{
-	window.scrollTo(0, 0);
-	
-	body.setAttribute('class', 'noTrailer');
-	
-	while (blackout.firstChild)
-	{
-		blackout.removeChild(blackout.firstChild);
-	}
-		
-}
-
 function setup()
 {
 	var platform = navigator.platform.toLowerCase();
@@ -53,11 +40,11 @@ function setup()
 
 function parallaxy()
 {
-	offset4 = -(scrollVal * -0.04);
+	offset4 = -(scrollVal * -0.04).toFixed(1);
 	offset3 = 0;
-	offset2 = -(scrollVal * -0.12);
-	offset1 = -(scrollVal * -0.2);
-	offset0 = -(scrollVal * -0.26);
+	offset2 = -(scrollVal * -0.2).toFixed(1);
+	offset1 = -(scrollVal * -0.32).toFixed(1);
+	offset0 = -(scrollVal * -0.36).toFixed(1);
 
 	layer0.style.webkitTransform = "translate3d(0, " + offset0 + "px, 0)";
 	layer0.style.MozTransform = "translate3d(0, " + offset0 + "px, 0)";
