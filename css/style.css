@@ -9,7 +9,7 @@
 /* Variables */
 /* Grid width */
 .grid {
-  padding-top: 50px;
+  padding-top: 20px;
   width: 100%;
   /* margin: 0 auto; --- Optional */ }
 
@@ -70,7 +70,7 @@ img {
   max-width: 100%; }
 
 .profile {
-  padding: 10% 0 5% 10%; }
+  padding: 10% 0 0% 10%; }
 
 .parallax_layer {
   height: 100%;
@@ -217,12 +217,9 @@ p, footer {
   max-width: 640px;
   padding: 20px; }
 
-#information, #social, #portfolio, #contact {
-  padding-top: 80px;
-  padding-bottom: 80px; }
-
 #portfolio {
-  max-width: 860px; }
+  max-width: 860px;
+  padding-bottom: 50px; }
 
 .contact {
   padding-top: 80px;
@@ -270,6 +267,18 @@ footer {
 ---------------------------------------- Responsive ----------------------------------------
 ----------------------------------------            ----------------------------------------
 */
+@media only screen and (min-width: 1400px) {
+  .content {
+    max-width: 960px; }
+
+  .col-50 p {
+    padding-top: 68px; }
+
+  .profile {
+    height: 300px;
+    width: 300px;
+    padding: 0;
+    margin: 6% 0 6% 6%; } }
 @media only screen and (max-width: 700px) {
   h1 {
     font-size: 44px;
