@@ -1,235 +1,251 @@
-jQuery(document).ready(function($){
-	//set your google maps parameters
-	var latitude = 51.060028,
-		longitude = -1.326075,
-		map_zoom = 14;
+var body = document.body;
+var container = document.getElementById("container");
 
-	//google map custom marker icon - .png fallback for IE11
-	var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
-	var marker_url = ( is_internetExplorer11 ) ? 'img/cd-icon-location.png' : 'img/cd-icon-location.png';
-	// img/cd-icon-location.png should be .svg above
-		
-	//define the basic color of your map, plus a value for saturation and brightness
-	var	main_color = '#FFF',
-		saturation_value= -100,
-		brightness_value= 5;
+var isTouchscreen;
+var scrollVal = 0;
+	
+var layer0 = document.getElementById("layer-0");
+var layer1 = document.getElementById("layer-1");
+var layer2 = document.getElementById("layer-2");
+var layer3 = document.getElementById("layer-3");
 
-	//we define here the style of the map
-	var style= [ 
-		{
-			//set saturation for the labels on the map
-			elementType: "labels",
-			stylers: [
-				{saturation: saturation_value}
-			]
-		},  
-	    {	//poi stands for point of interest - don't show these lables on the map 
-			featureType: "poi",
-			elementType: "labels",
-			stylers: [
-				{visibility: "off"}
-			]
-		},
-		{
-			//don't show highways lables on the map
-	        featureType: 'road.highway',
-	        elementType: 'labels',
-	        stylers: [
-	            {visibility: "off"}
-	        ]
-	    }, 
-		{ 	
-			//don't show local road lables on the map
-			featureType: "road.local", 
-			elementType: "labels.icon", 
-			stylers: [
-				{visibility: "off"} 
-			] 
-		},
-		{ 
-			//don't show arterial road lables on the map
-			featureType: "road.arterial", 
-			elementType: "labels.icon", 
-			stylers: [
-				{visibility: "off"}
-			] 
-		},
-		{
-			//don't show road lables on the map
-			featureType: "road",
-			elementType: "geometry.stroke",
-			stylers: [
-				{visibility: "off"}
-			]
-		}, 
-		//style different elements on the map
-		{ 
-			featureType: "transit", 
-			elementType: "geometry.fill", 
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		}, 
-		{
-			featureType: "poi",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "poi.government",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "poi.sport_complex",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "poi.attraction",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "poi.business",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "transit",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "transit.station",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "landscape",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-			
-		},
-		{
-			featureType: "road",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		},
-		{
-			featureType: "road.highway",
-			elementType: "geometry.fill",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "on" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		}, 
-		{
-			featureType: "water",
-			elementType: "geometry",
-			stylers: [
-				{ hue: main_color },
-				{ visibility: "off" }, 
-				{ lightness: brightness_value }, 
-				{ saturation: saturation_value }
-			]
-		}
-	];
-		
-	//set google map options
-	var map_options = {
-      	center: new google.maps.LatLng(latitude, longitude),
-      	zoom: map_zoom,
-      	panControl: false,
-      	zoomControl: false,
-      	mapTypeControl: false,
-      	streetViewControl: false,
-      	mapTypeId: google.maps.MapTypeId.ROADMAP,
-      	scrollwheel: false,
-      	styles: style,
-    }
-
-    //inizialize the map
-	var map = new google.maps.Map(document.getElementById('google-container'), map_options);
-	//add a custom marker to the map				
-	var marker = new google.maps.Marker({
-	  	position: new google.maps.LatLng(latitude, longitude),
-	    map: map,
-	    visible: true,
-	 	icon: marker_url,
-	});
-
-	//add custom buttons for the zoom-in/zoom-out on the map
-	function CustomZoomControl(controlDiv, map) {
-		//grap the zoom elements from the DOM and insert them in the map 
-	  	var controlUIzoomIn= document.getElementById('cd-zoom-in'),
-	  		controlUIzoomOut= document.getElementById('cd-zoom-out');
-	  	controlDiv.appendChild(controlUIzoomIn);
-	  	controlDiv.appendChild(controlUIzoomOut);
-
-		// Setup the click event listeners and zoom-in or out according to the clicked element
-		google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-		    map.setZoom(map.getZoom()+1)
-		});
-		google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-		    map.setZoom(map.getZoom()-1)
-		});
+function setup()
+{
+	var platform = navigator.platform.toLowerCase();
+	var userAgent = navigator.userAgent.toLowerCase();
+	
+	if ( platform.indexOf('ipad') != -1  ||  platform.indexOf('iphone') != -1 ) 
+	{
+		isTouchscreen = 1;
+		container.setAttribute("class", "touch");
+		body.style.backgroundImage = 'none';
+	}
+	
+	else
+	{
+		isTouchscreen = 0;
 	}
 
-	var zoomControlDiv = document.createElement('div');
- 	var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+}
 
-  	//insert the zoom div on the top left of the map
-  	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
-});
+function parallaxy()
+{
+	offset4 = -(scrollVal * -0.04).toFixed(1);
+	offset3 = 0;
+	offset2 = -(scrollVal * -0.2).toFixed(1);
+	offset1 = -(scrollVal * -0.32).toFixed(1);
+	offset0 = -(scrollVal * -0.36).toFixed(1);
 
-  
+	layer0.style.webkitTransform = "translate3d(0, " + offset0 + "px, 0)";
+	layer0.style.MozTransform = "translate3d(0, " + offset0 + "px, 0)";
+	layer0.style.msTransform = "translateY(" + offset0 + "px)";
+	layer0.style.OTransform = "translate3d(0, " + offset0 + "px, 0)";
+	layer0.style.transform = "translate3d(0, " + offset0 + "px, 0)";
+
+	layer1.style.webkitTransform = "translate3d(0, " + offset1 + "px, 0)";
+	layer1.style.MozTransform = "translate3d(0, " + offset1 + "px, 0)";
+	layer1.style.msTransform = "translateY(" + offset1 + "px)";
+	layer1.style.OTransform = "translate3d(0, " + offset1 + "px, 0)";
+	layer1.style.transform = "translate3d(0, " + offset1 + "px, 0)";
+
+	layer2.style.webkitTransform = "translate3d(0, " + offset2 + "px, 0)";
+	layer2.style.MozTransform = "translate3d(0, " + offset2 + "px, 0)";
+	layer2.style.msTransform = "translateY(" + offset2 + "px)";
+	layer2.style.OTransform = "translate3d(0, " + offset2 + "px, 0)";
+	layer2.style.transform = "translate3d(0, " + offset2 + "px, 0)";
+
+	layer3.style.webkitTransform = "translate3d(0, " + offset3 + "px, 0)";
+	layer3.style.MozTransform = "translate3d(0, " + offset3 + "px, 0)";
+	layer3.style.msTransform = "translateY(" + offset3 + "px)";
+	layer3.style.OTransform = "translate3d(0, " + offset3 + "px, 0)";
+	layer3.style.transform = "translate3d(0, " + offset3 + "px, 0)";
+}
+
+
+function scrollHandler(e)
+{
+	scrollVal = Math.max(window.pageYOffset,0);
+	
+	/* UNCOMMENT THESE LINES TO ABORT PARALLAX STUFF */
+/*
+	isTouchscreen = 1;
+	container.setAttribute("class", "touch");
+	body.style.backgroundImage = 'none';
+	firewatchlogo.style.position = 'absolute';
+*/
+	
+	if ( isTouchscreen != 1 )
+	{
+		parallaxy()
+	}
+}
+
+body.onload = setup();
+document.addEventListener('scroll', scrollHandler, false);
+
+function images()
+{
+	$('#traditional').magnificPopup({
+	    items: [
+	      {
+	        src: 'img/traditional/01.png'
+	      },
+	      {
+	        src: 'img/traditional/02.jpg'
+	      },
+	      {
+	        src: 'img/traditional/03.jpg'
+	      },
+	      {
+	        src: 'img/traditional/04.jpg'
+	      },
+	      {
+	        src: 'img/traditional/05.jpg'
+	      },
+	      {
+	        src: 'img/traditional/07.jpg'
+	      },
+	      {
+	        src: 'img/traditional/08.jpg'
+	      },
+	      {
+	        src: 'img/traditional/09.jpg'
+	      },
+	      {
+	        src: 'img/traditional/10.jpg'
+	      },
+	      {
+	        src: 'img/traditional/11.jpg'
+	      },
+	      {
+	        src: 'img/traditional/12.jpg'
+	      },
+	      {
+	        src: 'img/traditional/13.jpg'
+	      },
+	      {
+	        src: 'img/traditional/14.jpg'
+	      },
+	      {
+	        src: 'img/traditional/15.jpg'
+	      },
+	      {
+	        src: 'img/traditional/16.jpg'
+	      },
+	      {
+	        src: 'img/traditional/17.jpg'
+	      },
+	      {
+	        src: 'img/traditional/18.jpg'
+	      },
+	      {
+	        src: 'img/traditional/19.jpg'
+	      },
+	      {
+	        src: 'img/traditional/20.jpg'
+	      },
+	      {
+	        src: 'img/traditional/21.jpg'
+	      },
+	      {
+	        src: 'img/traditional/22.jpg'
+	      },
+	      {
+	        src: 'img/traditional/23.jpg'
+	      },
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image'
+	});
+
+	$('#digital').magnificPopup({
+	    items: [
+	      {
+	        src: 'img/digital/01.jpg'
+	      },
+	      {
+	        src: 'img/digital/02.jpg'
+	      },
+	      {
+	        src: 'img/digital/03.jpg'
+	      },
+	      {
+	        src: 'img/digital/04.jpg'
+	      },
+	      {
+	        src: 'img/digital/05.png'
+	      },
+	      {
+	        src: 'img/digital/06.png'
+	      },
+	      {
+	        src: 'img/digital/07.jpg'
+	      },
+	      {
+	        src: 'img/digital/08.jpg'
+	      },
+	      {
+	        src: 'img/digital/09.jpg'
+	      },
+	      {
+	        src: 'img/digital/10.jpg'
+	      },
+	      {
+	        src: 'img/digital/11.png'
+	      },
+	      {
+	        src: 'img/digital/12.jpg'
+	      },
+	      {
+	        src: 'img/digital/13.jpg'
+	      },
+	      {
+	        src: 'img/digital/14.jpg'
+	      },
+	      {
+	        src: 'img/digital/15.jpg'
+	      },
+	      {
+	        src: 'img/digital/16.jpg'
+	      },
+	      {
+	        src: 'img/digital/17.jpg'
+	      },
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image'
+	});
+
+	$('#videos').magnificPopup({
+	    items: [
+	      {
+	        src: 'https://www.youtube.com/watch?v=JfPCn80MS2A',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=lIsfPlJASFE',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=L4WwDIY1JlA',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=aLFrUH9AVik',
+	        type: 'iframe'
+	      },
+	      {
+	        src: 'https://www.youtube.com/watch?v=cH-SsWJfHec',
+	        type: 'iframe'
+	      },
+	    ],
+	    gallery: {
+	      enabled: true
+	    },
+	    type: 'image'
+	});
+}
