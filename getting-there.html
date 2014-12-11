@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<!--
+=====================================================
+wwww.transmedia-show.co.uk
+=====================================================
+
+Design and build: Conor Cresswell & Magnus Skare
+Coded in SASS.
+
+Thank you for your interest in the source code.
+As you've gotten this far, I'm assuming you're
+interested in how it was made:
+
+wwww.transmedia-show.co.uk/getting-there
+
+=====================================================
+
+Copyright 2014 - The University of Winchester
+
+=====================================================
+-->
+
+<html lang="en-GB">
+
+<head>
+<meta charset="UTF-8">
+<title>Transmedia - Workflow</title>
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Behind the website.">
+<link rel="stylesheet" href="css/style.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<!--
+=====================================================
+  NAVIGATION
+=====================================================
+-->
+
+<div class="wrap nav animated fadeIn delay-2"> <!-- Fix this. -->
+  <a href="index.html">Back to home</a>
+</div>
+
+<!--
+=====================================================
+  COVER
+=====================================================
+-->
+
+<div id="splash" class="relative">
+<div class="wrap cover animated fadeIn delay">
+
+  <div class="welcome">
+
+    <p class="top-text">13/03/201<span class="final-letter top-text">5</span></p>
+
+    <h1>WORKFLO<span class="final-letter">W</span></h1>
+
+    <p class="sub">This website - from start to finis<span class="final-letter">h</span></p>
+
+    <div class="button">
+      <a href="http://mailchimp.com/" target="_blank" class="button">
+
+        <span class="show">RSVP</span>
+        <span class="hide">Yayy!</span>
+
+      </a>
+    </div>
+
+  </div>
+
+</div>
+</div>
+
+
+<!--
+=====================================================
+  ABOUT
+=====================================================
+-->
+
+<div class="wrap white">
+<div class="content workflow">
+
+  <h2>Tools</h2>
+
+  <span class="break"></span>
+
+  <p>Firstly, thank you for your interest in how the site was made. We are constantly learning so this workflow might be dated within months, but we will do our best to keep this updated throughout the project.</p>
+
+  <p>This is a general list of tools worth mentioning as these are tools I am using every day for web development and deployment: <a href="https://www.sublimetext.com">Sublime Text</a>, <a href="https://github.com/sergeche/emmet-sublime">Emmet</a>, <a href="http://github.com">GitHub</a>, <a href="http://sass-lang.com">Sass</a>, <a href="http://jquery.com/">jQuery</a>, <a href="http://daneden.github.io/animate.css/">Animate.css</a>, and various jQuery plugins. I am also using <a href="http://nodejs.org/">Node JS</a> (npm) when needed.</p>
+
+  <span class="break"></span>
+
+</div>
+
+<div class="content workflow">
+
+  <h2>Early development</h2>
+
+  <span class="break"></span>
+
+  <p>We started off with a six hour session on what the website would have to do, and how best to achieve that. Sketches were made, coffee was consumed and design discussions were had. Starting with a set plan instead of diving into the code straight away avoids bloated code that can be caused by repeated change in design.</p>
+
+  <p>I usually generate a new project from my simple, but functional framework. It's not as extensive as <a href="http://foundation.zurb.com/">Foundation</a> or <a href="http://getbootstrap.com/">Bootstrap</a>, but it's enough to kickstart the project with a predefined grid system and a selection of Sass variables.</p>
+
+  <div class="code">
+    <p>
+      @mixin font($size) {
+      <br>
+      <span class="highlight-blue indent">font-size</span>: $size;
+      <br>
+      <span class="highlight-blue indent">font-size</span>: ($size / <span class="highlight-yellow">16</span><span class="highlight-orange">px</span>) * <span class="highlight-yellow">1</span><span class="highlight-orange">rem</span>;
+      <br>
+      }
+    </p>
+
+    <p>
+      @include <span class="highlight-blue">font</span>(36px);
+    </p>
+  </div>
+
+  <p>Being able to define rem values with pixel values as a fall-back makes my life a lot easier. The support for rem is good, but when it fails, it's nice to have a bulletproof fall-back. I tend to follow this up by defining fonts and a colour scheme:</p>
+
+  <div class="code">
+    <p>$headlines: 'Montserrat', sans-serif;<br>$bodytext: 'Helvetica Neue', Helvetica, Arial, sans-serif;</p>
+
+    <p>$titles: <span class="highlight-yellow">#383838</span>;<br>$text: <span class="highlight-yellow">#555</span>;<br>$teal: <span class="highlight-yellow">#36b3a8</span>;<br>$teal-light: lighten(<span class="highlight-yellow">#36b3a8</span>, <span class="highlight-yellow">10</span><span class="highlight-orange">%</span>);</p>
+  </div>
+
+  <p>Defining fonts and colours like this makes the code easier to maintain, update and change - because if you change the colour once, it changes everywhere.</p>
+
+  <span class="break"></span>
+
+</div>
+
+<div class="content workflow">
+
+  <h2>Illusions</h2>
+
+  <span class="break"></span>
+
+  <p>We are using <a href="http://daneden.github.io/animate.css/">Animate.css</a> to fade our content in - namely the entire splash screen and navigation. We also assigned a delay to the navigation to make sure everything faded in at a pleasant speed. This does not affect load times in a major way, but avoids the janky loading of most websites where elements pop into view at random.</p>
+
+  <p>The animations used on this website are 0.8 seconds, with two different delays defined. The site will wait 0.3 seconds before fading the content in, and another 0.2 seconds before the navigation fades in. The animation uses keyframes to change the opacity value form 0 to 1.</p>
+
+  <div class="code">
+    <p><span class="highlight-green">.animated</span> {
+      <br>
+      <span class="indent">animation-duration:</span> <span class="highlight-yellow">.8</span><span class="highlight-orange">s</span>;
+      <br>
+      <span class="indent">animation-fill-mode:</span> <span class="highlight-yellow">both</span>;
+      <br>
+      }
+    </p>
+  </div>
+
+  <div class="code">
+    <p>
+      animation-delay: <span class="highlight-yellow">.3</span><span class="highlight-orange">s</span>;
+      <br>
+      animation-delay: <span class="highlight-yellow">.5</span><span class="highlight-orange">s</span>;
+    </p>
+  </div>
+
+  <span class="break"></span>
+
+</div>
+
+<div class="content workflow">
+
+  <h2>Manageable code</h2>
+
+  <span class="break"></span>
+
+  <p>By importing documents into our main CSS document, we can seperate and manage our files easier. We are using Sass to do this, which means it will compile everything into one document, rather than just loading several documents. This saves us HTTP-requests, and makes sure we can serve a single minified CSS document for the entire page.</p>
+
+  <div class="code">
+    <p><span class="highlight-yellow">@import</span> "map";</p>
+  </div>
+
+  <span class="break"></span>
+
+</div>
+
+<div class="content workflow">
+
+  <h2>Writing and testing</h2>
+
+  <span class="break"></span>
+
+  <p>I push changes to <a href="https://github.com/">GitHub</a> to test our changes on different devices, and I'm also running a simple Python HTTP server during my development. This makes a rather powerful workflow, and with <a href="https://github.com/sergeche/emmet-sublime">Emmet</a>, writing code is <em>really</em> quick.</p>
+
+  <p>That's about it - I hope this was insightful or interesting. Any questions or can be directed to email link in the footer.</p>
+
+  <span class="break"></span>
+
+</div>
+
+</div>
+
+
+<!--
+=====================================================
+  FOOTER
+=====================================================
+-->
+
+<p class="wrap footer"><a href="#splash">Scroll to top</a> - <a target="_blank" href="#">Mail</a> - <a target="_blank" href="https://www.facebook.com/transmedia2015">Facebook</a> - <a target="_blank" href="#">Twitter</a><br>© 2014-2015 Winchester Univeristy</p>
+
+
+<!--
+=====================================================
+  WIZARDRY
+=====================================================
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type='application/javascript' src='js/fastclick.js'></script>
+
+<script>
+  $(function() {
+    $('a[href*=#]:not([href=#])').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({
+            scrollTop: target.offset().top
+          }, 500);
+          return false;
+        }
+      }
+    });
+  });
+</script>
+
+<script>
+  $(function() {
+      FastClick.attach(document.body);
+  });
+</script>
+
+</body>
+</html>
