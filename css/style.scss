@@ -296,11 +296,13 @@ footer {
 	}
 }
 
-@media only screen and (max-width: 700px) {
+@media screen and (max-aspect-ratio: 1/1) {
 	#layer-2 {
 		background-image: url(../img/layer-2-small.png);
 	}
+}
 
+@media only screen and (max-width: 700px) {
 	.content {
 		width: 94%;
 		padding: 0;
