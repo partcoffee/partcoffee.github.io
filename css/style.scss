@@ -6,7 +6,7 @@
 
 
 /* Fonts */
-$primary: 'source-sans-pro', 'Lato', 'Helvetica', sans-serif;
+$primary: 'source-sans-pro', 'Helvetica', sans-serif;
 $secondary: 'source-sans-pro', Arial, 'Helvetica', sans-serif;
 
 
@@ -48,7 +48,6 @@ html, body {
 
 body {
 	background: #12121b;
-	-webkit-text-size-adjust: 100%;
 	font-weight: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -62,6 +61,8 @@ body {
 
 img {
 	max-width: 100%;
+	width: auto;
+	height: auto;
 }
 
 .profile {
@@ -110,25 +111,6 @@ img {
 
 h1 {
 	font-family: $primary;
-	@include font(58px);
-	margin: 0;
-	color: #222;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-	font-weight: 700;
-}
-
-h2 {
-	font-family: $secondary;
-	@include font(14px);
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: #444;
-	font-weight: 300;
-}
-
-h3 {
-	font-family: $primary;
 	@include font(24px);
 	color: darken($primary-blue, 5%);
 	font-weight: 700;
@@ -152,7 +134,7 @@ a {
 }
 
 .col-100 p {
-	padding: 0, 5%, 0, 5%;
+	padding: 5%;
 }
 
 .byline {
@@ -170,47 +152,6 @@ a {
 	-moz-column-gap: 50px;
 	column-gap: 50px;
 	padding-top: 20px;
-}
-
-@font-face {
-	font-family: 'icomoon';
-	src:url('../fonts/icomoon.eot?-ng8e0w');
-	src:url('../fonts/icomoon.eot?#iefix-ng8e0w') format('embedded-opentype'),
-		url('../fonts/icomoon.woff?-ng8e0w') format('woff'),
-		url('../fonts/icomoon.ttf?-ng8e0w') format('truetype'),
-		url('../fonts/icomoon.svg?-ng8e0w#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	text-align: center;
-	color: $primary-blue;
-	@include font(30px);
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-heart:before {
-	content: "\e600";
-}
-.icon-pen:before {
-	content: "\e601";
-}
-.icon-study:before {
-	content: "\e602";
-}
-.icon-clip:before {
-	content: "\e603";
 }
 
 
@@ -245,12 +186,64 @@ a {
 	padding-bottom: 50px;
 }
 
+.on-hover {
+	display: none;
+}
+
+.col-33:hover {
+	.no-hover {
+		display: none;
+	}
+	.on-hover {
+		display: inline-block;
+	}
+}
+
 .contact {
 	padding-top: 80px;
-	padding-bottom: 100px;
+	padding-bottom: 40px;
 	width: 60%;
 	text-align: center;
 	margin: 0 auto;
+}
+
+#contact {
+	max-width: 460px;
+}
+
+
+/* Social network links and hover effects */
+
+.links {
+	width: 40px;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+.real {
+	display: none;
+}
+
+.col-25:hover {
+	.real {
+		display: block;
+	}
+	.style {
+		display: none;
+	}
+}
+
+.divider {
+	width: 100%;
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 20px;
+	img {
+		width: 530px;
+		display: inline;
+		margin: 0 auto;
+	}
 }
 
 .button {
@@ -303,8 +296,8 @@ footer {
 }
 
 @media only screen and (max-width: 700px) {
-	h1 {
-		@include font(44px);
+	#layer-2 {
+		background-image: url(../img/layer-2-small.png);
 	}
 
 	.content {
@@ -312,6 +305,20 @@ footer {
 		padding: 0;
 		padding-left: 3%;
 		padding-right: 3%;
+	}
+
+	#contact {
+		width: 80%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.divider img {
+		width: 60%;
+	}
+
+	.links {
+		width: 30px;
 	}
 
 	#portfolio {
@@ -342,23 +349,15 @@ footer {
 		padding: 0;
 		max-width: 200px;
 	}
+}
 
+@media only screen and (max-width: 500px) {
 	.col-33 {
 		width: 50%;
 	}
 
 	.last {
 		width: 100%;
-	}
-}
-
-@media only screen and (max-width: 500px) {
-	.logo {
-		width: 80%;
-	}
-
-	h1 {
-		@include font(32px);
 	}
 
 	.more {
@@ -405,41 +404,6 @@ footer {
 .fadeIn {
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
-}
-
-@-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    -ms-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    -ms-transform: none;
-    transform: none;
-  }
-}
-
-.fadeInUp {
-  -webkit-animation-name: fadeInUp;
-  animation-name: fadeInUp;
 }
 
 .delay {

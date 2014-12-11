@@ -18,7 +18,6 @@ Coded in SASS.
 <meta name="description" content="Personal portfolio of Sonja Langskjær.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/style.css">
-<link href='http://fonts.googleapis.com/css?family=Lato:700' rel='stylesheet' type='text/css'>
 <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
 </head>
 <body>
@@ -45,12 +44,12 @@ Coded in SASS.
 
 <div id="information" class="content">
 	
-	<h3>Sonja Langskjær</h3>
+	<h1>Sonja Langskjær</h1>
 	<p class="byline">"Animator, illustrator and experienced coffee brewer."</p>
 
 	<div class="grid"><!-- 
 		<div class="col-100"><img src="img/profile.png" alt="Sonja Langskjær" class="profile"></div> -->
-		<div class="col-100"><p>Lorem ipsum dolor sit amet, <a href="#">Hearthstone</a>, <a href="#">Warcraft</a> and <a href="#">Minus</a> adipisicing elit. Ut, quam, expedita fuga pariatur, repellat sint aperiam ratione ipsum eligendi esse quas inventore deleniti et. Iure, dolorum cum illum dolorem dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolores quam tenetur cum nemo ipsum sed vel facilis, repellendus eum, officia placeat atque nulla sunt laboriosam veritatis fugit, beatae suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem reprehenderit nobis, voluptas.</p></div>
+		<div class="col-100"><p>Lorem ipsum dolor sit amet, <a href="#">first link</a>, <a href="#">seconds link</a> and <a href="#">another link</a> adipisicing elit. Ut, quam, expedita fuga pariatur, repellat sint aperiam ratione ipsum eligendi esse quas inventore deleniti et. Iure, dolorum cum illum dolorem dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolores quam tenetur cum nemo ipsum sed vel facilis, repellendus eum, officia placeat atque nulla sunt laboriosam veritatis fugit, beatae suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem reprehenderit nobis, voluptas.</p></div>
 	</div>
 
 </div>
@@ -58,20 +57,23 @@ Coded in SASS.
 
 <div id="portfolio" class="content">
 
-	<h3>Selected galleries</h3>
+	<h1>Selected galleries</h1>
 
 	<div class="grid galleries">
 
 		<div class="col-33">
-			<img id="traditional" src="http://placehold.it/700x700" alt="Placeholder.">
+			<img class="no-hover" src="img/D1.jpg" alt="Digital art">
+			<img class="on-hover" id="traditional" src="img/D0.jpg" alt="Digital art">
 		</div>
 
 		<div class="col-33">
-			<img id="digital" src="http://placehold.it/700x700" alt="Placeholder.">
+			<img class="no-hover" src="img/T1.jpg" alt="Traditional art">
+			<img class="on-hover" id="digital" src="img/T0.jpg" alt="Traditional art">
 		</div>
 
 		<div class="col-33 last">
-			<img id="videos" src="http://placehold.it/700x700" alt="Placeholder.">
+			<img class="no-hover" src="img/A1.jpg" alt="Animations">
+			<img class="on-hover" id="videos" src="img/A0.jpg" alt="Animations">
 		</div>
 
 	</div>
@@ -80,28 +82,55 @@ Coded in SASS.
 
 <!-- <div id="social" class="content">
 
-	<h3>This is another headline</h3>
+	<h1>This is another headline</h1>
 	<p class="byline">"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>
 	<br>
 	<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta laudantium, rem architecto quos illum perspiciatis cupiditate hic aliquid voluptas accusamus amet modi voluptates veritatis. Fuga totam perferendis at praesentium magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magnam provident accusamus, sed similique dolorum molestias temporibus omnis architecto? Soluta nobis itaque voluptatem nemo magni, repudiandae hic cum et dolores!</p>
 
 </div> -->
 
-<div id="contact" class="content">
-	
-	<div class="grid">
-		<span class="col-25 icon-heart"></span>
-		<span class="col-25 icon-pen"></span>
-		<span class="col-25 icon-study"></span>
-		<span class="col-25 icon-clip"></span>
-	</div>
-
+<div class="divider">
+	<img src="img/border.png" alt="Divider">
 </div>
 
 <div id="form" class="content">
 
 	<div class="contact">
 		<a href="#"><span class="button">Mail me m8</span></a>
+	</div>
+
+</div>
+
+<div id="contact" class="content">
+	
+	<div class="grid">
+		<div class="col-25">
+			<a href="http://panimated.deviantart.com/">
+				<img class="links style" src="img/da.png" alt="Social icon">
+				<img class="links real" src="img/da1.png" alt="Social icon">
+			</a>
+		</div>
+
+		<div class="col-25">
+			<a href="http://panimated.blogspot.co.uk/">
+				<img class="links style" src="img/blog.png" alt="Social icon">
+				<img class="links real" src="img/blog1.png" alt="Social icon">
+			</a>
+		</div>
+
+		<div class="col-25">
+			<a href="http://panimated.tumblr.com/">
+				<img class="links style" src="img/tumblr.png" alt="Social icon">
+				<img class="links real" src="img/tumblr1.png" alt="Social icon">
+			</a>
+		</div>
+
+		<div class="col-25">
+			<a href="https://www.youtube.com/user/PantheraSonya">
+				<img class="links style" src="img/yt.png" alt="Social icon">
+				<img class="links real" src="img/yt1.png" alt="Social icon">
+			</a>
+		</div>
 	</div>
 
 </div>
