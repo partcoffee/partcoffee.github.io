@@ -1,126 +1,161 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
+
+<!--
+=====================================================
+www.panimated.com
+=====================================================
+
+Design and build: Sonja Langskjær
+Coded in SASS.
+
+=====================================================
+-->
 
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<title>Panimated</title>
+<meta name="description" content="Personal portfolio of Sonja Langskjær.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Web app"> <!-- Fix this. -->
 <link rel="stylesheet" href="css/style.css">
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+<script src="http://use.edgefonts.net/source-sans-pro.js"></script>
 </head>
-
 <body>
 
 <!--
 =====================================================
-  NAVIGATION
+  Section
 =====================================================
 -->
 
-<div class="sidebar animated fadeIn delay-a">
-  <span>Resilience Toolkit</span>
-  <br>
-  <a href="index.html" id="active">Categories</a>
-  <br>
-  <a href="about.html">About</a>
-  <br>
-  <a href="mailto:name@email.com">Contact</a>
-  <footer>© University of Winchester</footer>
+<div class="splash animated fadeIn delay">
+<div class="container">
+
+	<div id="parallax">
+		<div class="parallax_layer" id="layer-0"></div>
+		<div class="parallax_layer" id="layer-1"></div>
+		<div class="parallax_layer" id="layer-2"></div>
+		<div class="parallax_layer" id="layer-3"></div>
+		<div class="parallax_layer" id="layer-4"></div>
+	</div>
+
 </div>
+</div>
+
+<div id="information" class="content">
+	
+	<h1>Sonja Langskjær</h1>
+	<p class="byline">"Animator, illustrator and experienced coffee brewer."</p>
+
+	<div class="grid"><!-- 
+		<div class="col-100"><img src="img/profile.png" alt="Sonja Langskjær" class="profile"></div> -->
+		<div class="col-100">
+			<p>On the polar circle, there's a mountainous barren little island surrounded by black, foaming sea and on it, a cluster of houses. That's where I grew up – and as you can imagine, the harsh (yet inspiring) environment allowed for more than enough time to sit inside and stare out of the window. At some point I decided to take up drawing, and as soon as I got a hold of a <a href="http://media.giphy.com/media/T7kKcENcq6TNm/giphy.gif" target="_blank">2D-animated movie</a>, I knew what I wanted to do. Fast forward to today, and I've moved out into the big world to study animation at a university in the United Kingdom.<br> <br>So far, I've created everything from children's books, animated shorts, logos, storyboards, huge street art pieces, tiny paintings and I've lost track of how many walk and run cycles I've animated. I am currently working with a client to develop an <a href="http://panimated.blogspot.co.uk/2014/12/sanna-1-introduction.html">animated ebook</a> for children.</p>
+		</div>
+	</div>
+
+</div>
+
+
+<div id="portfolio" class="content">
+
+	<h1>Selected galleries</h1>
+
+	<div class="grid galleries">
+
+		<div class="col-33">
+			<img class="no-hover" src="img/D1.jpg" alt="Digital art">
+			<img class="on-hover" id="traditional" src="img/D0.jpg" alt="Digital art">
+		</div>
+
+		<div class="col-33">
+			<img class="no-hover" src="img/T1.jpg" alt="Traditional art">
+			<img class="on-hover" id="digital" src="img/T0.jpg" alt="Traditional art">
+		</div>
+
+		<div class="col-33 last">
+			<img class="no-hover" src="img/A1.jpg" alt="Animations">
+			<img class="on-hover" id="videos" src="img/A0.jpg" alt="Animations">
+		</div>
+
+	</div>
+
+</div>
+
+<!-- <div id="social" class="content">
+
+	<h1>This is another headline</h1>
+	<p class="byline">"Lorem ipsum dolor sit amet, consectetur adipisicing elit."</p>
+	<br>
+	<p class="more">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eaque culpa nulla dolores dolore officiis, placeat qui deserunt eligendi debitis pariatur ut sit officia autem asperiores quos molestiae! Dolorem, laudantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quibusdam quos id minima quas, ducimus veritatis neque quaerat possimus a assumenda dolores excepturi necessitatibus unde obcaecati et dicta dolore nesciunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta laudantium, rem architecto quos illum perspiciatis cupiditate hic aliquid voluptas accusamus amet modi voluptates veritatis. Fuga totam perferendis at praesentium magnam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint magnam provident accusamus, sed similique dolorum molestias temporibus omnis architecto? Soluta nobis itaque voluptatem nemo magni, repudiandae hic cum et dolores!</p>
+
+</div> -->
+
+<div class="divider">
+	<img src="img/border.png" alt="Divider">
+</div>
+
+<div id="form" class="content">
+
+	<div class="contact">
+		<a href="mailto:sonja_langskjaer@yahoo.com"><span class="button">Send email</span></a>
+	</div>
+
+</div>
+
+<div id="contact" class="content">
+	
+	<div class="grid">
+		<div class="col-25">
+			<a href="http://panimated.deviantart.com/">
+				<img class="links style" src="img/da.png" alt="Social icon">
+				<img class="links real" src="img/da1.png" alt="Social icon">
+			</a>
+		</div>
+
+		<div class="col-25">
+			<a href="http://panimated.blogspot.co.uk/">
+				<img class="links style" src="img/blog.png" alt="Social icon">
+				<img class="links real" src="img/blog1.png" alt="Social icon">
+			</a>
+		</div>
+
+		<div class="col-25">
+			<a href="http://panimated.tumblr.com/">
+				<img class="links style" src="img/tumblr.png" alt="Social icon">
+				<img class="links real" src="img/tumblr1.png" alt="Social icon">
+			</a>
+		</div>
+
+		<div class="col-25">
+			<a href="https://www.youtube.com/user/PantheraSonya">
+				<img class="links style" src="img/yt.png" alt="Social icon">
+				<img class="links real" src="img/yt1.png" alt="Social icon">
+			</a>
+		</div>
+	</div>
+
+</div>
+
+<footer>© 2014 - Sonja Langskjær</footer>
+
 
 
 <!--
 =====================================================
-  CONTENT
+  Scripts
 =====================================================
 -->
 
-
-<div class="wrap">
-<div class="content animated fadeIn delay-b">
-
-  <!-- <div class="col-full intro">
-    
-    <h1>Welcome</h1>
-
-    <p>This is what this is, feel free to explore. Explain explain explain. It's like Wikipedia - just sooper specific!</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero quaerat omnis, neque deleniti iure! Esse asperiores, quibusdam, voluptatibus illo laudantium, nam maiores possimus quae consequuntur in perferendis facere earum ratione.</p>
-
-    <br>
-
-    <p class="button"><a id="start">Cool, let's get started!</a></p>
-
-  </div> -->
-
-  <a href="watershortage.html">
-    <div class="col-half start animated fadeIn delay-b one">
-      <span class="icon-umbrella"></span>
-      <h1 class="category">Water shortage</h1>
-    </div>
-  </a>
-
-  <a href="energy.html">
-    <div class="col-half end animated fadeIn delay-c two">
-      <span class="icon-sun"></span>
-      <h1 class="category">Energy</h1>
-    </div>
-  </a>
-
-
-  <a href="heating.html">
-    <div class="col-half start animated fadeIn delay-b three">
-      <span class="icon-thermometer"></span>
-      <h1 class="category">Heating</h1>
-    </div>
-  </a>
-
-  <a href="flooding.html">
-    <div class="col-half end animated fadeIn delay-d four">
-      <span class="icon-drop"></span>
-      <h1 class="category">Flooding</h1>
-    </div>
-  </a>
-
-
-  <a href="info.html">
-    <div class="col-half start animated fadeIn delay-d five">
-      <span class="icon-moon"></span>
-      <h1 class="category">[Title]</h1>
-    </div>
-  </a>
-
-  <a href="info.html">
-    <div class="col-half end animated fadeIn delay-d six">
-      <span class="icon-cloud"></span>
-      <h1 class="category">[Title]</h1>
-    </div>
-  </a>
-
-</div>
-</div>
-
-<footer>© University of Winchester</footer>
-<!--
-=====================================================
-  WIZARDRY
-=====================================================
--->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type='application/javascript' src='js/jquery.min.js'></script>
+<script type='application/javascript' src='js/jquery-1.11.0.min.js'></script>
+<script type='application/javascript' src='js/main.js'></script>
 <script type='application/javascript' src='js/fastclick.js'></script>
+<script type='application/javascript' src='js/jquery.magnific-popup.min.js'></script>
 
 <script>
-  if ($(window).width() < 801) {
-    $('.sidebar').addClass("super fun");
-  }
-
   $(function() {
-      FastClick.attach(document.body);
+  	FastClick.attach(document.body),
+  	images();
   });
 </script>
 
