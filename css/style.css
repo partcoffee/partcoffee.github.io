@@ -95,7 +95,8 @@ img {
 
 #layer-0 {
   background-image: url(../img/layer-3.png);
-  z-index: 906; }
+  z-index: 906;
+  bottom: -1px; }
 
 #layer-1 {
   background-image: url(../img/layer-2.png);
