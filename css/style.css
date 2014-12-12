@@ -81,7 +81,7 @@ img {
   position: relative;
   background: #aec6c6;
   width: 100%;
-  height: 680px; }
+  height: 600px; }
 
 .parallax_layer {
   height: 100%;
@@ -91,7 +91,7 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   transform: translateZ(0);
-  background-size: auto 100%; }
+  background-size: 1702px 600px; }
 
 #layer-0 {
   background-image: url(../img/layer-3.png);
@@ -103,7 +103,7 @@ img {
 
 #layer-2 {
   z-index: 904;
-  padding-top: 400px;
+  padding-top: 380px;
   width: 100%;
   height: 100%;
   text-align: center; }
@@ -146,7 +146,7 @@ body {
   line-height: 1.6; }
 
 h1 {
-  color: #222; }
+  color: #838e8e; }
 
 h2 {
   font-size: 20px;
