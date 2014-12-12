@@ -30,11 +30,12 @@ function setup()
 
 function parallaxy()
 {
-	offset4 = -(scrollVal * -0.04).toFixed(1);
-	offset3 = 0;
-	offset2 = -(scrollVal * -0.2).toFixed(1);
-	offset1 = -(scrollVal * -0.32).toFixed(1);
-	offset0 = -(scrollVal * -0.36).toFixed(1);
+	offset4 = -(scrollVal * 0.5).toFixed(1);
+	offset3 = -(scrollVal * -0.5).toFixed(1);
+	offset2 = -(scrollVal * -0.4).toFixed(1);
+	offset1 = -(scrollVal * -0.2).toFixed(1);
+	offset0 = 0;
+
 
 	layer0.style.webkitTransform = "translate3d(0, " + offset0 + "px, 0)";
 	layer0.style.MozTransform = "translate3d(0, " + offset0 + "px, 0)";
