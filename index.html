@@ -20,7 +20,7 @@ Coded with Sass.
 <link rel="stylesheet" href="css/style.css">
 <script src="http://use.edgefonts.net/source-sans-pro.js"></script>
 </head>
-<body>
+<body class="quick fadeIn">
 
 <!--
 =====================================================
@@ -29,15 +29,23 @@ Coded with Sass.
 -->
 
 <div class="splash">
-<div class="container">
+<div id="top" class="container">
 
 	<div id="parallax">
 		<div class="parallax_layer" id="layer-0"></div>
-		<div class="parallax_layer" id="layer-1"></div>
-		<div class="parallax_layer" id="layer-2">
+		<div class="parallax_layer" id="layer-1">
 			<h1>Parallax effect</h1>
+			<div class="sub">Javascript <span>experiment</span></div>
 		</div>
-		<div class="parallax_layer" id="layer-3"></div>
+		<div class="parallax_layer" id="layer-2">
+			<img class="cloud-1 animated delay float" src="img/layer-3.png">
+			<img class="cloud-2 animated delay float" src="img/layer-3.png">
+			<img class="cloud-3 animated delay float slow" src="img/layer-3.png">
+		</div>
+		<div class="parallax_layer" id="layer-3">
+			<img class="animation fly delay" src="img/plane.png">
+		</div>
+		<div class="parallax_layer" id="layer-4"></div>
 	</div>
 
 </div>
@@ -49,14 +57,15 @@ Coded with Sass.
 </div>
 
 <div class="content">
-	<h2>Ipsum</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus id quidem, est illo rem distinctio reprehenderit quisquam. Numquam perferendis modi deleniti, vero sapiente fugit porro quis cumque consequuntur veniam quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam facere accusantium optio minima velit molestiae nisi ducimus reiciendis odit consequuntur non eveniet aperiam fugiat delectus doloremque tempore aut impedit ex doloribus cum ab laboriosam, ea inventore labore! Perferendis, perspiciatis, nihil. Sed possimus voluptas, earum, dicta aliquam inventore explicabo non odio tenetur culpa minus rem veniam eligendi quam cupiditate repellat amet. Suscipit maiores impedit qui corporis eaque, culpa maxime sed quae ipsa, eius tempora atque vel quos incidunt commodi, veritatis reiciendis.</p>
-</div>
-
-<div class="content last">
 	<h2>Dolor</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus id quidem, est illo rem distinctio reprehenderit quisquam. Numquam perferendis modi deleniti, vero sapiente fugit porro quis cumque consequuntur veniam quasi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam facere accusantium optio minima velit molestiae nisi ducimus reiciendis odit consequuntur non eveniet aperiam fugiat delectus doloremque tempore aut impedit ex doloribus cum ab laboriosam, ea inventore labore! Perferendis, perspiciatis, nihil. Sed possimus voluptas, earum, dicta aliquam inventore explicabo non odio tenetur culpa minus rem veniam eligendi quam cupiditate repellat amet. Suscipit maiores impedit qui corporis eaque, culpa maxime sed quae ipsa, eius tempora atque vel quos incidunt commodi, veritatis reiciendis.</p>
 </div>
+
+<div class="content">
+	<div class="sub"><a href="#top"><span>Back to top</span></a></div>
+</div>
+
+<div class="content end"></div>
 
 
 
@@ -71,8 +80,17 @@ Coded with Sass.
 <script type='application/javascript' src='js/main.js'></script>
 
 <script>
+	$(function() {
+		FastClick.attach(document.body);
+	});
+
   $(function() {
-      FastClick.attach(document.body);
+  $('a').click(function(e) {
+      e.preventDefault();
+      $('body, html').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 1000);
+    });
   });
 </script>
 
