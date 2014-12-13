@@ -34,7 +34,7 @@ function parallaxy()
 	offset4 = -(scrollVal * -0.6).toFixed(1);
 	offset3 = -(scrollVal * -0.5).toFixed(1);
 	offset2 = -(scrollVal * -0.4).toFixed(1);
-	offset1 = -(scrollVal * -0.2).toFixed(1);
+	offset1 = -(scrollVal * -0.3).toFixed(1);
 	offset0 = 0;
 
 
@@ -79,7 +79,6 @@ function scrollHandler(e)
 	isTouchscreen = 1;
 	container.setAttribute("class", "touch");
 	body.style.backgroundImage = 'none';
-	firewatchlogo.style.position = 'absolute';
 */
 	
 	if ( isTouchscreen != 1 )
@@ -90,170 +89,3 @@ function scrollHandler(e)
 
 body.onload = setup();
 document.addEventListener('scroll', scrollHandler, false);
-
-function images()
-{
-	$('#traditional').magnificPopup({
-	    items: [
-	      {
-	        src: 'img/traditional/01.png'
-	      },
-	      {
-	        src: 'img/traditional/02.jpg'
-	      },
-	      {
-	        src: 'img/traditional/03.jpg'
-	      },
-	      {
-	        src: 'img/traditional/04.jpg'
-	      },
-	      {
-	        src: 'img/traditional/05.jpg'
-	      },
-	      {
-	        src: 'img/traditional/07.jpg'
-	      },
-	      {
-	        src: 'img/traditional/08.jpg'
-	      },
-	      {
-	        src: 'img/traditional/09.jpg'
-	      },
-	      {
-	        src: 'img/traditional/10.jpg'
-	      },
-	      {
-	        src: 'img/traditional/11.jpg'
-	      },
-	      {
-	        src: 'img/traditional/12.jpg'
-	      },
-	      {
-	        src: 'img/traditional/13.jpg'
-	      },
-	      {
-	        src: 'img/traditional/14.jpg'
-	      },
-	      {
-	        src: 'img/traditional/15.jpg'
-	      },
-	      {
-	        src: 'img/traditional/16.jpg'
-	      },
-	      {
-	        src: 'img/traditional/17.jpg'
-	      },
-	      {
-	        src: 'img/traditional/18.jpg'
-	      },
-	      {
-	        src: 'img/traditional/19.jpg'
-	      },
-	      {
-	        src: 'img/traditional/20.jpg'
-	      },
-	      {
-	        src: 'img/traditional/21.jpg'
-	      },
-	      {
-	        src: 'img/traditional/22.jpg'
-	      },
-	      {
-	        src: 'img/traditional/23.jpg'
-	      },
-	    ],
-	    gallery: {
-	      enabled: true
-	    },
-	    type: 'image'
-	});
-
-	$('#digital').magnificPopup({
-	    items: [
-	      {
-	        src: 'img/digital/01.jpg'
-	      },
-	      {
-	        src: 'img/digital/02.jpg'
-	      },
-	      {
-	        src: 'img/digital/03.jpg'
-	      },
-	      {
-	        src: 'img/digital/04.jpg'
-	      },
-	      {
-	        src: 'img/digital/05.png'
-	      },
-	      {
-	        src: 'img/digital/06.png'
-	      },
-	      {
-	        src: 'img/digital/07.jpg'
-	      },
-	      {
-	        src: 'img/digital/08.jpg'
-	      },
-	      {
-	        src: 'img/digital/09.jpg'
-	      },
-	      {
-	        src: 'img/digital/10.jpg'
-	      },
-	      {
-	        src: 'img/digital/11.png'
-	      },
-	      {
-	        src: 'img/digital/12.jpg'
-	      },
-	      {
-	        src: 'img/digital/13.jpg'
-	      },
-	      {
-	        src: 'img/digital/14.jpg'
-	      },
-	      {
-	        src: 'img/digital/15.jpg'
-	      },
-	      {
-	        src: 'img/digital/16.jpg'
-	      },
-	      {
-	        src: 'img/digital/17.jpg'
-	      },
-	    ],
-	    gallery: {
-	      enabled: true
-	    },
-	    type: 'image'
-	});
-
-	$('#videos').magnificPopup({
-	    items: [
-	      {
-	        src: 'https://www.youtube.com/watch?v=JfPCn80MS2A',
-	        type: 'iframe'
-	      },
-	      {
-	        src: 'https://www.youtube.com/watch?v=lIsfPlJASFE',
-	        type: 'iframe'
-	      },
-	      {
-	        src: 'https://www.youtube.com/watch?v=L4WwDIY1JlA',
-	        type: 'iframe'
-	      },
-	      {
-	        src: 'https://www.youtube.com/watch?v=aLFrUH9AVik',
-	        type: 'iframe'
-	      },
-	      {
-	        src: 'https://www.youtube.com/watch?v=cH-SsWJfHec',
-	        type: 'iframe'
-	      },
-	    ],
-	    gallery: {
-	      enabled: true
-	    },
-	    type: 'image'
-	});
-}
