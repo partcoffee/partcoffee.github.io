@@ -1,5 +1,5 @@
 var body = document.body;
-var container = document.getElementById("container");
+var top = document.getElementById("top");
 
 var isTouchscreen;
 var scrollVal = 0;
@@ -18,7 +18,7 @@ function setup()
 	if ( platform.indexOf('ipad') != -1  ||  platform.indexOf('iphone') != -1 ) 
 	{
 		isTouchscreen = 1;
-		container.setAttribute("class", "touch");
+		top.setAttribute("class", "touch");
 		body.style.backgroundImage = 'none';
 	}
 	
@@ -75,11 +75,11 @@ function scrollHandler(e)
 	scrollVal = Math.max(window.pageYOffset,0);
 	
 	/* UNCOMMENT THESE LINES TO ABORT PARALLAX STUFF */
-/*
-	isTouchscreen = 1;
-	container.setAttribute("class", "touch");
-	body.style.backgroundImage = 'none';
-*/
+
+	// isTouchscreen = 1;
+	// top.setAttribute("class", "touch");
+	// body.style.backgroundImage = 'none';
+
 	
 	if ( isTouchscreen != 1 )
 	{
