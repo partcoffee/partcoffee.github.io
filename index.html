@@ -62,7 +62,7 @@ Coded with Sass.
 </div>
 
 <div class="content">
-	<div class="sub"><a href="#top"><span>Back to top</span></a></div>
+	<div class="sub"><a href="#top">Back to top</a></div>
 </div>
 
 <div class="content end"></div>
@@ -76,22 +76,24 @@ Coded with Sass.
 -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type='application/javascript' src='js/fastclick.min.js'></script>
 <script type='application/javascript' src='js/main.js'></script>
+<script type='application/javascript' src='js/fastclick.min.js'></script>
 
 <script>
-	$(function() {
-		FastClick.attach(document.body);
-	});
-
   $(function() {
-  $('a').click(function(e) {
+  $('.sub a').click(function(e) {
       e.preventDefault();
       $('body, html').animate({
         scrollTop: $($.attr(this, 'href')).offset().top
       }, 1000);
     });
   });
+</script>
+
+<script>
+	$(function() {
+		FastClick.attach(document.body);
+	});
 </script>
 
 </body>
