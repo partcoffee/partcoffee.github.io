@@ -70,19 +70,29 @@ Coded with Sass.
 <script type='application/javascript' src='js/fastclick.min.js'></script>
 
 <script>
-  $(function() {
-  $('.sub a').click(function(e) {
-      e.preventDefault();
-      $('body, html').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-      }, 1000);
-    });
-  });
-</script>
+	$(function() {
+		$('.sub a').click(function(e) {
+  		e.preventDefault();
 
-<script>
+  	$('body, html').animate({
+   	 	scrollTop: $($.attr(this, 'href')).offset().top
+  			}, 1000);
+		});
+	});
+	
 	$(function() {
 		FastClick.attach(document.body);
+	});
+
+	$('.end').click(function() {
+		$('#layer-0').css("background-image", "url(img/layer-0r.png)"),
+		$('#layer-4').css("background-image", "url(img/layer-1r.png)"),
+		$('.splash, a').css("background-color", "#e15527"),
+		$('.content, span').css("background-color", "#414143"),
+		$('.end').css("background-image", "url(img/layer-1r.png)"),
+		$('h1').css("color", "#FFF"),
+		$('#layer-2, .fly').fadeOut(300),
+		console.log('Easter egg?!');
 	});
 </script>
 
