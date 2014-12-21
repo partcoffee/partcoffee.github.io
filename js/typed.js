@@ -342,7 +342,7 @@
     };
 
     $.fn.typed.defaults = {
-        strings: ["Transmedia '15"],
+        strings: ["Transmedia <span>2015</span>"],
         // typing speed
         typeSpeed: 20,
         // time before typing starts
@@ -364,7 +364,11 @@
         // either html or text
         contentType: 'html',
         // call when done callback function
-        callback: function() {},
+        callback: function() {
+            $('nav').addClass("animated delay fadeIn"),
+            $('.date').addClass("animated delay fadeInUp"),
+            $('h2, .welcome .button').addClass("animated delay fadeInDown");
+        },
         // starting callback function before each string
         preStringTyped: function() {},
         //callback for every typed string
