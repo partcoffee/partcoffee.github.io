@@ -2,10 +2,10 @@
 title: Magnus Skare
 email: your-email@domain.com
 description: The Portfolio of Magnus Skare.
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://magnusskare.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+baseurl: "/about"
+url: "http://magnusskare.com"
+twitter_username: MagnusSkare
+github_username:  partcoffee
 
 # Build settings
 markdown: kramdown
