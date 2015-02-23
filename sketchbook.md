@@ -10,7 +10,7 @@ permalink: /sketchbook/
 Should you have a sketchbook?
 -
 
-It doesn’t matter whether you define yourself as a creative or not – you still have ideas. Ideas worth keeping and acting upon. These ideas sit comfortably inside your pate, but a sketchbook could extend that to a physical thing you can look at, touch, feel or even tear apart if it doesn't really work out. You don't have to make polished artwork every time - these are sketches, and they're supposed to be quick and dirty.
+It doesn’t matter whether you define yourself as creative or not – you still have ideas. Ideas worth keeping and acting upon. These ideas sit comfortably inside your pate, but a sketchbook could extend that to a physical thing you can look at, touch, feel or even tear apart if it doesn't really work out. You don't have to make polished artwork every time - these are sketches, and they're supposed to be quick and dirty.
 
 You probably already know what a sketchbook is though, and you probably have one already - perhaps it's your phone or the top right corner of some important document. What I challenge you to do, however, is to pick up a physical sketchbook and explore the benefits of owning one - at least for a week or two.
 
