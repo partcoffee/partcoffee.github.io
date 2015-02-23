@@ -1,0 +1,15 @@
+# Site settings
+title: Magnus Skare
+email: your-email@domain.com
+description: The Portfolio of Magnus Skare.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://magnusskare.com" # the base hostname & protocol for your site
+twitter_username: jekyllrb
+github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: :compressed
