@@ -60,6 +60,8 @@ nav li a {
 	width: 100%;
 	height: 100%;
 	background: #e4e4e4;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
 }
 
 .curtain {
@@ -67,5 +69,28 @@ nav li a {
 	animation: swipeRight $anim ease-in-out forwards;
 }
 
+@-webkit-keyframes swipeRight {
+	50%, 60% {
+		-webkit-transform: translate(0);
+		transform: translate(0);
+	}
+	100% {
+		-webkit-transform: translate3d(101%,0,0);
+		transform: translate3d(101%,0,0);
+		visibility: hidden; /* Okay, this one is ugly, but it's a temporary fix for iOS and desktop Safari */
+	}
+}
 
+@keyframes swipeRight {
+	50%, 60% {
+		-webkit-transform: translate(0);
+		transform: translate(0);
+
+	}
+	100% {
+		-webkit-transform: translate3d(101%,0,0);
+		transform: translate3d(101%,0,0);
+		visibility: hidden;
+	}
+}
 
