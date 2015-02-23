@@ -3,16 +3,3 @@ function FastClick(t){"use strict";function e(t,e){return function(){return t.ap
 $(function() {
   FastClick.attach(document.body);
 });
-
-// $(window).scroll(function() {    
-//   var a = $(window).scrollTop();
-// 	var b = $('blockquote').offset().top;
-// 	var c = $(window).height();
-// 
-// 	if (a > (b - c)) {
-//		$('blockquote').addClass('fadeIn').removeClass('fadeOut');
-//	}
-//	else {
-//		$('blockquote').addClass('fadeOut').removeClass('fadeIn');
-//	}
-//});
