@@ -45,10 +45,14 @@ $anim: 0.76s; /* Initial animation duration */
     #General
 \*------------------------------------*/
 
+::-moz-selection {
+	background: $blue;
+	color: $main-color;
+}
+
 ::selection {
 	background: $blue;
 	color: $main-color;
-	font-family: monospace;
 }
 
 html, body {
