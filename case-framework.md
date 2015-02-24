@@ -1,11 +1,9 @@
 ---
-layout: page
+layout: post
 title: A Super Simple Start - Magnus Skare
+headline: A Super Simple Start
 permalink: /case-framework/
 ---
-
-A Super Simple Start
-=
 
 *I'm constantly learning, so this is a project I will continuously update. It's primarily a tool to make my life easier, but you're free to use it and modify as you wish. You can find the latest version on <a href="https://github.com/partcoffee/startAgain" taget="_blank">GitHub</a>.*
 
