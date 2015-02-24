@@ -14,7 +14,7 @@ It doesn’t matter whether you define yourself as creative or not – you still
 
 You probably already know what a sketchbook is though, and you probably have one already - perhaps it's your phone or the top right corner of some important document. What I challenge you to do, however, is to pick up a physical sketchbook and explore the benefits of owning one - at least for a week or two.
 
-> A sketchbook is everything in the back of your head and the tip of your tongue.
+> A sketchbook is everything in the back of your head and on the tip of your tongue.
 
 <img src="../img/sketchbook/img_01.jpg" alt="A modern sketchbook" class="cover big">
 
