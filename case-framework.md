@@ -7,7 +7,7 @@ permalink: /case-framework/
 A Super Simple Start
 =
 
-*I'm constantly learning, so this is a project I will continuously update. You can find the latest version on <a href="https://github.com/partcoffee/startAgain" taget="_blank">GitHub</a>.*
+*I'm constantly learning, so this is a project I will continuously update. It's primarily a tool to make my life easier, but you're free to use it and modify as you wish. You can find the latest version on <a href="https://github.com/partcoffee/startAgain" taget="_blank">GitHub</a>.*
 
 Writing code is tedious, and I found myself writing the same thing over and over again unless I used extensive frameworks like Foundation and Bootstrap. No hate, but they're way too big for the majority of the projects I'm currently working on.
 
