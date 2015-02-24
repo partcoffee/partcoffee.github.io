@@ -7,7 +7,7 @@ permalink: /projects/
 Projects
 =
 
-I like to tinker with stuff and I’m probably currently working on some sort of side project. <a href="https://twitter.com/MagnusSkare" target="_blank">Ask me</a> what I've been up to or peek at some of my latest work below!
+I like to tinker with stuff and I’m probably currently working on some sort of side project. <a href="https://twitter.com/MagnusSkare" target="_blank">Ask me</a> what I've been up to or go buy some of that patience while I work on these studies.
 
 Case studies (Coming soon)
 -
