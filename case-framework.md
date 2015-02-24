@@ -13,6 +13,8 @@ Writing code is tedious, and I found myself writing the same thing over and over
 
 So, frustrated with that fact, I set up a <a href="https://github.com/partcoffee/startAgain" target="_blank">starting point</a> to kickstart all upcoming project. No styling, nothing fancy, no huge library apart from jQuery, just the things I found myself writing over and over again. It's currently featuring a grid system, animations, retina support for images and some basic resets. And all in Sass so it's easy to maintain!
 
+<img src="../img/framework/frame.jpg" alt="Framework" class="cover">
+
 Configuration
 -
 
