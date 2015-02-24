@@ -81,7 +81,7 @@ Do not let your drawing skills stop you. Start now. Write down your dreams, draw
 
 *In the next part, I will cover what to put in your sketchbook. Feel free to <a href="http://twitter.com/share?text=How To Start Sketching" target="_blank">share</a> this series for a chance to win yourself a noteworthy prize!*
 
-<a href="/sketchbook-2" class="next">Next up: Methods for UI sketching</a>
+<a href="/sketchbook-2" class="next">Next up: What To Sketch</a>
 
 
 
