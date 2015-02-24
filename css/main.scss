@@ -195,7 +195,7 @@ nav {
 		margin-bottom: 42px;
 
 		&:first-of-type {
-			margin-bottom: 10px;
+			margin-bottom: 5px;
 		}
 	}
 
@@ -441,6 +441,10 @@ code {
 		ul {
 			border-bottom: 0;
 			margin-bottom: 0;
+
+			&:first-of-type {
+				margin-bottom: 20px;
+			}
 		}
 
 		li {
