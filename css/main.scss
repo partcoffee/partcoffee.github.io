@@ -180,7 +180,7 @@ footer {
 \*------------------------------------*/
 
 .words {
-	color: $lighter;
+	color: $main-color;
 	font: 400 12px/1.6 $primary;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -256,13 +256,14 @@ nav {
 
 h1 {
 	color: $lighter;
-	font: 300 33.75px/1.8 $thin;
+	font: 300 40px/1.8 $thin;
 	line-height: 1;
 	margin-top: 20px;
 	text-align: center;
 
 	&:first-of-type {
-		font-size: 33.75px;
+		color: $main-color;
+		font-size: 34px;
 		font-weight: 100;
 		margin: 60px 0;
 		text-transform: uppercase;
@@ -271,7 +272,7 @@ h1 {
 
 h2 {
 	color: $main-color;
-	font: 300 22.5px/1.8 $thin;
+	font: 300 24px/1.8 $thin;
 	line-height: 1;
 	padding: 30px 0 0;
 }
@@ -281,14 +282,14 @@ h2 {
 }
 
 p {
-	font: 400 15px/1.8 $serif;
+	font: 400 14px/1.8 $serif;
 	color: $main-color;
 	margin: 24px 0;
 }
 
 a {
 	@include animate(0.2s);
-	font: 400 15px/1.8 $serif;
+	font: 400 14px/1.8 $serif;
 	text-decoration: none;
 	color: $lighter;
 
@@ -305,7 +306,7 @@ q p, blockquote p {
 	border-left: 1px solid $highlight-color;
 	color: $highlight-color;
 	display: block;
-	font: 100 33.75px/1.2 $thin;
+	font: 100 30px/1.2 $thin;
 	margin: 30px auto;
 	padding: 60px 0 30px 20px;
 	position: relative;
@@ -329,7 +330,7 @@ q p, blockquote p {
 
 article {
 	li {
-		font: 400 15px/1.8 $serif;
+		font: 400 14px/1.8 $serif;
 		position: relative;
 		margin-bottom: 10px;
 

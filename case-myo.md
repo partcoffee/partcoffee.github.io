@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Myo Armband - Magnus Skare
+headline: Myo Armband
 permalink: /case-myo/
 ---
-
-Myo Armband
-=
 
 Coming soon.

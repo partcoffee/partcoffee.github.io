@@ -1,10 +1,8 @@
 ---
 layout: page
 title: Sketchbook - Magnus Skare
+headline: Sketchbook Part Three
 permalink: /sketchbook-3/
 ---
-
-Paper to web
-=
 
 (Coming 03.03.15)
