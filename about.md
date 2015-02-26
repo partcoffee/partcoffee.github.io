@@ -5,7 +5,7 @@ headline: Storytime
 permalink: /about/
 ---
 
-My name is Magnus Skare. I was born and raised in Northern Norway, and I'm currently working and stuyding in Winchester, UK. I'm a designer of sorts, but I also enjoy the code that goes behind it - so product/UX designer sounds about right.
+My name is Magnus Skare. I was born and raised in Northern Norway, and I'm currently working and studying in Winchester, UK. I'm a designer of sorts, but I also enjoy the code that goes behind it - so product/UX designer sounds about right.
 
 This website is where I share thoughts, ideas, ongoing projects and work. Consider it my professional playground.
 

@@ -8,7 +8,7 @@
             <div class="curtain"></div>
         </li>
         <li>
-            <a href='/sketchbook' {% if active[1] == 'sketchbook' %}class='active'{% endif %}>Sketchbook</a>
+            <a href='/sketchbook' {% if active[1] == 'sketchbook' %} class='active' {% elsif active[1] == 'sketchbook-2' %} class='active' {% elsif active[1] == 'sketchbook-3' %} class='active' {% elsif active[1] == 'sketchbook-4' %} class='active' {% endif %}>Sketchbook</a>
             <div class="curtain"></div>
         </li>
         <li>
