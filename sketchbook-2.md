@@ -12,7 +12,7 @@ permalink: /sketchbook-2/
 Get sketching
 -
 
-So now you've got a sketchbook &mdash; or at least a pen and some paper. That's the simplicity of sketching, it really doesn't take much more than that. It's a direct connect between you and that snug brain of yours.
+So now you've got a sketchbook &mdash; or at least a pen and some paper. That's the simplicity of sketching, it really doesn't take much more than that. It's a direct connection between you and that snug brain of yours.
 
 Now, I'm not saying you have to sketch something every day &mdash; do it because you want to and because you benefit from it, not because I tell you to. Once you have the right mindset and motivation, you can start to fill it up in four simple steps:
 
