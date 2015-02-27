@@ -5,7 +5,11 @@ headline: Getting Started
 permalink: /sketchbook/
 ---
 
-*<a href="/case-sketchbook">Sketchbook</a> is a series to encourage a solid foundation for any project. It was made to mark the launch of this website, with a noteworthy prize at the end. <a href="http://twitter.com/share?text=How%20To%20Start%20Sketching" target="_blank">Share</a> and let me know for a chance to win!*
+*<a href="/case-sketchbook">Sketchbook</a> is a series to encourage a solid foundation for any creative project. It was made to mark the launch of this website, with a noteworthy prize at the end. <a href="http://twitter.com/share?text=How%20To%20Start%20Sketching" target="_blank">Share</a> and let me know for a chance to win!*
+
+This is part one<br>
+<a href="/sketchbook-2">Skip to part two</a><br>
+<a href="/sketchbook-3">Skip to part three</a>
 
 Should you have a sketchbook?
 -
