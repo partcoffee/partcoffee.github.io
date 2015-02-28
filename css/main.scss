@@ -31,11 +31,14 @@ $black: #202020;
 }
 
 
-/* Variables */
+/* Navigation */
 $total: 8; /* Total menu items */
 $toplist: 3; /* List items before break */
-$delay: 0.05s; /* Animation delay */
+$delay: 0.06s; /* Animation delay */
 $anim: 0.76s; /* Initial animation duration */
+$curtain: #e4e4e4; /* #e4e4e4 */ /* Curtain colour */
+
+/* @import 'syntax'; */
 
 
 
@@ -150,6 +153,10 @@ article {
 	iframe {
 		width: 100%;
 	}
+
+	.spaceless {
+		margin-top: 0;
+	}
 }
 
 footer {
@@ -220,7 +227,6 @@ nav {
 
 .sidenote {
 	display: block;
-	line-height: 0;
 	position: relative;
 	margin: 50px 0;
 
@@ -243,6 +249,23 @@ nav {
 	}
 }
 
+.img {
+	line-height: 0;
+
+	span {
+		bottom: 0;
+	}
+}
+
+.text {
+	margin: 24px 0;
+
+	span {
+		display: none;
+		top: 0;
+	}
+}
+
 .next {
 	display: block;
 	font: 400 14px/1.8 $primary;
@@ -260,12 +283,11 @@ nav {
 
 h1 {
 	color: $main-color;
-	font: 100 34px/1.8 $thin;
+	font: 300 34px/1.8 $thin;
 	line-height: 1;
 	margin-top: 20px;
 	margin-left: (-34px/20);
 	text-align: center;
-	text-transform: uppercase;
 
 	&:first-of-type {
 		margin-top: 60px;
@@ -295,6 +317,7 @@ a {
 	font: 400 14px/1.8 $serif;
 	text-decoration: none;
 	color: $lighter;
+	-webkit-tap-highlight-color: #e4e4e4;
 
 	&:hover {
 		color: $main-color;
@@ -311,7 +334,7 @@ q p, blockquote p {
 	display: block;
 	font: 100 30px/1.2 $thin;
 	margin: 30px auto;
-	padding: 60px 0 30px 20px;
+	padding: 60px 0 40px 20px;
 	position: relative;
 	text-align: left;
 
@@ -339,7 +362,7 @@ article {
 
 		&:before {
 			color: $highlight-color;
-			content: "\203a";
+			content: "\00b7";
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -353,13 +376,13 @@ article {
 code {
 	background: #f6f6f6;
 	border-radius: 2px;
-	color: #555;
+	color: $main-color;
 	display: block;
 	font: 700 13px/1.8 monospace;
 	margin: 30px 0;
 	padding: 20px;
 	text-align: left;
-	white-space: pre-line;
+	white-space: pre-wrap;
 	width: 100%;
 }
 
@@ -464,8 +487,8 @@ code {
 		width: 570px;
 
 		li:before {
-			left: -36px;
-			width: 34px;
+			left: -26px;
+			width: 24px;
 		}
 
 		iframe {
@@ -484,12 +507,16 @@ code {
 	.sidenote span {
 			border-top: 1px solid $ultralight;
 			border-bottom: 1px solid $ultralight;
-			bottom: 0;
+			display: block;
 			font: 400 13px/1.4 $primary;
 			padding: 6px 0;
 			width: 240px;
 			margin-left: -260px;
 			position: absolute;
+	}
+
+	.text {
+		display: inline;
 	}
 
 	.spaceless {

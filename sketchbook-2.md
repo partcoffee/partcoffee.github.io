@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sketchbook - Magnus Skare
-headline: Filling Sketchbooks
+headline: Filling sketchbooks
 permalink: /sketchbook-2/
 ---
 

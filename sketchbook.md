@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sketchbook - Magnus Skare
-headline: Getting Started
+headline: Getting started
 permalink: /sketchbook/
 ---
 
@@ -56,7 +56,7 @@ For the following benefits we'll assume you're going with a tablet, but the bene
 
 <a href="https://itunes.apple.com/gb/app/procreate-sketch-paint-create./id425073498?mt=8" target="_blank">Procreate</a> is a nice option, but arguably a bit complex for sketching out basic ideas. The benefit of going digital should be ease of use. Making things look neat is not our goal right now, our goal is to get those ideas of yours in front of your eyes.
 
-<span class="sidenote">
+<span class="sidenote img">
 	<img src="../img/sketchbook/img_05.jpg" alt="Pencil by 53">
 	<span>Pencil stylus by 53</span>
 </span>
@@ -67,7 +67,7 @@ Remember earlier, when I mentioned the importance of where you work and how you 
 
 If you're just starting out, go with something cheap. Go with a basic notebook &mdash; you can commit to something more expensive when you're more comfortable and determined.
 
-<span class="sidenote">
+<span class="sidenote img">
 	<img src="../img/sketchbook/img_07.jpg" alt="UI sketch">
 	<span>UI sketching from Paper's Mix community</span>
 </span>
