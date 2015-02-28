@@ -9,7 +9,8 @@ permalink: /sketchbook/
 
 This is part one<br>
 <a href="/sketchbook-2">Skip to part two</a><br>
-<a href="/sketchbook-3">Skip to part three</a>
+<a href="/sketchbook-3">Skip to part three</a><br>
+<a href="/sketchbook-4">Skip to part four</a>
 
 Should you have a sketchbook?
 -
@@ -86,6 +87,3 @@ Do not let your drawing skills stop you. Start now. Write down your dreams, draw
 *In the next part, I will cover what to put in your sketchbook. Feel free to <a href="http://twitter.com/share?text=How%20To%20Start%20Sketching" target="_blank">share</a> this series for a chance to win yourself a noteworthy prize!*
 
 <a href="/sketchbook-2" class="next">Next up: What To Sketch</a>
-
-
-
