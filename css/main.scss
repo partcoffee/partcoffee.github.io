@@ -36,7 +36,7 @@ $total: 8; /* Total menu items */
 $toplist: 3; /* List items before break */
 $delay: 0.06s; /* Animation delay */
 $anim: 0.76s; /* Initial animation duration */
-$curtain: #e4e4e4; /* #e4e4e4 */ /* Curtain colour */
+$curtain: #e4e4e4; /* #e4e4e4 is default */ /* Curtain colour */
 
 /* @import 'syntax'; */
 
@@ -93,8 +93,13 @@ body {
 
 img {
 	background: darken($light, 20%);
+	border-width: 0;
 	max-width: 100%;
 	width: 100%;
+}
+
+.transparent {
+	background: transparent;
 }
 
 ul, li {
@@ -127,7 +132,6 @@ header {
 	img {
 		margin-top: 150px;
 		width: 100px;
-		background: transparent;
 	}
 }
 
@@ -238,10 +242,13 @@ nav {
 .sidenote span {
 	display: block;
 	border-bottom: 1px solid $ultralight;
-	font: 400 13px/1.4 $primary;
 	padding: 6px 0;
 	position: relative;
 	width: 100%;
+
+	&, & a {
+		font: 400 13px/1.4 $primary;
+	}
 
 	strong {
 		font-weight: normal;
@@ -281,8 +288,13 @@ nav {
     #Typography
 \*------------------------------------*/
 
+h1, footer a, code {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 h1 {
-	color: $main-color;
+	color: darken($main-color, 10%);
 	font: 300 34px/1.8 $thin;
 	line-height: 1;
 	margin-top: 20px;
