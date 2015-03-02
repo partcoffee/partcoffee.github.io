@@ -5,7 +5,7 @@ headline: Sketchbook Case Study
 permalink: /case-sketchbook/
 ---
 
-Sketchbook is a series to encourage a solid foundation for any creative project. It's an ongoing campaign to mark the launch of this website. <a href="http://twitter.com/share?text=How To Start Sketching" target="_blank">Share</a> the articles for a chance to win a prize!
+Sketchbook is a series to encourage a solid foundation for any creative project. It's an ongoing campaign to mark the launch of this website. <a href="http://twitter.com/share?text=How%20To%20Start%20Sketching" target="_blank">Share</a> the articles for a chance to win a prize!
 
 A full case-study will be posted here at the end of the campaign.
 
