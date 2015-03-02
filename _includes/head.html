@@ -9,5 +9,5 @@
 <link rel="shortcut icon" href="../img/favicon.ico">
 <link rel="stylesheet" href="../css/main.css" />
 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro%7CAlegreya+Sans:100,300' rel='stylesheet' type='text/css'>
-<link rel="canonical" href="http://magnusskare.com/" />
+<link rel="canonical" href="{% if page.title %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}{% endif %}" />
 </head>
