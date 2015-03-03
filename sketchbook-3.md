@@ -36,7 +36,7 @@ Our layout looks simple, but good &mdash; time to develop! This will be a static
 
 <img src="../img/sketchbook/img_01.png" alt="Exploring typography" class="transparent big">
 
-Typography is probably the most important part of our cover page. We are looking for a elegant and bold font, but we should keep our options open. I chose <a href="http://www.google.com/fonts/specimen/Montserrat" target="_blank">Montserrat</a> based on our buzzwords and typographic brainstorm. Montserrat is the top right sans-serif font above by the way.
+Typography is probably the most important part of our cover page. We are looking for an elegant and bold font, but we should keep our options open. I chose <a href="http://www.google.com/fonts/specimen/Montserrat" target="_blank">Montserrat</a> based on our buzzwords and typographic brainstorm. Montserrat is the top right sans-serif font above by the way.
 
 * Sans-serif
 * Uppercase
