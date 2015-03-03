@@ -329,7 +329,7 @@ a {
 	font: 400 14px/1.8 $serif;
 	text-decoration: none;
 	color: $lighter;
-	-webkit-tap-highlight-color: #e4e4e4;
+	-webkit-tap-highlight-color: transparent;
 
 	&:hover {
 		color: $main-color;
