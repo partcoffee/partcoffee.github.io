@@ -70,7 +70,7 @@ You can probably figure this out <a href="/experimental/cover" target="_blank">f
 Whoo!
 -
 
-We used our sketchbook throughout the process to make a neat little cover-page for individuals to promote themselves. Our example is promoting an actor, but I kept it universal enough to be adaptable to any skill and personality. Feel free to use it for whatever you want. It's even environmentally friendly!
+We used our sketchbook throughout the process to make a neat little cover-page for individuals to promote themselves. Our example is promoting an actor, but I kept it universal enough to be adaptable to any skill and personality. Feel free to <a href="/experimental/cover.zip">download it</a>, and use it for whatever you want. It's even environmentally friendly!
 
 <img src="../img/sketchbook/2.jpg" alt="Final outcome" class="big">
 
