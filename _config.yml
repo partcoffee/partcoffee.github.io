@@ -1,7 +1,7 @@
 # Site settings
 title: Magnus Skare
 description: The Portfolio of Magnus Skare.
-baseurl: "/about"
+baseurl: ""
 url: "http://magnusskare.com"
 twitter_username: MagnusSkare
 github_username:  partcoffee
