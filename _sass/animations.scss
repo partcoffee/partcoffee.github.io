@@ -21,22 +21,6 @@
 	animation-name: fadeIn;
 } */
 
-nav li a {
-	visibility: hidden;
-	-webkit-animation: showMe $anim step-end forwards;
-	animation: showMe $anim step-end forwards;
-}
-
-@-webkit-keyframes showMe {
-	from { visibility: hidden; }
-	60%, 100% { visibility: visible; }
-}
-
-@keyframes showMe {
-	from { visibility: hidden; }
-	60%, 100% { visibility: visible; }
-}
-
 @for $i from 1 through $toplist {
 
   ul:nth-of-type(1) li:nth-child(#{$i}) .curtain, ul:nth-of-type(1) li:nth-child(#{$i}) a {
@@ -53,15 +37,32 @@ nav li a {
 	}
 }
 
+nav li a {
+	opacity: 0;
+	-webkit-animation: showMe $anim step-end forwards;
+	animation: showMe $anim step-end forwards;
+}
+
+@-webkit-keyframes showMe {
+	from { visibility: hidden; opacity: 1; }
+	60%, 100% { visibility: visible; opacity: 1; }
+}
+
+@keyframes showMe {
+	from { visibility: hidden; opacity: 1; }
+	60%, 100% { visibility: visible; opacity: 1; }
+}
+
 .curtain {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
 	background: $curtain;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	width: 100%;
 	-webkit-transform: translate3d(-100%,0,0);
 	transform: translate3d(-100%,0,0);
+	visibility: hidden;
 }
 
 .curtain {
@@ -70,6 +71,9 @@ nav li a {
 }
 
 @-webkit-keyframes swipeRight {
+	0% {
+		visibility: visible;
+	}
 	50%, 60% {
 		-webkit-transform: translate(0);
 		transform: translate(0);
@@ -82,10 +86,12 @@ nav li a {
 }
 
 @keyframes swipeRight {
+	0% {
+		visibility: visible;
+	}
 	50%, 60% {
 		-webkit-transform: translate(0);
 		transform: translate(0);
-
 	}
 	100% {
 		-webkit-transform: translate3d(101%,0,0);
