@@ -48,7 +48,7 @@ We will also give our text a very subtle shadow to ensure legible text on bright
 
 <img src="../img/sketchbook/img_13.jpg" alt="Buttons">
 
-For the footer links, I had some icons in mind. These will adjust depending on what sort of media channels our actor is looking to use, but for now we'll  assume he/she is an avid user of Facebook, Twitter and email. We are loading <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> to be flexible.
+For the footer links, I had some icons in mind. These will adjust depending on what sort of media channels our actor is looking to use, but for now we'll  assume he/she is an avid user of Facebook, Twitter and email. We are loading <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> to be flexible, and a picture from <a href="unsplash.com" target="_blank">Unsplash</a> to speed things up.
 
 Wizardry
 -
