@@ -556,6 +556,10 @@ code {
 	article {
 		max-width: (900px - 750px) + 540px;
 		width: (900px - 750px) + 540px;
+
+		li {
+			font-size: 18px;
+		}
 	}
 
 	h1 {
@@ -571,7 +575,7 @@ code {
 		font-size: 18px;
 		margin: 30px 0;
 
-		a, li {
+		a {
 			font-size: 18px;
 		}
 	}
