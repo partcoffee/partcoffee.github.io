@@ -557,13 +557,10 @@ code {
 		max-width: (900px - 750px) + 540px;
 		width: (900px - 750px) + 540px;
 
-		p {
+		p, li, a {
+			color: rgba($main-color, 0.8);
+			font-size: 18px;
 			margin: 30px 0;
-
-			&, li, a {
-				font-size: 18px;
-				color: rgba($main-color, 0.8);
-			}
 		}
 	}
 
