@@ -11,8 +11,7 @@ This website is where I share thoughts, ideas, ongoing projects and work. Consid
 
 <img class="cover" src="../img/assets/story.jpg" alt="Img">
 
-Workflow
--
+## Workflow
 
 For web, I'm a fan of a simple sketch followed by development. I like to keep up on new web trends, but I prefer not to be dictated by them.
 
@@ -23,7 +22,6 @@ As for development, I stick to a few powerful tools:
 * Node
 * Git
 
-Ideals
--
+## Ideals
 
 * Simplify

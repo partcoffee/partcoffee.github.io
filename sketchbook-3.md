@@ -11,8 +11,7 @@ permalink: /sketchbook-3/
 
 <a href="/experimental/cover" target="_blank">Live demo</a>
 
-Planning
--
+## Planning
 
 Let's build a little something! We'll do more with less and develop a cover page &mdash; which is like an online business card or poster to represent you or your product. We would like to include a name, a title, and a way to connect. We start off with a sketch to explore the possibilities.
 
@@ -29,8 +28,7 @@ Let's start by making the website type obvious. This is representing a single pe
 
 Our actor wants to get in touch with people to discuss ideas and opportunities &mdash; that's our call-to-action right there, so we'll add a few links to make people talk and connect. All we need now is a good picture of our actor, and we're good to go!
 
-Development
--
+## Development
 
 Our layout looks simple, but good &mdash; time to develop! This will be a static site, so our code should be pretty straight forward. I will not cover any in-depth code here, but you can check out a <a href="/experimental/cover" target="_blank">live demo here</a>.
 
@@ -50,8 +48,7 @@ We will also give our text a very subtle shadow to ensure legible text on bright
 
 For the footer links, I had some icons in mind. These will adjust depending on what sort of media channels our actor is looking to use, but for now we'll  assume he/she is an avid user of Facebook, Twitter and email. We are loading <a href="http://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a> to be flexible, and a picture from <a href="unsplash.com" target="_blank">Unsplash</a> to speed things up.
 
-Wizardry
--
+## Wizardry
 
 You can probably figure this out <a href="/experimental/cover" target="_blank">from the demo</a>, but the two interesting bits from the code would be the full screen background image and centered content.
 
@@ -72,7 +69,7 @@ Whoo!
 
 We used our sketchbook throughout the process to make a neat little cover-page for individuals to promote themselves. Our example is promoting an actor, but I kept it universal enough to be adaptable to any skill and personality. Feel free to <a href="/experimental/cover.zip">download it</a>, and use it for whatever you want. It's even environmentally friendly!
 
-<img src="../img/sketchbook/2.jpg" alt="Final outcome" class="big">
+<img src="../img/sketchbook/img_16.jpg" alt="Final outcome" class="big">
 
 *In the next part, I will cover some common pitfalls and make sure you're on your way to a sketchy, but awesome future. Feel free to <a href="http://twitter.com/share?text=How%20To%20Start%20Sketching" target="_blank">share</a> this series for a chance to win yourself a noteworthy prize!*
 

@@ -9,8 +9,7 @@ permalink: /sketchbook-2/
 
 *<a href="/case-sketchbook">Sketchbook</a> is a series to encourage a solid foundation for any creative project. It was made to mark the launch of this website, with a noteworthy prize at the end. <a href="http://twitter.com/share?text=How%20To%20Start%20Sketching" target="_blank">Share</a> and let me know for a chance to win!*
 
-Get sketching
--
+## Get sketching
 
 So now you've got a sketchbook &mdash; or at least a pen and some paper. That's the simplicity of sketching, it really doesn't take much more than that. It's a direct connection between you and that snug brain of yours.
 
@@ -23,17 +22,15 @@ Now, I'm not saying you have to sketch something every day &mdash; do it because
 
 Before we go any further, I should mention that bringing your sketchbook everywhere is a bit of a bold statement. I don't mean literally everywhere, but wherever it's appropriate &mdash; like public transport, dull lunch breaks, or when Netflix starts to buffer. You don't even have to limit yourself to a single sketchbook, so you can pretty much have them everywhere.
 
-Explore
--
+## Explore
 
 As with any form of research, this is also a journey and you're exploring potential paths &mdash; and at the same time you're laying the foundation for your own product. A solid foundation is important, but remember to keep it light. To cite Mr. Draplin in the video from <a href="https://vimeo.com/113751583" target="_blank">Lynda</a> below:
 
 > "Sketching is supposed to be fast and fun"
 
-<iframe class="big" src="//player.vimeo.com/video/113751583?color=46d3e0&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<iframe class="big" src="//player.vimeo.com/video/113751583?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Experiment
--
+## Experiment
 
 Try experimenting with different thoughts and directions, you might stumble upon some great stuff. Have this long list of things to kickstart your new sketchbook! Draw it or write it &mdash; whatever's most fun and/or convenient for you:
 

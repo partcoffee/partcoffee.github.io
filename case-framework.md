@@ -13,8 +13,7 @@ So, frustrated with that fact, I set up a <a href="https://github.com/partcoffee
 
 <img src="../img/framework/frame.jpg" alt="Framework" class="cover">
 
-Configuration
--
+## Configuration
 
 The HTML document is merely a basic setup, which includes jQuery, Google font imports, basic meta tags, and <a href="https://github.com/ftlabs/fastclick" target="_blank">FastClick</a> to battle pesky smartphone behaviour. The fun stuff is in the Sass:
 
@@ -49,8 +48,7 @@ Lastly, I import the grid system and retina display support (when needed) before
 	    0% opacity: 0
 	    100% opacity: 1
 
-The grid
--
+## The grid
 
 	.grid
 	    width: 100%
