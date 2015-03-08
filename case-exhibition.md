@@ -5,7 +5,7 @@ headline: Art Exhibition
 permalink: /case-exhibition/
 ---
 
-*Full case study coming soon. For now, enjoy some pictures from the day.*
+*Full case study coming soon. For now, enjoy these pictures from the day.*
 
 <img src="../img/eoys/01.jpg" alt="End of year show">
 <img src="../img/eoys/16.jpg" alt="End of year show" class="big">

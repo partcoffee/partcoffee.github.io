@@ -9,13 +9,13 @@ I like to tinker with stuff and I’m probably currently working on some sort of
 
 ## Case studies
 
+<a href="/case-exhibition">Art Exhibition</a>
+
 <a href="/case-framework">A Super Simple Start</a>
 
 <a href="/case-sketchbook">Sketchbook</a>
 
 <a href="/case-myo">Designing for MYO</a> (Coming soon)
-
-<a href="/case-exhibition">Art Exhibition</a> (Coming soon)
 
 ## Other
 
