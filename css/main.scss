@@ -558,9 +558,12 @@ code {
 		width: (900px - 750px) + 540px;
 
 		p, li, a {
-			color: rgba($main-color, 0.8);
-			font-size: 18px;
+			font-size: 17px;
 			margin: 30px 0;
+		}
+
+		p, li {
+			color: rgba($main-color, 0.8);
 		}
 	}
 
