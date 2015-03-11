@@ -223,7 +223,7 @@ nav {
 	}
 
 	a {
-		font: 400 12px/1.6 $primary;
+		font: 400 13px/1.6 $primary;
 		letter-spacing: 1px;
 		text-transform: uppercase;
 	}
@@ -304,6 +304,10 @@ h1 {
 	&:first-of-type {
 		margin-top: 60px;
 	}
+}
+
+.first-type {
+	text-align: left;
 }
 
 h2 {
@@ -486,6 +490,10 @@ code {
 
 		li {
 			display: block;
+		}
+
+		a {
+			font-size: 12px;
 		}
 	}
 
