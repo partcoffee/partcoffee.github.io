@@ -11,19 +11,19 @@ You've got a sketchbook, you've seen how I use it, and you're hungry to do it yo
 
 <img src="../img/sketchbook/img_17.jpg" alt="Tip number one">
 
-## Make it easy
+<h2 class="spaceless">Make it easy</h2>
 
 You know how it's easier to eat fruit if there's a bowl of ready cut fruit in front of you? Sketching is the same way. Keep it close, keep it available and always have a pen within reach. Sketching out ideas will eventually become easier than not doing so. You'll appreciate doing this in the long run.
 
 <img src="../img/sketchbook/img_18.jpg" alt="Tip number two">
 
-## Be hungry
+<h2 class="spaceless">Be hungry</h2>
 
 Cliché, I know, but be hungry for knowledge. What I mean by that is that even if you get to a point where you can make great stuff with ease, you shouldn't stop learning. In terms of your sketchbook, that basically means you can look back through the pages and see tremendous amounts of progression over the years.
 
 <img src="../img/sketchbook/img_19.jpg" alt="Tip number three">
 
-## Inspire and be inspired
+<h2 class="spaceless">Inspire and be inspired</h2>
 
 Unexpected inspiration is often the reason I start on projects. I might think I can do something better than the source or I'd just like to include a particular design piece from it in my own project. Either way, it's kickstarting new projects. Insipiration can come from anything, so go watch some old films, read a book or browse through photos from an unknown photographer. Here's a couple of websites I find useful:
 

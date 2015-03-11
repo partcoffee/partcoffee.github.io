@@ -17,7 +17,7 @@ $highlight-color: #575d68;
 $blue: #32d6df;
 $green: #d4fb00;
 $light: #fbfbfb;
-$lighter: #b8b8b8;
+$lighter: #959a9e; /* #b8b8b8 or black .4 */
 $ultralight: #d4d4d4;
 $black: #202020;
 
@@ -160,6 +160,7 @@ article {
 
 	.spaceless {
 		margin-top: 0;
+		padding: 0;
 	}
 }
 
@@ -240,14 +241,15 @@ nav {
 }
 
 .sidenote span {
-	display: block;
+	color: $lighter;
 	border-bottom: 1px solid $ultralight;
+	display: block;
 	padding: 6px 0;
 	position: relative;
 	width: 100%;
 
 	&, & a {
-		font: 400 13px/1.4 $primary;
+		font: 400 13px/1.8 $primary;
 	}
 
 	strong {
@@ -295,38 +297,33 @@ h1, footer a, code {
 
 h1 {
 	color: darken($main-color, 10%);
-	font: 300 34px/1.8 $thin;
-	line-height: 1;
-	margin-top: 20px;
-	margin-left: (-34px/20);
+	font: 300 34px/1 $serif;
+	margin: 20px 0 14px (-34px/20);
 	text-align: center;
-
-	&:first-of-type {
-		margin-top: 60px;
-	}
 }
 
 .first-type {
+	font-size: 28px;
 	text-align: left;
 }
 
 h2 {
 	color: $main-color;
-	font: 300 24px/1.8 $thin;
+	font: 300 24px/1.8 $serif;
 	line-height: 1;
 	margin-left: (-24px/20);
 	padding: 30px 0 0;
 }
 
 p {
-	font: 400 14px/1.8 $serif;
+	font: 400 14px/1.8 $primary;
 	color: $main-color;
 	margin: 24px 0;
 }
 
 a {
 	@include animate(0.2s);
-	font: 400 14px/1.8 $serif;
+	font: 400 14px/1.8 $primary;
 	text-decoration: none;
 	color: $lighter;
 	-webkit-tap-highlight-color: transparent;
@@ -368,9 +365,13 @@ q p, blockquote p {
 
 article {
 	li {
-		font: 400 14px/1.8 $serif;
+		font: 400 14px/1.8 $primary;
 		position: relative;
 		margin-bottom: 10px;
+
+		&:last-of-type {
+			margin-bottom: 24px;
+		}
 
 		&:before {
 			color: $highlight-color;
@@ -410,10 +411,6 @@ code {
 	#wordcount {
 		margin: 60px 0;
 
-		h1 {
-			margin: 0;
-		}
-
 		.words {
 			display: block;
 			text-align: center;
@@ -433,9 +430,9 @@ code {
 
 @media only screen and (min-width: 720px) {
 	.big {
-		margin: 30px 0 30px -15%;
-		max-width: 130%;
-		width: 130%;
+		margin: 30px 0 30px -20%;
+		max-width: 140%;
+		width: 140%;
 	}
 
 	q p, blockquote p {
@@ -516,7 +513,7 @@ code {
 		text-align: left;
 
 		&:first-of-type {
-			margin: 0 0 0 (-34px/20);
+			margin: 14px 0 14px (-34px/20);
 		}
 	}
 
