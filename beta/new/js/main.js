@@ -3,9 +3,3 @@ function FastClick(t){"use strict";function e(t,e){return function(){return t.ap
 $(function() {
   FastClick.attach(document.body);
 });
-
-$(window).scroll(function() {
-	if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-   //	$('footer ul:first-of-type li').addClass('look');
-   }
-});
