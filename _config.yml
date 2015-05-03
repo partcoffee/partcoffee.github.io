@@ -1,0 +1,19 @@
+# Site settings
+title: Magnus Skare
+description: The Portfolio of Magnus Skare.
+baseurl: ""
+url: "http://magnusskare.com"
+twitter_username: MagnusSkare
+github_username:  partcoffee
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Build settings
+markdown: kramdown
+include: ['_pages']
+
+# Time zone
+timezone: Europe/London

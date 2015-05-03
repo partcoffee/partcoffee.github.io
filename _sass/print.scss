@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #Print
+\*------------------------------------*/
+
+@media print {
+	html, body {
+		background: transparent;
+	}
+
+	.wrap {
+		background: transparent;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	header {
+		padding: 40px 0;
+	}
+
+	article a:after {
+		content: ' ('attr(href)')';
+		/* The space is there to add spacebetween the URL and the link. */
+		/* For example: "You can find it on this website (http://www.website.com)." */
+	}
+
+	.show svg {
+		display: none;
+	}
+}
