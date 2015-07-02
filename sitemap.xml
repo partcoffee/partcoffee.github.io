@@ -2,90 +2,42 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://www.magnusskare.com/404.html</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
+        <lastmod>2015-07-02T03:39:26+01:00</lastmod>
     </url>
     <url>
-        <loc>http://www.magnusskare.com/about/</loc>
-        <lastmod>2015-06-04T18:14:15+01:00</lastmod>
+        <loc>http://www.magnusskare.com/englishness/</loc>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://www.magnusskare.com/case-exhibition/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
+        <loc>http://www.magnusskare.com/exhibition/</loc>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://www.magnusskare.com/case-framework/</loc>
-        <lastmod>2015-05-30T21:29:39+01:00</lastmod>
+        <loc>http://www.magnusskare.com/experience/</loc>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://www.magnusskare.com/case-myo/</loc>
-        <lastmod>2015-06-04T17:18:15+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/case-sketchbook/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
+        <loc>http://www.magnusskare.com/hearthstone/</loc>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.magnusskare.com/</loc>
-        <lastmod>2015-06-03T21:07:19+01:00</lastmod>
+        <lastmod>2015-07-02T18:06:22+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.magnusskare.com/css/main.css</loc>
-        <lastmod>2015-06-04T21:04:51+01:00</lastmod>
+        <lastmod>2015-07-02T18:51:17+01:00</lastmod>
     </url>
     <url>
-        <loc>http://www.magnusskare.com/projects/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/sketchbook-2/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/sketchbook-3/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/sketchbook-4/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
+        <loc>http://www.magnusskare.com/personal/</loc>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
     <url>
         <loc>http://www.magnusskare.com/sketchbook/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://www.magnusskare.com/uni-animation/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-englishness/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-group/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-socialmedia/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-transmedia/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-website/</loc>
-        <lastmod>2015-06-04T16:16:56+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-work/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni-workflow/</loc>
-        <lastmod>2015-05-01T08:08:12+01:00</lastmod>
-    </url>
-    <url>
-        <loc>http://www.magnusskare.com/uni/</loc>
-        <lastmod>2015-06-04T20:00:32+01:00</lastmod>
+        <loc>http://www.magnusskare.com/workflow/</loc>
+        <lastmod>2015-07-02T17:41:44+01:00</lastmod>
     </url>
 </urlset>
