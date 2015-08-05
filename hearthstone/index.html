@@ -23,35 +23,8 @@ www.magnusskare.com/workflow
 <link rel="shortcut icon" href="../img/assets/favicon.ico">
 <link rel="canonical" href="http://www.magnusskare.com/hearthstone/" />
 
-<script>
-void function typekitInit(d) {
-  var kit = 'ujv5zha'
-  var key = 'typekit_url_cache'
-  var sel = 'link[href*="use.typekit.net"]'
-  function cacheUrl () {
-    if ('sessionStorage' in window)
-      sessionStorage.setItem(key, d.querySelector(sel).href)
-  }
-  function makeScript () {
-    var js = d.createElement('script')
-    js.src = '//use.typekit.net/' + kit + '.js'
-    js.onload = function(){ Typekit.load({active: cacheUrl}) }
-    d.head.appendChild(js)
-  }
-  function makeLink () {
-    var css = d.createElement('link')
-    css.rel = 'stylesheet'
-    css.href = sessionStorage.getItem(key)
-    css.onerror = makeScript
-    d.head.appendChild(css)
-  }
-  if ('sessionStorage' in window && sessionStorage.getItem(key)) {
-    makeLink()
-  } else {
-    makeScript()
-  }
-}(document)
-</script>
+<script src="//use.typekit.net/ekg6utg.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <link rel="stylesheet" href="../css/main.css" />
 
