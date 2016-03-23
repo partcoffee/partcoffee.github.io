@@ -1,0 +1,23 @@
+- name: Englishness Application
+  image: ../img/show/englishness.png
+  link: /englishness
+
+- name: Sketchbook Project
+  image: ../img/show/sketchbook.png
+  link: /sketchbook
+
+- name: First Option
+  image: ../img/show/fos.png
+  link: /experience
+
+- name: End of Year Show
+  image: ../img/show/exhibition.png
+  link: /exhibition
+
+- name: Hearthstone Application
+  image: ../img/show/hearthstone.png
+  link: /hearthstone
+
+- name: Personal Website
+  image: ../img/show/personal.png
+  link: /personal

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<!--
+=====================================================
+
+Hey curious!
+As you've gotten this far, you may also be
+interested in how I work:
+
+www.magnusskare.com/workflow
+
+=====================================================
+-->
+{% include head.html %}
+<body>
+{% include svg.html %}
+{% if page.custom == null %}
+{% include header.html %}
+{% endif %}
+<main>
+{{ content }}
+</main>
+{% include footer.html %}
+</body>
+</html>

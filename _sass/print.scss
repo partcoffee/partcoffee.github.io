@@ -1,0 +1,40 @@
+/*------------------------------------*\
+    #Print
+\*------------------------------------*/
+
+@media print {
+	html, body {
+		background: transparent;
+		max-width: 90%;
+		margin: 0 auto;
+	}
+
+	article, footer {
+		a:after {
+			content: ' ('attr(href)')';
+		}
+	}
+
+	footer {
+		li {
+			display: block;
+			text-transform: none;
+
+			&:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(6), &:nth-of-type(8) {
+				display: none;
+			}
+		}
+	}
+
+	.intro {
+		padding: 50px 0;
+	}
+
+	.about {
+		padding: 0;
+	}
+
+	.show svg, .continue, .button {
+		display: none;
+	}
+}

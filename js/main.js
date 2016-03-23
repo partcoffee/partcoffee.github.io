@@ -1,1 +1,743 @@
-(function(){var t,e,n,r,o,i,s,a,u,c,l,h,p,d,f,g,m,y,w,v,k,S,b,E,T,x,C,A,L,P,q,O,M,R,N,W,F,j,z,H,_,D,X,I,B,Q,$,Y,U,G=[].slice,Z={}.hasOwnProperty,K=function(t,e){function n(){this.constructor=t}for(var r in e)Z.call(e,r)&&(t[r]=e[r]);return n.prototype=e.prototype,t.prototype=new n,t.__super__=e.prototype,t},J=[].indexOf||function(t){for(var e=0,n=this.length;n>e;e++)if(e in this&&this[e]===t)return e;return-1};for(k={catchupTime:100,initialRate:.03,minTime:250,ghostTime:100,maxProgressPerFrame:20,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},L=function(){var t;return null!=(t="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?t:+new Date},q=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,v=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==q&&(q=function(t){return setTimeout(t,50)},v=function(t){return clearTimeout(t)}),M=function(t){var e,n;return e=L(),(n=function(){var r;return r=L()-e,r>=33?(e=L(),t(r,function(){return q(n)})):setTimeout(n,33-r)})()},O=function(){var t,e,n;return n=arguments[0],e=arguments[1],t=3<=arguments.length?G.call(arguments,2):[],"function"==typeof n[e]?n[e].apply(n,t):n[e]},S=function(){var t,e,n,r,o,i,s;for(e=arguments[0],r=2<=arguments.length?G.call(arguments,1):[],i=0,s=r.length;s>i;i++)if(n=r[i])for(t in n)Z.call(n,t)&&(o=n[t],null!=e[t]&&"object"==typeof e[t]&&null!=o&&"object"==typeof o?S(e[t],o):e[t]=o);return e},m=function(t){var e,n,r,o,i;for(n=e=0,o=0,i=t.length;i>o;o++)r=t[o],n+=Math.abs(r),e++;return n/e},E=function(t,e){var n,r,o;if(null==t&&(t="options"),null==e&&(e=!0),o=document.querySelector("[data-pace-"+t+"]")){if(n=o.getAttribute("data-pace-"+t),!e)return n;try{return JSON.parse(n)}catch(i){return r=i,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",r):void 0}}},s=function(){function t(){}return t.prototype.on=function(t,e,n,r){var o;return null==r&&(r=!1),null==this.bindings&&(this.bindings={}),null==(o=this.bindings)[t]&&(o[t]=[]),this.bindings[t].push({handler:e,ctx:n,once:r})},t.prototype.once=function(t,e,n){return this.on(t,e,n,!0)},t.prototype.off=function(t,e){var n,r,o;if(null!=(null!=(r=this.bindings)?r[t]:void 0)){if(null==e)return delete this.bindings[t];for(n=0,o=[];n<this.bindings[t].length;)o.push(this.bindings[t][n].handler===e?this.bindings[t].splice(n,1):n++);return o}},t.prototype.trigger=function(){var t,e,n,r,o,i,s,a,u;if(n=arguments[0],t=2<=arguments.length?G.call(arguments,1):[],null!=(s=this.bindings)?s[n]:void 0){for(o=0,u=[];o<this.bindings[n].length;)a=this.bindings[n][o],r=a.handler,e=a.ctx,i=a.once,r.apply(null!=e?e:this,t),u.push(i?this.bindings[n].splice(o,1):o++);return u}},t}(),c=window.Pace||{},window.Pace=c,S(c,s.prototype),P=c.options=S({},k,window.paceOptions,E()),$=["ajax","document","eventLag","elements"],X=0,B=$.length;B>X;X++)F=$[X],P[F]===!0&&(P[F]=k[F]);u=function(t){function e(){return Y=e.__super__.constructor.apply(this,arguments)}return K(e,t),e}(Error),e=function(){function t(){this.progress=0}return t.prototype.getElement=function(){var t;if(null==this.el){if(t=document.querySelector(P.target),!t)throw new u;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=t.firstChild?t.insertBefore(this.el,t.firstChild):t.appendChild(this.el)}return this.el},t.prototype.finish=function(){var t;return t=this.getElement(),t.className=t.className.replace("pace-active",""),t.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},t.prototype.update=function(t){return this.progress=t,this.render()},t.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(t){u=t}return this.el=void 0},t.prototype.render=function(){var t,e,n,r,o,i,s;if(null==document.querySelector(P.target))return!1;for(t=this.getElement(),r="translate3d("+this.progress+"%, 0, 0)",s=["webkitTransform","msTransform","transform"],o=0,i=s.length;i>o;o++)e=s[o],t.children[0].style[e]=r;return(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(t.children[0].setAttribute("data-progress-text",""+(0|this.progress)+"%"),this.progress>=100?n="99":(n=this.progress<10?"0":"",n+=0|this.progress),t.children[0].setAttribute("data-progress",""+n)),this.lastRenderedProgress=this.progress},t.prototype.done=function(){return this.progress>=100},t}(),a=function(){function t(){this.bindings={}}return t.prototype.trigger=function(t,e){var n,r,o,i,s;if(null!=this.bindings[t]){for(i=this.bindings[t],s=[],r=0,o=i.length;o>r;r++)n=i[r],s.push(n.call(this,e));return s}},t.prototype.on=function(t,e){var n;return null==(n=this.bindings)[t]&&(n[t]=[]),this.bindings[t].push(e)},t}(),D=window.XMLHttpRequest,_=window.XDomainRequest,H=window.WebSocket,b=function(t,e){var n,r,o,i;i=[];for(r in e.prototype)try{o=e.prototype[r],i.push(null==t[r]&&"function"!=typeof o?t[r]=o:void 0)}catch(s){n=s}return i},C=[],c.ignore=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?G.call(arguments,1):[],C.unshift("ignore"),n=e.apply(null,t),C.shift(),n},c.track=function(){var t,e,n;return e=arguments[0],t=2<=arguments.length?G.call(arguments,1):[],C.unshift("track"),n=e.apply(null,t),C.shift(),n},W=function(t){var e;if(null==t&&(t="GET"),"track"===C[0])return"force";if(!C.length&&P.ajax){if("socket"===t&&P.ajax.trackWebSockets)return!0;if(e=t.toUpperCase(),J.call(P.ajax.trackMethods,e)>=0)return!0}return!1},l=function(t){function e(){var t,n=this;e.__super__.constructor.apply(this,arguments),t=function(t){var e;return e=t.open,t.open=function(r,o){return W(r)&&n.trigger("request",{type:r,url:o,request:t}),e.apply(t,arguments)}},window.XMLHttpRequest=function(e){var n;return n=new D(e),t(n),n};try{b(window.XMLHttpRequest,D)}catch(r){}if(null!=_){window.XDomainRequest=function(){var e;return e=new _,t(e),e};try{b(window.XDomainRequest,_)}catch(r){}}if(null!=H&&P.ajax.trackWebSockets){window.WebSocket=function(t,e){var r;return r=null!=e?new H(t,e):new H(t),W("socket")&&n.trigger("request",{type:"socket",url:t,protocols:e,request:r}),r};try{b(window.WebSocket,H)}catch(r){}}}return K(e,t),e}(a),I=null,T=function(){return null==I&&(I=new l),I},N=function(t){var e,n,r,o;for(o=P.ajax.ignoreURLs,n=0,r=o.length;r>n;n++)if(e=o[n],"string"==typeof e){if(-1!==t.indexOf(e))return!0}else if(e.test(t))return!0;return!1},T().on("request",function(e){var n,r,o,i,s;return i=e.type,o=e.request,s=e.url,N(s)?void 0:c.running||P.restartOnRequestAfter===!1&&"force"!==W(i)?void 0:(r=arguments,n=P.restartOnRequestAfter||0,"boolean"==typeof n&&(n=0),setTimeout(function(){var e,n,s,a,u,l;if(e="socket"===i?o.readyState<2:0<(a=o.readyState)&&4>a){for(c.restart(),u=c.sources,l=[],n=0,s=u.length;s>n;n++){if(F=u[n],F instanceof t){F.watch.apply(F,r);break}l.push(void 0)}return l}},n))}),t=function(){function t(){var t=this;this.elements=[],T().on("request",function(){return t.watch.apply(t,arguments)})}return t.prototype.watch=function(t){var e,n,r,o;return r=t.type,e=t.request,o=t.url,N(o)?void 0:(n="socket"===r?new d(e):new f(e),this.elements.push(n))},t}(),f=function(){function t(t){var e,n,r,o,i,s,a=this;if(this.progress=0,null!=window.ProgressEvent)for(n=null,t.addEventListener("progress",function(t){return a.progress=t.lengthComputable?100*t.loaded/t.total:a.progress+(100-a.progress)/2},!1),s=["load","abort","timeout","error"],r=0,o=s.length;o>r;r++)e=s[r],t.addEventListener(e,function(){return a.progress=100},!1);else i=t.onreadystatechange,t.onreadystatechange=function(){var e;return 0===(e=t.readyState)||4===e?a.progress=100:3===t.readyState&&(a.progress=50),"function"==typeof i?i.apply(null,arguments):void 0}}return t}(),d=function(){function t(t){var e,n,r,o,i=this;for(this.progress=0,o=["error","open"],n=0,r=o.length;r>n;n++)e=o[n],t.addEventListener(e,function(){return i.progress=100},!1)}return t}(),r=function(){function t(t){var e,n,r,i;for(null==t&&(t={}),this.elements=[],null==t.selectors&&(t.selectors=[]),i=t.selectors,n=0,r=i.length;r>n;n++)e=i[n],this.elements.push(new o(e))}return t}(),o=function(){function t(t){this.selector=t,this.progress=0,this.check()}return t.prototype.check=function(){var t=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return t.check()},P.elements.checkInterval)},t.prototype.done=function(){return this.progress=100},t}(),n=function(){function t(){var t,e,n=this;this.progress=null!=(e=this.states[document.readyState])?e:100,t=document.onreadystatechange,document.onreadystatechange=function(){return null!=n.states[document.readyState]&&(n.progress=n.states[document.readyState]),"function"==typeof t?t.apply(null,arguments):void 0}}return t.prototype.states={loading:0,interactive:50,complete:100},t}(),i=function(){function t(){var t,e,n,r,o,i=this;this.progress=0,t=0,o=[],r=0,n=L(),e=setInterval(function(){var s;return s=L()-n-50,n=L(),o.push(s),o.length>P.eventLag.sampleCount&&o.shift(),t=m(o),++r>=P.eventLag.minSamples&&t<P.eventLag.lagThreshold?(i.progress=100,clearInterval(e)):i.progress=100*(3/(t+3))},50)}return t}(),p=function(){function t(t){this.source=t,this.last=this.sinceLastUpdate=0,this.rate=P.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=O(this.source,"progress"))}return t.prototype.tick=function(t,e){var n;return null==e&&(e=O(this.source,"progress")),e>=100&&(this.done=!0),e===this.last?this.sinceLastUpdate+=t:(this.sinceLastUpdate&&(this.rate=(e-this.last)/this.sinceLastUpdate),this.catchup=(e-this.progress)/P.catchupTime,this.sinceLastUpdate=0,this.last=e),e>this.progress&&(this.progress+=this.catchup*t),n=1-Math.pow(this.progress/100,P.easeFactor),this.progress+=n*this.rate*t,this.progress=Math.min(this.lastProgress+P.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},t}(),j=null,R=null,y=null,z=null,g=null,w=null,c.running=!1,x=function(){return P.restartOnPushState?c.restart():void 0},null!=window.history.pushState&&(Q=window.history.pushState,window.history.pushState=function(){return x(),Q.apply(window.history,arguments)}),null!=window.history.replaceState&&(U=window.history.replaceState,window.history.replaceState=function(){return x(),U.apply(window.history,arguments)}),h={ajax:t,elements:r,document:n,eventLag:i},(A=function(){var t,n,r,o,i,s,a,u;for(c.sources=j=[],s=["ajax","elements","document","eventLag"],n=0,o=s.length;o>n;n++)t=s[n],P[t]!==!1&&j.push(new h[t](P[t]));for(u=null!=(a=P.extraSources)?a:[],r=0,i=u.length;i>r;r++)F=u[r],j.push(new F(P));return c.bar=y=new e,R=[],z=new p})(),c.stop=function(){return c.trigger("stop"),c.running=!1,y.destroy(),w=!0,null!=g&&("function"==typeof v&&v(g),g=null),A()},c.restart=function(){return c.trigger("restart"),c.stop(),c.start()},c.go=function(){var t;return c.running=!0,y.render(),t=L(),w=!1,g=M(function(e,n){var r,o,i,s,a,u,l,h,d,f,g,m,v,k,S,b;for(h=100-y.progress,o=g=0,i=!0,u=m=0,k=j.length;k>m;u=++m)for(F=j[u],f=null!=R[u]?R[u]:R[u]=[],a=null!=(b=F.elements)?b:[F],l=v=0,S=a.length;S>v;l=++v)s=a[l],d=null!=f[l]?f[l]:f[l]=new p(s),i&=d.done,d.done||(o++,g+=d.tick(e));return r=g/o,y.update(z.tick(e,r)),y.done()||i||w?(y.update(100),c.trigger("done"),setTimeout(function(){return y.finish(),c.running=!1,c.trigger("hide")},Math.max(P.ghostTime,Math.max(P.minTime-(L()-t),0)))):n()})},c.start=function(t){S(P,t),c.running=!0;try{y.render()}catch(e){u=e}return document.querySelector(".pace")?(c.trigger("start"),c.go()):setTimeout(c.start,50)},"function"==typeof define&&define.amd?define(function(){return c}):"object"==typeof exports?module.exports=c:P.startOnPageLoad&&c.start()}).call(this),!function(){"use strict";function t(e,r){function o(t,e){return function(){return t.apply(e,arguments)}}var i;if(r=r||{},this.trackingClick=!1,this.trackingClickStart=0,this.targetElement=null,this.touchStartX=0,this.touchStartY=0,this.lastTouchIdentifier=0,this.touchBoundary=r.touchBoundary||10,this.layer=e,this.tapDelay=r.tapDelay||200,this.tapTimeout=r.tapTimeout||700,!t.notNeeded(e)){for(var s=["onMouse","onClick","onTouchStart","onTouchMove","onTouchEnd","onTouchCancel"],a=this,u=0,c=s.length;c>u;u++)a[s[u]]=o(a[s[u]],a);n&&(e.addEventListener("mouseover",this.onMouse,!0),e.addEventListener("mousedown",this.onMouse,!0),e.addEventListener("mouseup",this.onMouse,!0)),e.addEventListener("click",this.onClick,!0),e.addEventListener("touchstart",this.onTouchStart,!1),e.addEventListener("touchmove",this.onTouchMove,!1),e.addEventListener("touchend",this.onTouchEnd,!1),e.addEventListener("touchcancel",this.onTouchCancel,!1),Event.prototype.stopImmediatePropagation||(e.removeEventListener=function(t,n,r){var o=Node.prototype.removeEventListener;"click"===t?o.call(e,t,n.hijacked||n,r):o.call(e,t,n,r)},e.addEventListener=function(t,n,r){var o=Node.prototype.addEventListener;"click"===t?o.call(e,t,n.hijacked||(n.hijacked=function(t){t.propagationStopped||n(t)}),r):o.call(e,t,n,r)}),"function"==typeof e.onclick&&(i=e.onclick,e.addEventListener("click",function(t){i(t)},!1),e.onclick=null)}}var e=navigator.userAgent.indexOf("Windows Phone")>=0,n=navigator.userAgent.indexOf("Android")>0&&!e,r=/iP(ad|hone|od)/.test(navigator.userAgent)&&!e,o=r&&/OS 4_\d(_\d)?/.test(navigator.userAgent),i=r&&/OS [6-7]_\d/.test(navigator.userAgent),s=navigator.userAgent.indexOf("BB10")>0;t.prototype.needsClick=function(t){switch(t.nodeName.toLowerCase()){case"button":case"select":case"textarea":if(t.disabled)return!0;break;case"input":if(r&&"file"===t.type||t.disabled)return!0;break;case"label":case"iframe":case"video":return!0}return/\bneedsclick\b/.test(t.className)},t.prototype.needsFocus=function(t){switch(t.nodeName.toLowerCase()){case"textarea":return!0;case"select":return!n;case"input":switch(t.type){case"button":case"checkbox":case"file":case"image":case"radio":case"submit":return!1}return!t.disabled&&!t.readOnly;default:return/\bneedsfocus\b/.test(t.className)}},t.prototype.sendClick=function(t,e){var n,r;document.activeElement&&document.activeElement!==t&&document.activeElement.blur(),r=e.changedTouches[0],n=document.createEvent("MouseEvents"),n.initMouseEvent(this.determineEventType(t),!0,!0,window,1,r.screenX,r.screenY,r.clientX,r.clientY,!1,!1,!1,!1,0,null),n.forwardedTouchEvent=!0,t.dispatchEvent(n)},t.prototype.determineEventType=function(t){return n&&"select"===t.tagName.toLowerCase()?"mousedown":"click"},t.prototype.focus=function(t){var e;r&&t.setSelectionRange&&0!==t.type.indexOf("date")&&"time"!==t.type&&"month"!==t.type?(e=t.value.length,t.setSelectionRange(e,e)):t.focus()},t.prototype.updateScrollParent=function(t){var e,n;if(e=t.fastClickScrollParent,!e||!e.contains(t)){n=t;do{if(n.scrollHeight>n.offsetHeight){e=n,t.fastClickScrollParent=n;break}n=n.parentElement}while(n)}e&&(e.fastClickLastScrollTop=e.scrollTop)},t.prototype.getTargetElementFromEventTarget=function(t){return t.nodeType===Node.TEXT_NODE?t.parentNode:t},t.prototype.onTouchStart=function(t){var e,n,i;if(t.targetTouches.length>1)return!0;if(e=this.getTargetElementFromEventTarget(t.target),n=t.targetTouches[0],r){if(i=window.getSelection(),i.rangeCount&&!i.isCollapsed)return!0;if(!o){if(n.identifier&&n.identifier===this.lastTouchIdentifier)return t.preventDefault(),!1;this.lastTouchIdentifier=n.identifier,this.updateScrollParent(e)}}return this.trackingClick=!0,this.trackingClickStart=t.timeStamp,this.targetElement=e,this.touchStartX=n.pageX,this.touchStartY=n.pageY,t.timeStamp-this.lastClickTime<this.tapDelay&&t.preventDefault(),!0},t.prototype.touchHasMoved=function(t){var e=t.changedTouches[0],n=this.touchBoundary;return Math.abs(e.pageX-this.touchStartX)>n||Math.abs(e.pageY-this.touchStartY)>n?!0:!1},t.prototype.onTouchMove=function(t){return this.trackingClick?((this.targetElement!==this.getTargetElementFromEventTarget(t.target)||this.touchHasMoved(t))&&(this.trackingClick=!1,this.targetElement=null),!0):!0},t.prototype.findControl=function(t){return void 0!==t.control?t.control:t.htmlFor?document.getElementById(t.htmlFor):t.querySelector("button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea")},t.prototype.onTouchEnd=function(t){var e,s,a,u,c,l=this.targetElement;if(!this.trackingClick)return!0;if(t.timeStamp-this.lastClickTime<this.tapDelay)return this.cancelNextClick=!0,!0;if(t.timeStamp-this.trackingClickStart>this.tapTimeout)return!0;if(this.cancelNextClick=!1,this.lastClickTime=t.timeStamp,s=this.trackingClickStart,this.trackingClick=!1,this.trackingClickStart=0,i&&(c=t.changedTouches[0],l=document.elementFromPoint(c.pageX-window.pageXOffset,c.pageY-window.pageYOffset)||l,l.fastClickScrollParent=this.targetElement.fastClickScrollParent),a=l.tagName.toLowerCase(),"label"===a){if(e=this.findControl(l)){if(this.focus(l),n)return!1;l=e}}else if(this.needsFocus(l))return t.timeStamp-s>100||r&&window.top!==window&&"input"===a?(this.targetElement=null,!1):(this.focus(l),this.sendClick(l,t),r&&"select"===a||(this.targetElement=null,t.preventDefault()),!1);return r&&!o&&(u=l.fastClickScrollParent,u&&u.fastClickLastScrollTop!==u.scrollTop)?!0:(this.needsClick(l)||(t.preventDefault(),this.sendClick(l,t)),!1)},t.prototype.onTouchCancel=function(){this.trackingClick=!1,this.targetElement=null},t.prototype.onMouse=function(t){return this.targetElement?t.forwardedTouchEvent?!0:t.cancelable&&(!this.needsClick(this.targetElement)||this.cancelNextClick)?(t.stopImmediatePropagation?t.stopImmediatePropagation():t.propagationStopped=!0,t.stopPropagation(),t.preventDefault(),!1):!0:!0},t.prototype.onClick=function(t){var e;return this.trackingClick?(this.targetElement=null,this.trackingClick=!1,!0):"submit"===t.target.type&&0===t.detail?!0:(e=this.onMouse(t),e||(this.targetElement=null),e)},t.prototype.destroy=function(){var t=this.layer;n&&(t.removeEventListener("mouseover",this.onMouse,!0),t.removeEventListener("mousedown",this.onMouse,!0),t.removeEventListener("mouseup",this.onMouse,!0)),t.removeEventListener("click",this.onClick,!0),t.removeEventListener("touchstart",this.onTouchStart,!1),t.removeEventListener("touchmove",this.onTouchMove,!1),t.removeEventListener("touchend",this.onTouchEnd,!1),t.removeEventListener("touchcancel",this.onTouchCancel,!1)},t.notNeeded=function(t){var e,r,o;if("undefined"==typeof window.ontouchstart)return!0;if(r=+(/Chrome\/([0-9]+)/.exec(navigator.userAgent)||[,0])[1]){if(!n)return!0;if(e=document.querySelector("meta[name=viewport]")){if(-1!==e.content.indexOf("user-scalable=no"))return!0;if(r>31&&document.documentElement.scrollWidth<=window.outerWidth)return!0}}if(s&&(o=navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/),o[1]>=10&&o[2]>=3&&(e=document.querySelector("meta[name=viewport]")))){if(-1!==e.content.indexOf("user-scalable=no"))return!0;if(document.documentElement.scrollWidth<=window.outerWidth)return!0}return"none"===t.style.msTouchAction?!0:"none"===t.style.touchAction?!0:!1},t.attach=function(e,n){return new t(e,n)},"function"==typeof define&&"object"==typeof define.amd&&define.amd?define(function(){return t}):"undefined"!=typeof module&&module.exports?(module.exports=t.attach,module.exports.FastClick=t):window.FastClick=t}(),$(function(){FastClick.attach(document.body)}),function(t){t.fn.unveil=function(e,n){function r(){var e=c.filter(function(){var e=t(this);if(!e.is(":hidden")){var n=i.scrollTop(),r=n+i.height(),o=e.offset().top,a=o+e.height();return a>=n-s&&r+s>=o}});o=e.trigger("unveil"),c=c.not(o)}var o,i=t(window),s=e||0,a=window.devicePixelRatio>1,u=a?"data-src-retina":"data-src",c=this;return this.one("unveil",function(){var t=this.getAttribute(u);t=t||this.getAttribute("data-src"),t&&(this.setAttribute("src",t),"function"==typeof n&&n.call(this))}),i.on("scroll.unveil resize.unveil lookup.unveil",r),r(),this}}(window.jQuery||window.Zepto),$("img").unveil(800,function(){$(this).load(function(){$(this).css({opacity:"1","padding-bottom":"0",height:"auto"})})}),function(){"use strict";function t(r){if(!r)throw new Error("No options passed to Waypoint constructor");if(!r.element)throw new Error("No element option passed to Waypoint constructor");if(!r.handler)throw new Error("No handler option passed to Waypoint constructor");this.key="waypoint-"+e,this.options=t.Adapter.extend({},t.defaults,r),this.element=this.options.element,this.adapter=new t.Adapter(this.element),this.callback=r.handler,this.axis=this.options.horizontal?"horizontal":"vertical",this.enabled=this.options.enabled,this.triggerPoint=null,this.group=t.Group.findOrCreate({name:this.options.group,axis:this.axis}),this.context=t.Context.findOrCreateByElement(this.options.context),t.offsetAliases[this.options.offset]&&(this.options.offset=t.offsetAliases[this.options.offset]),this.group.add(this),this.context.add(this),n[this.key]=this,e+=1}var e=0,n={};t.prototype.queueTrigger=function(t){this.group.queueTrigger(this,t)},t.prototype.trigger=function(t){this.enabled&&this.callback&&this.callback.apply(this,t)},t.prototype.destroy=function(){this.context.remove(this),this.group.remove(this),delete n[this.key]},t.prototype.disable=function(){return this.enabled=!1,this},t.prototype.enable=function(){return this.context.refresh(),this.enabled=!0,this},t.prototype.next=function(){return this.group.next(this)},t.prototype.previous=function(){return this.group.previous(this)},t.invokeAll=function(t){var e=[];for(var r in n)e.push(n[r]);for(var o=0,i=e.length;i>o;o++)e[o][t]()},t.destroyAll=function(){t.invokeAll("destroy")},t.disableAll=function(){t.invokeAll("disable")},t.enableAll=function(){t.invokeAll("enable")},t.refreshAll=function(){t.Context.refreshAll()},t.viewportHeight=function(){return window.innerHeight||document.documentElement.clientHeight},t.viewportWidth=function(){return document.documentElement.clientWidth},t.adapters=[],t.defaults={context:window,continuous:!0,enabled:!0,group:"default",horizontal:!1,offset:0},t.offsetAliases={"bottom-in-view":function(){return this.context.innerHeight()-this.adapter.outerHeight()},"right-in-view":function(){return this.context.innerWidth()-this.adapter.outerWidth()}},window.Waypoint=t}(),function(){"use strict";function t(t){window.setTimeout(t,1e3/60)}function e(t){this.element=t,this.Adapter=o.Adapter,this.adapter=new this.Adapter(t),this.key="waypoint-context-"+n,this.didScroll=!1,this.didResize=!1,this.oldScroll={x:this.adapter.scrollLeft(),y:this.adapter.scrollTop()},this.waypoints={vertical:{},horizontal:{}},t.waypointContextKey=this.key,r[t.waypointContextKey]=this,n+=1,this.createThrottledScrollHandler(),this.createThrottledResizeHandler()}var n=0,r={},o=window.Waypoint,i=window.onload;e.prototype.add=function(t){var e=t.options.horizontal?"horizontal":"vertical";this.waypoints[e][t.key]=t,this.refresh()},e.prototype.checkEmpty=function(){var t=this.Adapter.isEmptyObject(this.waypoints.horizontal),e=this.Adapter.isEmptyObject(this.waypoints.vertical);t&&e&&(this.adapter.off(".waypoints"),delete r[this.key])},e.prototype.createThrottledResizeHandler=function(){function t(){e.handleResize(),e.didResize=!1}var e=this;this.adapter.on("resize.waypoints",function(){e.didResize||(e.didResize=!0,o.requestAnimationFrame(t))})},e.prototype.createThrottledScrollHandler=function(){function t(){e.handleScroll(),e.didScroll=!1}var e=this;this.adapter.on("scroll.waypoints",function(){(!e.didScroll||o.isTouch)&&(e.didScroll=!0,o.requestAnimationFrame(t))})},e.prototype.handleResize=function(){o.Context.refreshAll()},e.prototype.handleScroll=function(){var t={},e={horizontal:{newScroll:this.adapter.scrollLeft(),oldScroll:this.oldScroll.x,forward:"right",backward:"left"},vertical:{newScroll:this.adapter.scrollTop(),oldScroll:this.oldScroll.y,forward:"down",backward:"up"}};for(var n in e){var r=e[n],o=r.newScroll>r.oldScroll,i=o?r.forward:r.backward;for(var s in this.waypoints[n]){var a=this.waypoints[n][s],u=r.oldScroll<a.triggerPoint,c=r.newScroll>=a.triggerPoint,l=u&&c,h=!u&&!c;(l||h)&&(a.queueTrigger(i),t[a.group.id]=a.group)}}for(var p in t)t[p].flushTriggers();this.oldScroll={x:e.horizontal.newScroll,y:e.vertical.newScroll}},e.prototype.innerHeight=function(){return this.element==this.element.window?o.viewportHeight():this.adapter.innerHeight()},e.prototype.remove=function(t){delete this.waypoints[t.axis][t.key],this.checkEmpty()},e.prototype.innerWidth=function(){return this.element==this.element.window?o.viewportWidth():this.adapter.innerWidth()},e.prototype.destroy=function(){var t=[];for(var e in this.waypoints)for(var n in this.waypoints[e])t.push(this.waypoints[e][n]);for(var r=0,o=t.length;o>r;r++)t[r].destroy()},e.prototype.refresh=function(){var t,e=this.element==this.element.window,n=this.adapter.offset(),r={};this.handleScroll(),t={horizontal:{contextOffset:e?0:n.left,contextScroll:e?0:this.oldScroll.x,contextDimension:this.innerWidth(),oldScroll:this.oldScroll.x,forward:"right",backward:"left",offsetProp:"left"},vertical:{contextOffset:e?0:n.top,contextScroll:e?0:this.oldScroll.y,contextDimension:this.innerHeight(),oldScroll:this.oldScroll.y,forward:"down",backward:"up",offsetProp:"top"}};for(var o in t){var i=t[o];for(var s in this.waypoints[o]){var a,u,c,l,h,p=this.waypoints[o][s],d=p.options.offset,f=p.triggerPoint,g=0,m=null==f;p.element!==p.element.window&&(g=p.adapter.offset()[i.offsetProp]),"function"==typeof d?d=d.apply(p):"string"==typeof d&&(d=parseFloat(d),p.options.offset.indexOf("%")>-1&&(d=Math.ceil(i.contextDimension*d/100))),a=i.contextScroll-i.contextOffset,p.triggerPoint=g+a-d,u=f<i.oldScroll,c=p.triggerPoint>=i.oldScroll,l=u&&c,h=!u&&!c,!m&&l?(p.queueTrigger(i.backward),r[p.group.id]=p.group):!m&&h?(p.queueTrigger(i.forward),r[p.group.id]=p.group):m&&i.oldScroll>=p.triggerPoint&&(p.queueTrigger(i.forward),r[p.group.id]=p.group)}}for(var y in r)r[y].flushTriggers();return this},e.findOrCreateByElement=function(t){return e.findByElement(t)||new e(t)},e.refreshAll=function(){for(var t in r)r[t].refresh()},e.findByElement=function(t){return r[t.waypointContextKey]},window.onload=function(){i&&i(),e.refreshAll()},o.requestAnimationFrame=function(e){var n=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||t;n.call(window,e)},o.Context=e}(),function(){"use strict";function t(t,e){return t.triggerPoint-e.triggerPoint}function e(t,e){return e.triggerPoint-t.triggerPoint}function n(t){this.name=t.name,this.axis=t.axis,this.id=this.name+"-"+this.axis,this.waypoints=[],this.clearTriggerQueues(),r[this.axis][this.name]=this}var r={vertical:{},horizontal:{}},o=window.Waypoint;n.prototype.add=function(t){this.waypoints.push(t)},n.prototype.clearTriggerQueues=function(){this.triggerQueues={up:[],down:[],left:[],right:[]}},n.prototype.flushTriggers=function(){for(var n in this.triggerQueues){var r=this.triggerQueues[n],o="up"===n||"left"===n;r.sort(o?e:t);for(var i=0,s=r.length;s>i;i+=1){var a=r[i];(a.options.continuous||i===r.length-1)&&a.trigger([n])}}this.clearTriggerQueues()},n.prototype.next=function(e){this.waypoints.sort(t);var n=o.Adapter.inArray(e,this.waypoints),r=n===this.waypoints.length-1;return r?null:this.waypoints[n+1]},n.prototype.previous=function(e){this.waypoints.sort(t);var n=o.Adapter.inArray(e,this.waypoints);return n?this.waypoints[n-1]:null},n.prototype.queueTrigger=function(t,e){this.triggerQueues[e].push(t)},n.prototype.remove=function(t){var e=o.Adapter.inArray(t,this.waypoints);e>-1&&this.waypoints.splice(e,1)},n.prototype.first=function(){return this.waypoints[0]},n.prototype.last=function(){return this.waypoints[this.waypoints.length-1]},n.findOrCreate=function(t){return r[t.axis][t.name]||new n(t)},o.Group=n}(),function(){"use strict";function t(t){this.$element=e(t)}var e=window.jQuery,n=window.Waypoint;e.each(["innerHeight","innerWidth","off","offset","on","outerHeight","outerWidth","scrollLeft","scrollTop"],function(e,n){t.prototype[n]=function(){var t=Array.prototype.slice.call(arguments);return this.$element[n].apply(this.$element,t)}}),e.each(["extend","inArray","isEmptyObject"],function(n,r){t[r]=e[r]}),n.adapters.push({name:"jquery",Adapter:t}),n.Adapter=t}(),function(){"use strict";function t(t){return function(){var n=[],r=arguments[0];return t.isFunction(arguments[0])&&(r=t.extend({},arguments[1]),r.handler=arguments[0]),this.each(function(){var o=t.extend({},r,{element:this});"string"==typeof o.context&&(o.context=t(this).closest(o.context)[0]),n.push(new e(o))}),n}}var e=window.Waypoint;window.jQuery&&(window.jQuery.fn.waypoint=t(window.jQuery)),window.Zepto&&(window.Zepto.fn.waypoint=t(window.Zepto))}(),$(".entry").each(function(t){$(this).attr("id","item_"+t);new Waypoint({element:document.getElementById("item_"+t),handler:function(t){"down"==t&&(console.log(this.element.id+" triggers at "+this.triggerPoint),$(this.element).addClass("up"))},offset:"90%"})}),console.log("Hey curious!\nAs you've gotten this far, you may also be interested in how I work:\nwww.magnusskare.com/workflow");
+// Pace
+
+(function(){var a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X=[].slice,Y={}.hasOwnProperty,Z=function(a,b){function c(){this.constructor=a}for(var d in b)Y.call(b,d)&&(a[d]=b[d]);return c.prototype=b.prototype,a.prototype=new c,a.__super__=b.prototype,a},$=[].indexOf||function(a){for(var b=0,c=this.length;c>b;b++)if(b in this&&this[b]===a)return b;return-1};for(u={catchupTime:100,initialRate:.03,minTime:250,ghostTime:100,maxProgressPerFrame:20,easeFactor:1.25,startOnPageLoad:!0,restartOnPushState:!0,restartOnRequestAfter:500,target:"body",elements:{checkInterval:100,selectors:["body"]},eventLag:{minSamples:10,sampleCount:3,lagThreshold:3},ajax:{trackMethods:["GET"],trackWebSockets:!0,ignoreURLs:[]}},C=function(){var a;return null!=(a="undefined"!=typeof performance&&null!==performance&&"function"==typeof performance.now?performance.now():void 0)?a:+new Date},E=window.requestAnimationFrame||window.mozRequestAnimationFrame||window.webkitRequestAnimationFrame||window.msRequestAnimationFrame,t=window.cancelAnimationFrame||window.mozCancelAnimationFrame,null==E&&(E=function(a){return setTimeout(a,50)},t=function(a){return clearTimeout(a)}),G=function(a){var b,c;return b=C(),(c=function(){var d;return d=C()-b,d>=33?(b=C(),a(d,function(){return E(c)})):setTimeout(c,33-d)})()},F=function(){var a,b,c;return c=arguments[0],b=arguments[1],a=3<=arguments.length?X.call(arguments,2):[],"function"==typeof c[b]?c[b].apply(c,a):c[b]},v=function(){var a,b,c,d,e,f,g;for(b=arguments[0],d=2<=arguments.length?X.call(arguments,1):[],f=0,g=d.length;g>f;f++)if(c=d[f])for(a in c)Y.call(c,a)&&(e=c[a],null!=b[a]&&"object"==typeof b[a]&&null!=e&&"object"==typeof e?v(b[a],e):b[a]=e);return b},q=function(a){var b,c,d,e,f;for(c=b=0,e=0,f=a.length;f>e;e++)d=a[e],c+=Math.abs(d),b++;return c/b},x=function(a,b){var c,d,e;if(null==a&&(a="options"),null==b&&(b=!0),e=document.querySelector("[data-pace-"+a+"]")){if(c=e.getAttribute("data-pace-"+a),!b)return c;try{return JSON.parse(c)}catch(f){return d=f,"undefined"!=typeof console&&null!==console?console.error("Error parsing inline pace options",d):void 0}}},g=function(){function a(){}return a.prototype.on=function(a,b,c,d){var e;return null==d&&(d=!1),null==this.bindings&&(this.bindings={}),null==(e=this.bindings)[a]&&(e[a]=[]),this.bindings[a].push({handler:b,ctx:c,once:d})},a.prototype.once=function(a,b,c){return this.on(a,b,c,!0)},a.prototype.off=function(a,b){var c,d,e;if(null!=(null!=(d=this.bindings)?d[a]:void 0)){if(null==b)return delete this.bindings[a];for(c=0,e=[];c<this.bindings[a].length;)e.push(this.bindings[a][c].handler===b?this.bindings[a].splice(c,1):c++);return e}},a.prototype.trigger=function(){var a,b,c,d,e,f,g,h,i;if(c=arguments[0],a=2<=arguments.length?X.call(arguments,1):[],null!=(g=this.bindings)?g[c]:void 0){for(e=0,i=[];e<this.bindings[c].length;)h=this.bindings[c][e],d=h.handler,b=h.ctx,f=h.once,d.apply(null!=b?b:this,a),i.push(f?this.bindings[c].splice(e,1):e++);return i}},a}(),j=window.Pace||{},window.Pace=j,v(j,g.prototype),D=j.options=v({},u,window.paceOptions,x()),U=["ajax","document","eventLag","elements"],Q=0,S=U.length;S>Q;Q++)K=U[Q],D[K]===!0&&(D[K]=u[K]);i=function(a){function b(){return V=b.__super__.constructor.apply(this,arguments)}return Z(b,a),b}(Error),b=function(){function a(){this.progress=0}return a.prototype.getElement=function(){var a;if(null==this.el){if(a=document.querySelector(D.target),!a)throw new i;this.el=document.createElement("div"),this.el.className="pace pace-active",document.body.className=document.body.className.replace(/pace-done/g,""),document.body.className+=" pace-running",this.el.innerHTML='<div class="pace-progress">\n  <div class="pace-progress-inner"></div>\n</div>\n<div class="pace-activity"></div>',null!=a.firstChild?a.insertBefore(this.el,a.firstChild):a.appendChild(this.el)}return this.el},a.prototype.finish=function(){var a;return a=this.getElement(),a.className=a.className.replace("pace-active",""),a.className+=" pace-inactive",document.body.className=document.body.className.replace("pace-running",""),document.body.className+=" pace-done"},a.prototype.update=function(a){return this.progress=a,this.render()},a.prototype.destroy=function(){try{this.getElement().parentNode.removeChild(this.getElement())}catch(a){i=a}return this.el=void 0},a.prototype.render=function(){var a,b,c,d,e,f,g;if(null==document.querySelector(D.target))return!1;for(a=this.getElement(),d="translate3d("+this.progress+"%, 0, 0)",g=["webkitTransform","msTransform","transform"],e=0,f=g.length;f>e;e++)b=g[e],a.children[0].style[b]=d;return(!this.lastRenderedProgress||this.lastRenderedProgress|0!==this.progress|0)&&(a.children[0].setAttribute("data-progress-text",""+(0|this.progress)+"%"),this.progress>=100?c="99":(c=this.progress<10?"0":"",c+=0|this.progress),a.children[0].setAttribute("data-progress",""+c)),this.lastRenderedProgress=this.progress},a.prototype.done=function(){return this.progress>=100},a}(),h=function(){function a(){this.bindings={}}return a.prototype.trigger=function(a,b){var c,d,e,f,g;if(null!=this.bindings[a]){for(f=this.bindings[a],g=[],d=0,e=f.length;e>d;d++)c=f[d],g.push(c.call(this,b));return g}},a.prototype.on=function(a,b){var c;return null==(c=this.bindings)[a]&&(c[a]=[]),this.bindings[a].push(b)},a}(),P=window.XMLHttpRequest,O=window.XDomainRequest,N=window.WebSocket,w=function(a,b){var c,d,e,f;f=[];for(d in b.prototype)try{e=b.prototype[d],f.push(null==a[d]&&"function"!=typeof e?a[d]=e:void 0)}catch(g){c=g}return f},A=[],j.ignore=function(){var a,b,c;return b=arguments[0],a=2<=arguments.length?X.call(arguments,1):[],A.unshift("ignore"),c=b.apply(null,a),A.shift(),c},j.track=function(){var a,b,c;return b=arguments[0],a=2<=arguments.length?X.call(arguments,1):[],A.unshift("track"),c=b.apply(null,a),A.shift(),c},J=function(a){var b;if(null==a&&(a="GET"),"track"===A[0])return"force";if(!A.length&&D.ajax){if("socket"===a&&D.ajax.trackWebSockets)return!0;if(b=a.toUpperCase(),$.call(D.ajax.trackMethods,b)>=0)return!0}return!1},k=function(a){function b(){var a,c=this;b.__super__.constructor.apply(this,arguments),a=function(a){var b;return b=a.open,a.open=function(d,e){return J(d)&&c.trigger("request",{type:d,url:e,request:a}),b.apply(a,arguments)}},window.XMLHttpRequest=function(b){var c;return c=new P(b),a(c),c};try{w(window.XMLHttpRequest,P)}catch(d){}if(null!=O){window.XDomainRequest=function(){var b;return b=new O,a(b),b};try{w(window.XDomainRequest,O)}catch(d){}}if(null!=N&&D.ajax.trackWebSockets){window.WebSocket=function(a,b){var d;return d=null!=b?new N(a,b):new N(a),J("socket")&&c.trigger("request",{type:"socket",url:a,protocols:b,request:d}),d};try{w(window.WebSocket,N)}catch(d){}}}return Z(b,a),b}(h),R=null,y=function(){return null==R&&(R=new k),R},I=function(a){var b,c,d,e;for(e=D.ajax.ignoreURLs,c=0,d=e.length;d>c;c++)if(b=e[c],"string"==typeof b){if(-1!==a.indexOf(b))return!0}else if(b.test(a))return!0;return!1},y().on("request",function(b){var c,d,e,f,g;return f=b.type,e=b.request,g=b.url,I(g)?void 0:j.running||D.restartOnRequestAfter===!1&&"force"!==J(f)?void 0:(d=arguments,c=D.restartOnRequestAfter||0,"boolean"==typeof c&&(c=0),setTimeout(function(){var b,c,g,h,i,k;if(b="socket"===f?e.readyState<2:0<(h=e.readyState)&&4>h){for(j.restart(),i=j.sources,k=[],c=0,g=i.length;g>c;c++){if(K=i[c],K instanceof a){K.watch.apply(K,d);break}k.push(void 0)}return k}},c))}),a=function(){function a(){var a=this;this.elements=[],y().on("request",function(){return a.watch.apply(a,arguments)})}return a.prototype.watch=function(a){var b,c,d,e;return d=a.type,b=a.request,e=a.url,I(e)?void 0:(c="socket"===d?new n(b):new o(b),this.elements.push(c))},a}(),o=function(){function a(a){var b,c,d,e,f,g,h=this;if(this.progress=0,null!=window.ProgressEvent)for(c=null,a.addEventListener("progress",function(a){return h.progress=a.lengthComputable?100*a.loaded/a.total:h.progress+(100-h.progress)/2},!1),g=["load","abort","timeout","error"],d=0,e=g.length;e>d;d++)b=g[d],a.addEventListener(b,function(){return h.progress=100},!1);else f=a.onreadystatechange,a.onreadystatechange=function(){var b;return 0===(b=a.readyState)||4===b?h.progress=100:3===a.readyState&&(h.progress=50),"function"==typeof f?f.apply(null,arguments):void 0}}return a}(),n=function(){function a(a){var b,c,d,e,f=this;for(this.progress=0,e=["error","open"],c=0,d=e.length;d>c;c++)b=e[c],a.addEventListener(b,function(){return f.progress=100},!1)}return a}(),d=function(){function a(a){var b,c,d,f;for(null==a&&(a={}),this.elements=[],null==a.selectors&&(a.selectors=[]),f=a.selectors,c=0,d=f.length;d>c;c++)b=f[c],this.elements.push(new e(b))}return a}(),e=function(){function a(a){this.selector=a,this.progress=0,this.check()}return a.prototype.check=function(){var a=this;return document.querySelector(this.selector)?this.done():setTimeout(function(){return a.check()},D.elements.checkInterval)},a.prototype.done=function(){return this.progress=100},a}(),c=function(){function a(){var a,b,c=this;this.progress=null!=(b=this.states[document.readyState])?b:100,a=document.onreadystatechange,document.onreadystatechange=function(){return null!=c.states[document.readyState]&&(c.progress=c.states[document.readyState]),"function"==typeof a?a.apply(null,arguments):void 0}}return a.prototype.states={loading:0,interactive:50,complete:100},a}(),f=function(){function a(){var a,b,c,d,e,f=this;this.progress=0,a=0,e=[],d=0,c=C(),b=setInterval(function(){var g;return g=C()-c-50,c=C(),e.push(g),e.length>D.eventLag.sampleCount&&e.shift(),a=q(e),++d>=D.eventLag.minSamples&&a<D.eventLag.lagThreshold?(f.progress=100,clearInterval(b)):f.progress=100*(3/(a+3))},50)}return a}(),m=function(){function a(a){this.source=a,this.last=this.sinceLastUpdate=0,this.rate=D.initialRate,this.catchup=0,this.progress=this.lastProgress=0,null!=this.source&&(this.progress=F(this.source,"progress"))}return a.prototype.tick=function(a,b){var c;return null==b&&(b=F(this.source,"progress")),b>=100&&(this.done=!0),b===this.last?this.sinceLastUpdate+=a:(this.sinceLastUpdate&&(this.rate=(b-this.last)/this.sinceLastUpdate),this.catchup=(b-this.progress)/D.catchupTime,this.sinceLastUpdate=0,this.last=b),b>this.progress&&(this.progress+=this.catchup*a),c=1-Math.pow(this.progress/100,D.easeFactor),this.progress+=c*this.rate*a,this.progress=Math.min(this.lastProgress+D.maxProgressPerFrame,this.progress),this.progress=Math.max(0,this.progress),this.progress=Math.min(100,this.progress),this.lastProgress=this.progress,this.progress},a}(),L=null,H=null,r=null,M=null,p=null,s=null,j.running=!1,z=function(){return D.restartOnPushState?j.restart():void 0},null!=window.history.pushState&&(T=window.history.pushState,window.history.pushState=function(){return z(),T.apply(window.history,arguments)}),null!=window.history.replaceState&&(W=window.history.replaceState,window.history.replaceState=function(){return z(),W.apply(window.history,arguments)}),l={ajax:a,elements:d,document:c,eventLag:f},(B=function(){var a,c,d,e,f,g,h,i;for(j.sources=L=[],g=["ajax","elements","document","eventLag"],c=0,e=g.length;e>c;c++)a=g[c],D[a]!==!1&&L.push(new l[a](D[a]));for(i=null!=(h=D.extraSources)?h:[],d=0,f=i.length;f>d;d++)K=i[d],L.push(new K(D));return j.bar=r=new b,H=[],M=new m})(),j.stop=function(){return j.trigger("stop"),j.running=!1,r.destroy(),s=!0,null!=p&&("function"==typeof t&&t(p),p=null),B()},j.restart=function(){return j.trigger("restart"),j.stop(),j.start()},j.go=function(){var a;return j.running=!0,r.render(),a=C(),s=!1,p=G(function(b,c){var d,e,f,g,h,i,k,l,n,o,p,q,t,u,v,w;for(l=100-r.progress,e=p=0,f=!0,i=q=0,u=L.length;u>q;i=++q)for(K=L[i],o=null!=H[i]?H[i]:H[i]=[],h=null!=(w=K.elements)?w:[K],k=t=0,v=h.length;v>t;k=++t)g=h[k],n=null!=o[k]?o[k]:o[k]=new m(g),f&=n.done,n.done||(e++,p+=n.tick(b));return d=p/e,r.update(M.tick(b,d)),r.done()||f||s?(r.update(100),j.trigger("done"),setTimeout(function(){return r.finish(),j.running=!1,j.trigger("hide")},Math.max(D.ghostTime,Math.max(D.minTime-(C()-a),0)))):c()})},j.start=function(a){v(D,a),j.running=!0;try{r.render()}catch(b){i=b}return document.querySelector(".pace")?(j.trigger("start"),j.go()):setTimeout(j.start,50)},"function"==typeof define&&define.amd?define(function(){return j}):"object"==typeof exports?module.exports=j:D.startOnPageLoad&&j.start()}).call(this);
+
+
+// FastClick
+
+!function(){"use strict";function a(b,d){function f(a,b){return function(){return a.apply(b,arguments)}}var e;if(d=d||{},this.trackingClick=!1,this.trackingClickStart=0,this.targetElement=null,this.touchStartX=0,this.touchStartY=0,this.lastTouchIdentifier=0,this.touchBoundary=d.touchBoundary||10,this.layer=b,this.tapDelay=d.tapDelay||200,this.tapTimeout=d.tapTimeout||700,!a.notNeeded(b)){for(var g=["onMouse","onClick","onTouchStart","onTouchMove","onTouchEnd","onTouchCancel"],h=this,i=0,j=g.length;j>i;i++)h[g[i]]=f(h[g[i]],h);c&&(b.addEventListener("mouseover",this.onMouse,!0),b.addEventListener("mousedown",this.onMouse,!0),b.addEventListener("mouseup",this.onMouse,!0)),b.addEventListener("click",this.onClick,!0),b.addEventListener("touchstart",this.onTouchStart,!1),b.addEventListener("touchmove",this.onTouchMove,!1),b.addEventListener("touchend",this.onTouchEnd,!1),b.addEventListener("touchcancel",this.onTouchCancel,!1),Event.prototype.stopImmediatePropagation||(b.removeEventListener=function(a,c,d){var e=Node.prototype.removeEventListener;"click"===a?e.call(b,a,c.hijacked||c,d):e.call(b,a,c,d)},b.addEventListener=function(a,c,d){var e=Node.prototype.addEventListener;"click"===a?e.call(b,a,c.hijacked||(c.hijacked=function(a){a.propagationStopped||c(a)}),d):e.call(b,a,c,d)}),"function"==typeof b.onclick&&(e=b.onclick,b.addEventListener("click",function(a){e(a)},!1),b.onclick=null)}}var b=navigator.userAgent.indexOf("Windows Phone")>=0,c=navigator.userAgent.indexOf("Android")>0&&!b,d=/iP(ad|hone|od)/.test(navigator.userAgent)&&!b,e=d&&/OS 4_\d(_\d)?/.test(navigator.userAgent),f=d&&/OS [6-7]_\d/.test(navigator.userAgent),g=navigator.userAgent.indexOf("BB10")>0;a.prototype.needsClick=function(a){switch(a.nodeName.toLowerCase()){case"button":case"select":case"textarea":if(a.disabled)return!0;break;case"input":if(d&&"file"===a.type||a.disabled)return!0;break;case"label":case"iframe":case"video":return!0}return/\bneedsclick\b/.test(a.className)},a.prototype.needsFocus=function(a){switch(a.nodeName.toLowerCase()){case"textarea":return!0;case"select":return!c;case"input":switch(a.type){case"button":case"checkbox":case"file":case"image":case"radio":case"submit":return!1}return!a.disabled&&!a.readOnly;default:return/\bneedsfocus\b/.test(a.className)}},a.prototype.sendClick=function(a,b){var c,d;document.activeElement&&document.activeElement!==a&&document.activeElement.blur(),d=b.changedTouches[0],c=document.createEvent("MouseEvents"),c.initMouseEvent(this.determineEventType(a),!0,!0,window,1,d.screenX,d.screenY,d.clientX,d.clientY,!1,!1,!1,!1,0,null),c.forwardedTouchEvent=!0,a.dispatchEvent(c)},a.prototype.determineEventType=function(a){return c&&"select"===a.tagName.toLowerCase()?"mousedown":"click"},a.prototype.focus=function(a){var b;d&&a.setSelectionRange&&0!==a.type.indexOf("date")&&"time"!==a.type&&"month"!==a.type?(b=a.value.length,a.setSelectionRange(b,b)):a.focus()},a.prototype.updateScrollParent=function(a){var b,c;if(b=a.fastClickScrollParent,!b||!b.contains(a)){c=a;do{if(c.scrollHeight>c.offsetHeight){b=c,a.fastClickScrollParent=c;break}c=c.parentElement}while(c)}b&&(b.fastClickLastScrollTop=b.scrollTop)},a.prototype.getTargetElementFromEventTarget=function(a){return a.nodeType===Node.TEXT_NODE?a.parentNode:a},a.prototype.onTouchStart=function(a){var b,c,f;if(a.targetTouches.length>1)return!0;if(b=this.getTargetElementFromEventTarget(a.target),c=a.targetTouches[0],d){if(f=window.getSelection(),f.rangeCount&&!f.isCollapsed)return!0;if(!e){if(c.identifier&&c.identifier===this.lastTouchIdentifier)return a.preventDefault(),!1;this.lastTouchIdentifier=c.identifier,this.updateScrollParent(b)}}return this.trackingClick=!0,this.trackingClickStart=a.timeStamp,this.targetElement=b,this.touchStartX=c.pageX,this.touchStartY=c.pageY,a.timeStamp-this.lastClickTime<this.tapDelay&&a.preventDefault(),!0},a.prototype.touchHasMoved=function(a){var b=a.changedTouches[0],c=this.touchBoundary;return Math.abs(b.pageX-this.touchStartX)>c||Math.abs(b.pageY-this.touchStartY)>c?!0:!1},a.prototype.onTouchMove=function(a){return this.trackingClick?((this.targetElement!==this.getTargetElementFromEventTarget(a.target)||this.touchHasMoved(a))&&(this.trackingClick=!1,this.targetElement=null),!0):!0},a.prototype.findControl=function(a){return void 0!==a.control?a.control:a.htmlFor?document.getElementById(a.htmlFor):a.querySelector("button, input:not([type=hidden]), keygen, meter, output, progress, select, textarea")},a.prototype.onTouchEnd=function(a){var b,g,h,i,j,k=this.targetElement;if(!this.trackingClick)return!0;if(a.timeStamp-this.lastClickTime<this.tapDelay)return this.cancelNextClick=!0,!0;if(a.timeStamp-this.trackingClickStart>this.tapTimeout)return!0;if(this.cancelNextClick=!1,this.lastClickTime=a.timeStamp,g=this.trackingClickStart,this.trackingClick=!1,this.trackingClickStart=0,f&&(j=a.changedTouches[0],k=document.elementFromPoint(j.pageX-window.pageXOffset,j.pageY-window.pageYOffset)||k,k.fastClickScrollParent=this.targetElement.fastClickScrollParent),h=k.tagName.toLowerCase(),"label"===h){if(b=this.findControl(k)){if(this.focus(k),c)return!1;k=b}}else if(this.needsFocus(k))return a.timeStamp-g>100||d&&window.top!==window&&"input"===h?(this.targetElement=null,!1):(this.focus(k),this.sendClick(k,a),d&&"select"===h||(this.targetElement=null,a.preventDefault()),!1);return d&&!e&&(i=k.fastClickScrollParent,i&&i.fastClickLastScrollTop!==i.scrollTop)?!0:(this.needsClick(k)||(a.preventDefault(),this.sendClick(k,a)),!1)},a.prototype.onTouchCancel=function(){this.trackingClick=!1,this.targetElement=null},a.prototype.onMouse=function(a){return this.targetElement?a.forwardedTouchEvent?!0:a.cancelable?!this.needsClick(this.targetElement)||this.cancelNextClick?(a.stopImmediatePropagation?a.stopImmediatePropagation():a.propagationStopped=!0,a.stopPropagation(),a.preventDefault(),!1):!0:!0:!0},a.prototype.onClick=function(a){var b;return this.trackingClick?(this.targetElement=null,this.trackingClick=!1,!0):"submit"===a.target.type&&0===a.detail?!0:(b=this.onMouse(a),b||(this.targetElement=null),b)},a.prototype.destroy=function(){var a=this.layer;c&&(a.removeEventListener("mouseover",this.onMouse,!0),a.removeEventListener("mousedown",this.onMouse,!0),a.removeEventListener("mouseup",this.onMouse,!0)),a.removeEventListener("click",this.onClick,!0),a.removeEventListener("touchstart",this.onTouchStart,!1),a.removeEventListener("touchmove",this.onTouchMove,!1),a.removeEventListener("touchend",this.onTouchEnd,!1),a.removeEventListener("touchcancel",this.onTouchCancel,!1)},a.notNeeded=function(a){var b,d,e;if("undefined"==typeof window.ontouchstart)return!0;if(d=+(/Chrome\/([0-9]+)/.exec(navigator.userAgent)||[,0])[1]){if(!c)return!0;if(b=document.querySelector("meta[name=viewport]")){if(-1!==b.content.indexOf("user-scalable=no"))return!0;if(d>31&&document.documentElement.scrollWidth<=window.outerWidth)return!0}}if(g&&(e=navigator.userAgent.match(/Version\/([0-9]*)\.([0-9]*)/),e[1]>=10&&e[2]>=3&&(b=document.querySelector("meta[name=viewport]")))){if(-1!==b.content.indexOf("user-scalable=no"))return!0;if(document.documentElement.scrollWidth<=window.outerWidth)return!0}return"none"===a.style.msTouchAction?!0:"none"===a.style.touchAction?!0:!1},a.attach=function(b,c){return new a(b,c)},"function"==typeof define&&"object"==typeof define.amd&&define.amd?define(function(){return a}):"undefined"!=typeof module&&module.exports?(module.exports=a.attach,module.exports.FastClick=a):window.FastClick=a}();
+$(function() {
+  FastClick.attach(document.body);
+});
+
+
+// jQuery Unveil - lazy loading
+
+;(function($) {
+
+  $.fn.unveil = function(threshold, callback) {
+
+    var $w = $(window),
+        th = threshold || 0,
+        retina = window.devicePixelRatio > 1,
+        attrib = retina? "data-src-retina" : "data-src",
+        images = this,
+        loaded;
+
+    this.one("unveil", function() {
+      var source = this.getAttribute(attrib);
+      source = source || this.getAttribute("data-src");
+      if (source) {
+        this.setAttribute("src", source);
+        if (typeof callback === "function") callback.call(this);
+      }
+    });
+
+    function unveil() {
+      var inview = images.filter(function() {
+        var $e = $(this);
+        if ($e.is(":hidden")) return;
+
+        var wt = $w.scrollTop(),
+            wb = wt + $w.height(),
+            et = $e.offset().top,
+            eb = et + $e.height();
+
+        return eb >= wt - th && et <= wb + th;
+      });
+
+      loaded = inview.trigger("unveil");
+      images = images.not(loaded);
+    }
+
+    $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
+
+    unveil();
+
+    return this;
+
+  };
+
+})(window.jQuery || window.Zepto);
+
+$('img').unveil(800, function() {
+  $(this).load(function() {
+    $(this).css(
+      {
+      'opacity' : '1',
+      'padding-bottom' : '0',
+      'height' : 'auto'
+      }
+    );
+  });
+});
+
+
+// Waypoints
+
+(function() {
+  'use strict'
+
+  var keyCounter = 0
+  var allWaypoints = {}
+
+  /* http://imakewebthings.com/waypoints/api/waypoint */
+  function Waypoint(options) {
+    if (!options) {
+      throw new Error('No options passed to Waypoint constructor')
+    }
+    if (!options.element) {
+      throw new Error('No element option passed to Waypoint constructor')
+    }
+    if (!options.handler) {
+      throw new Error('No handler option passed to Waypoint constructor')
+    }
+
+    this.key = 'waypoint-' + keyCounter
+    this.options = Waypoint.Adapter.extend({}, Waypoint.defaults, options)
+    this.element = this.options.element
+    this.adapter = new Waypoint.Adapter(this.element)
+    this.callback = options.handler
+    this.axis = this.options.horizontal ? 'horizontal' : 'vertical'
+    this.enabled = this.options.enabled
+    this.triggerPoint = null
+    this.group = Waypoint.Group.findOrCreate({
+      name: this.options.group,
+      axis: this.axis
+    })
+    this.context = Waypoint.Context.findOrCreateByElement(this.options.context)
+
+    if (Waypoint.offsetAliases[this.options.offset]) {
+      this.options.offset = Waypoint.offsetAliases[this.options.offset]
+    }
+    this.group.add(this)
+    this.context.add(this)
+    allWaypoints[this.key] = this
+    keyCounter += 1
+  }
+
+  /* Private */
+  Waypoint.prototype.queueTrigger = function(direction) {
+    this.group.queueTrigger(this, direction)
+  }
+
+  /* Private */
+  Waypoint.prototype.trigger = function(args) {
+    if (!this.enabled) {
+      return
+    }
+    if (this.callback) {
+      this.callback.apply(this, args)
+    }
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/destroy */
+  Waypoint.prototype.destroy = function() {
+    this.context.remove(this)
+    this.group.remove(this)
+    delete allWaypoints[this.key]
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/disable */
+  Waypoint.prototype.disable = function() {
+    this.enabled = false
+    return this
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/enable */
+  Waypoint.prototype.enable = function() {
+    this.context.refresh()
+    this.enabled = true
+    return this
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/next */
+  Waypoint.prototype.next = function() {
+    return this.group.next(this)
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/previous */
+  Waypoint.prototype.previous = function() {
+    return this.group.previous(this)
+  }
+
+  /* Private */
+  Waypoint.invokeAll = function(method) {
+    var allWaypointsArray = []
+    for (var waypointKey in allWaypoints) {
+      allWaypointsArray.push(allWaypoints[waypointKey])
+    }
+    for (var i = 0, end = allWaypointsArray.length; i < end; i++) {
+      allWaypointsArray[i][method]()
+    }
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/destroy-all */
+  Waypoint.destroyAll = function() {
+    Waypoint.invokeAll('destroy')
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/disable-all */
+  Waypoint.disableAll = function() {
+    Waypoint.invokeAll('disable')
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/enable-all */
+  Waypoint.enableAll = function() {
+    Waypoint.invokeAll('enable')
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/refresh-all */
+  Waypoint.refreshAll = function() {
+    Waypoint.Context.refreshAll()
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/viewport-height */
+  Waypoint.viewportHeight = function() {
+    return window.innerHeight || document.documentElement.clientHeight
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/viewport-width */
+  Waypoint.viewportWidth = function() {
+    return document.documentElement.clientWidth
+  }
+
+  Waypoint.adapters = []
+
+  Waypoint.defaults = {
+    context: window,
+    continuous: true,
+    enabled: true,
+    group: 'default',
+    horizontal: false,
+    offset: 0
+  }
+
+  Waypoint.offsetAliases = {
+    'bottom-in-view': function() {
+      return this.context.innerHeight() - this.adapter.outerHeight()
+    },
+    'right-in-view': function() {
+      return this.context.innerWidth() - this.adapter.outerWidth()
+    }
+  }
+
+  window.Waypoint = Waypoint
+}())
+;(function() {
+  'use strict'
+
+  function requestAnimationFrameShim(callback) {
+    window.setTimeout(callback, 1000 / 60)
+  }
+
+  var keyCounter = 0
+  var contexts = {}
+  var Waypoint = window.Waypoint
+  var oldWindowLoad = window.onload
+
+  /* http://imakewebthings.com/waypoints/api/context */
+  function Context(element) {
+    this.element = element
+    this.Adapter = Waypoint.Adapter
+    this.adapter = new this.Adapter(element)
+    this.key = 'waypoint-context-' + keyCounter
+    this.didScroll = false
+    this.didResize = false
+    this.oldScroll = {
+      x: this.adapter.scrollLeft(),
+      y: this.adapter.scrollTop()
+    }
+    this.waypoints = {
+      vertical: {},
+      horizontal: {}
+    }
+
+    element.waypointContextKey = this.key
+    contexts[element.waypointContextKey] = this
+    keyCounter += 1
+
+    this.createThrottledScrollHandler()
+    this.createThrottledResizeHandler()
+  }
+
+  /* Private */
+  Context.prototype.add = function(waypoint) {
+    var axis = waypoint.options.horizontal ? 'horizontal' : 'vertical'
+    this.waypoints[axis][waypoint.key] = waypoint
+    this.refresh()
+  }
+
+  /* Private */
+  Context.prototype.checkEmpty = function() {
+    var horizontalEmpty = this.Adapter.isEmptyObject(this.waypoints.horizontal)
+    var verticalEmpty = this.Adapter.isEmptyObject(this.waypoints.vertical)
+    if (horizontalEmpty && verticalEmpty) {
+      this.adapter.off('.waypoints')
+      delete contexts[this.key]
+    }
+  }
+
+  /* Private */
+  Context.prototype.createThrottledResizeHandler = function() {
+    var self = this
+
+    function resizeHandler() {
+      self.handleResize()
+      self.didResize = false
+    }
+
+    this.adapter.on('resize.waypoints', function() {
+      if (!self.didResize) {
+        self.didResize = true
+        Waypoint.requestAnimationFrame(resizeHandler)
+      }
+    })
+  }
+
+  /* Private */
+  Context.prototype.createThrottledScrollHandler = function() {
+    var self = this
+    function scrollHandler() {
+      self.handleScroll()
+      self.didScroll = false
+    }
+
+    this.adapter.on('scroll.waypoints', function() {
+      if (!self.didScroll || Waypoint.isTouch) {
+        self.didScroll = true
+        Waypoint.requestAnimationFrame(scrollHandler)
+      }
+    })
+  }
+
+  /* Private */
+  Context.prototype.handleResize = function() {
+    Waypoint.Context.refreshAll()
+  }
+
+  /* Private */
+  Context.prototype.handleScroll = function() {
+    var triggeredGroups = {}
+    var axes = {
+      horizontal: {
+        newScroll: this.adapter.scrollLeft(),
+        oldScroll: this.oldScroll.x,
+        forward: 'right',
+        backward: 'left'
+      },
+      vertical: {
+        newScroll: this.adapter.scrollTop(),
+        oldScroll: this.oldScroll.y,
+        forward: 'down',
+        backward: 'up'
+      }
+    }
+
+    for (var axisKey in axes) {
+      var axis = axes[axisKey]
+      var isForward = axis.newScroll > axis.oldScroll
+      var direction = isForward ? axis.forward : axis.backward
+
+      for (var waypointKey in this.waypoints[axisKey]) {
+        var waypoint = this.waypoints[axisKey][waypointKey]
+        var wasBeforeTriggerPoint = axis.oldScroll < waypoint.triggerPoint
+        var nowAfterTriggerPoint = axis.newScroll >= waypoint.triggerPoint
+        var crossedForward = wasBeforeTriggerPoint && nowAfterTriggerPoint
+        var crossedBackward = !wasBeforeTriggerPoint && !nowAfterTriggerPoint
+        if (crossedForward || crossedBackward) {
+          waypoint.queueTrigger(direction)
+          triggeredGroups[waypoint.group.id] = waypoint.group
+        }
+      }
+    }
+
+    for (var groupKey in triggeredGroups) {
+      triggeredGroups[groupKey].flushTriggers()
+    }
+
+    this.oldScroll = {
+      x: axes.horizontal.newScroll,
+      y: axes.vertical.newScroll
+    }
+  }
+
+  /* Private */
+  Context.prototype.innerHeight = function() {
+    /*eslint-disable eqeqeq */
+    if (this.element == this.element.window) {
+      return Waypoint.viewportHeight()
+    }
+    /*eslint-enable eqeqeq */
+    return this.adapter.innerHeight()
+  }
+
+  /* Private */
+  Context.prototype.remove = function(waypoint) {
+    delete this.waypoints[waypoint.axis][waypoint.key]
+    this.checkEmpty()
+  }
+
+  /* Private */
+  Context.prototype.innerWidth = function() {
+    /*eslint-disable eqeqeq */
+    if (this.element == this.element.window) {
+      return Waypoint.viewportWidth()
+    }
+    /*eslint-enable eqeqeq */
+    return this.adapter.innerWidth()
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/context-destroy */
+  Context.prototype.destroy = function() {
+    var allWaypoints = []
+    for (var axis in this.waypoints) {
+      for (var waypointKey in this.waypoints[axis]) {
+        allWaypoints.push(this.waypoints[axis][waypointKey])
+      }
+    }
+    for (var i = 0, end = allWaypoints.length; i < end; i++) {
+      allWaypoints[i].destroy()
+    }
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/context-refresh */
+  Context.prototype.refresh = function() {
+    /*eslint-disable eqeqeq */
+    var isWindow = this.element == this.element.window
+    /*eslint-enable eqeqeq */
+    var contextOffset = this.adapter.offset()
+    var triggeredGroups = {}
+    var axes
+
+    this.handleScroll()
+    axes = {
+      horizontal: {
+        contextOffset: isWindow ? 0 : contextOffset.left,
+        contextScroll: isWindow ? 0 : this.oldScroll.x,
+        contextDimension: this.innerWidth(),
+        oldScroll: this.oldScroll.x,
+        forward: 'right',
+        backward: 'left',
+        offsetProp: 'left'
+      },
+      vertical: {
+        contextOffset: isWindow ? 0 : contextOffset.top,
+        contextScroll: isWindow ? 0 : this.oldScroll.y,
+        contextDimension: this.innerHeight(),
+        oldScroll: this.oldScroll.y,
+        forward: 'down',
+        backward: 'up',
+        offsetProp: 'top'
+      }
+    }
+
+    for (var axisKey in axes) {
+      var axis = axes[axisKey]
+      for (var waypointKey in this.waypoints[axisKey]) {
+        var waypoint = this.waypoints[axisKey][waypointKey]
+        var adjustment = waypoint.options.offset
+        var oldTriggerPoint = waypoint.triggerPoint
+        var elementOffset = 0
+        var freshWaypoint = oldTriggerPoint == null
+        var contextModifier, wasBeforeScroll, nowAfterScroll
+        var triggeredBackward, triggeredForward
+
+        if (waypoint.element !== waypoint.element.window) {
+          elementOffset = waypoint.adapter.offset()[axis.offsetProp]
+        }
+
+        if (typeof adjustment === 'function') {
+          adjustment = adjustment.apply(waypoint)
+        }
+        else if (typeof adjustment === 'string') {
+          adjustment = parseFloat(adjustment)
+          if (waypoint.options.offset.indexOf('%') > - 1) {
+            adjustment = Math.ceil(axis.contextDimension * adjustment / 100)
+          }
+        }
+
+        contextModifier = axis.contextScroll - axis.contextOffset
+        waypoint.triggerPoint = elementOffset + contextModifier - adjustment
+        wasBeforeScroll = oldTriggerPoint < axis.oldScroll
+        nowAfterScroll = waypoint.triggerPoint >= axis.oldScroll
+        triggeredBackward = wasBeforeScroll && nowAfterScroll
+        triggeredForward = !wasBeforeScroll && !nowAfterScroll
+
+        if (!freshWaypoint && triggeredBackward) {
+          waypoint.queueTrigger(axis.backward)
+          triggeredGroups[waypoint.group.id] = waypoint.group
+        }
+        else if (!freshWaypoint && triggeredForward) {
+          waypoint.queueTrigger(axis.forward)
+          triggeredGroups[waypoint.group.id] = waypoint.group
+        }
+        else if (freshWaypoint && axis.oldScroll >= waypoint.triggerPoint) {
+          waypoint.queueTrigger(axis.forward)
+          triggeredGroups[waypoint.group.id] = waypoint.group
+        }
+      }
+    }
+
+    for (var groupKey in triggeredGroups) {
+      triggeredGroups[groupKey].flushTriggers()
+    }
+
+    return this
+  }
+
+  /* Private */
+  Context.findOrCreateByElement = function(element) {
+    return Context.findByElement(element) || new Context(element)
+  }
+
+  /* Private */
+  Context.refreshAll = function() {
+    for (var contextId in contexts) {
+      contexts[contextId].refresh()
+    }
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/context-find-by-element */
+  Context.findByElement = function(element) {
+    return contexts[element.waypointContextKey]
+  }
+
+  window.onload = function() {
+    if (oldWindowLoad) {
+      oldWindowLoad()
+    }
+    Context.refreshAll()
+  }
+
+  Waypoint.requestAnimationFrame = function(callback) {
+    var requestFn = window.requestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      requestAnimationFrameShim
+    requestFn.call(window, callback)
+  }
+  Waypoint.Context = Context
+}())
+;(function() {
+  'use strict'
+
+  function byTriggerPoint(a, b) {
+    return a.triggerPoint - b.triggerPoint
+  }
+
+  function byReverseTriggerPoint(a, b) {
+    return b.triggerPoint - a.triggerPoint
+  }
+
+  var groups = {
+    vertical: {},
+    horizontal: {}
+  }
+  var Waypoint = window.Waypoint
+
+  /* http://imakewebthings.com/waypoints/api/group */
+  function Group(options) {
+    this.name = options.name
+    this.axis = options.axis
+    this.id = this.name + '-' + this.axis
+    this.waypoints = []
+    this.clearTriggerQueues()
+    groups[this.axis][this.name] = this
+  }
+
+  /* Private */
+  Group.prototype.add = function(waypoint) {
+    this.waypoints.push(waypoint)
+  }
+
+  /* Private */
+  Group.prototype.clearTriggerQueues = function() {
+    this.triggerQueues = {
+      up: [],
+      down: [],
+      left: [],
+      right: []
+    }
+  }
+
+  /* Private */
+  Group.prototype.flushTriggers = function() {
+    for (var direction in this.triggerQueues) {
+      var waypoints = this.triggerQueues[direction]
+      var reverse = direction === 'up' || direction === 'left'
+      waypoints.sort(reverse ? byReverseTriggerPoint : byTriggerPoint)
+      for (var i = 0, end = waypoints.length; i < end; i += 1) {
+        var waypoint = waypoints[i]
+        if (waypoint.options.continuous || i === waypoints.length - 1) {
+          waypoint.trigger([direction])
+        }
+      }
+    }
+    this.clearTriggerQueues()
+  }
+
+  /* Private */
+  Group.prototype.next = function(waypoint) {
+    this.waypoints.sort(byTriggerPoint)
+    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
+    var isLast = index === this.waypoints.length - 1
+    return isLast ? null : this.waypoints[index + 1]
+  }
+
+  /* Private */
+  Group.prototype.previous = function(waypoint) {
+    this.waypoints.sort(byTriggerPoint)
+    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
+    return index ? this.waypoints[index - 1] : null
+  }
+
+  /* Private */
+  Group.prototype.queueTrigger = function(waypoint, direction) {
+    this.triggerQueues[direction].push(waypoint)
+  }
+
+  /* Private */
+  Group.prototype.remove = function(waypoint) {
+    var index = Waypoint.Adapter.inArray(waypoint, this.waypoints)
+    if (index > -1) {
+      this.waypoints.splice(index, 1)
+    }
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/first */
+  Group.prototype.first = function() {
+    return this.waypoints[0]
+  }
+
+  /* Public */
+  /* http://imakewebthings.com/waypoints/api/last */
+  Group.prototype.last = function() {
+    return this.waypoints[this.waypoints.length - 1]
+  }
+
+  /* Private */
+  Group.findOrCreate = function(options) {
+    return groups[options.axis][options.name] || new Group(options)
+  }
+
+  Waypoint.Group = Group
+}())
+;(function() {
+  'use strict'
+
+  var $ = window.jQuery
+  var Waypoint = window.Waypoint
+
+  function JQueryAdapter(element) {
+    this.$element = $(element)
+  }
+
+  $.each([
+    'innerHeight',
+    'innerWidth',
+    'off',
+    'offset',
+    'on',
+    'outerHeight',
+    'outerWidth',
+    'scrollLeft',
+    'scrollTop'
+  ], function(i, method) {
+    JQueryAdapter.prototype[method] = function() {
+      var args = Array.prototype.slice.call(arguments)
+      return this.$element[method].apply(this.$element, args)
+    }
+  })
+
+  $.each([
+    'extend',
+    'inArray',
+    'isEmptyObject'
+  ], function(i, method) {
+    JQueryAdapter[method] = $[method]
+  })
+
+  Waypoint.adapters.push({
+    name: 'jquery',
+    Adapter: JQueryAdapter
+  })
+  Waypoint.Adapter = JQueryAdapter
+}())
+;(function() {
+  'use strict'
+
+  var Waypoint = window.Waypoint
+
+  function createExtension(framework) {
+    return function() {
+      var waypoints = []
+      var overrides = arguments[0]
+
+      if (framework.isFunction(arguments[0])) {
+        overrides = framework.extend({}, arguments[1])
+        overrides.handler = arguments[0]
+      }
+
+      this.each(function() {
+        var options = framework.extend({}, overrides, {
+          element: this
+        })
+        if (typeof options.context === 'string') {
+          options.context = framework(this).closest(options.context)[0]
+        }
+        waypoints.push(new Waypoint(options))
+      })
+
+      return waypoints
+    }
+  }
+
+  if (window.jQuery) {
+    window.jQuery.fn.waypoint = createExtension(window.jQuery)
+  }
+  if (window.Zepto) {
+    window.Zepto.fn.waypoint = createExtension(window.Zepto)
+  }
+}())
+;
+
+
+// For each entry point
+
+$(".entry").each(function(index){
+$(this).attr('id','item_'+index);
+	var waypoint = new Waypoint({
+		element: document.getElementById('item_'+index),
+      handler: function(direction) {
+		if(direction == 'down') {
+			console.log(this.element.id + ' triggers at ' + this.triggerPoint)
+			$(this.element).addClass('up');
+			}
+		},
+		offset: '90%'
+	});
+});
+
+
+// Custom
+
+console.log("Hey curious!\nAs you've gotten this far, you may also be interested in how I work:\nwww.magnusskare.com/workflow");
+
+
+

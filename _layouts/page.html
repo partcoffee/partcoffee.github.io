@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<article>
+	<div class="intro fadeIn">
+		<h1 class="uppercase">{{ page.headline }}</h1>
+		<p class="words">
+			{% if page.case %}
+				{% if page.tags %}
+					{{ page.tags }} <span>&#124;</span> {% include words.html %} read
+				{% else %}
+					{% include words.html %} read
+				{% endif %}
+			{% else %}
+				X
+			{% endif %}
+		</p>
+	</div>
+	{{ content }}
+</article>
+
+<p class="mid">
+	<a href="/" class="button">
+	<svg class="icon icon-chevron-thin-left">
+		<use xlink:href="#icon-chevron-thin-left"></use>
+	</svg>
+	Back to home
+	</a>
+</p>
+
+<div class="grid continue">
+	{% for project in site.data.projects %}
+		<div class="col-33">
+			<a href="{{ project.link }}">
+				<div class="container">
+					<img src="../img/assets/load.gif" data-src="{{ project.image }}" alt="{{ project.name }}">
+					<span>{{ project.name }}</span>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>

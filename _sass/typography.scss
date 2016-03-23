@@ -1,0 +1,125 @@
+/*------------------------------------*\
+    #Typography
+\*------------------------------------*/
+
+h1 {
+	font: 300 36px/1 $primary;
+}
+
+h2 {
+	font: 400 22px/1.8 $primary;
+	margin: 18px auto 0;
+	-webkit-transform: translateX((-22px/20));
+	transform: translateX((-22px/20));
+}
+
+h3 {
+	font: 400 18px/1.8 $primary;
+	margin: 18px auto;
+}
+
+p, li {
+	font: 300 14px/1.8 $secondary;
+
+	@media (min-width: 500px) {
+		font-size: 15px;
+	}
+}
+
+.lead {
+	font-size: 17px;
+
+	@media (min-width: 500px) {
+		font-size: 18px;
+	}
+}
+
+a {
+	color: lighten($main-color, 40%);
+	text-decoration: none;
+	font-weight: 600;
+	font-family: inherit;
+	@include animate(color 0.2s ease-out);
+
+	article & {
+		font-weight: normal;
+		color: lighten($main-color, 40%);
+	}
+
+	&:hover {
+		color: darken($main-color, 10%);
+	}
+}
+
+blockquote {
+	margin: 0;
+	position: relative;
+
+	p {
+		font-style: italic;
+		width: 80%;
+		margin: 48px auto;
+		text-align: center;
+		font-size: 140%;
+	}
+}
+
+
+/* Review this when you write something with/about code */
+pre {
+	background: #222;
+	white-space: pre-wrap;
+	padding: $margins 0;
+	margin: $margins auto;
+	font: 600 14px/1.8 monospace;
+	color: #FFF;
+
+	@media (min-width: ($soft * 1.2)) {
+		padding: ($margins * 2) $margins;
+	}
+
+	code {
+		display: block;
+		max-width: 80%;
+		margin: 0 auto;
+
+		@media (min-width: ($soft * 1.2)) {
+			max-width: $soft;
+		}
+	}
+}
+
+.uppercase {
+	font: 600 20px/1.4 $headline;
+	letter-spacing: 2px;
+	margin-bottom: 0;
+	margin-top: 0;
+	max-width: 100%;
+	text-transform: uppercase;
+
+	@media (min-width: 500px) {
+		font-size: 26px;
+		letter-spacing: 4px;
+	}
+
+/* 	&:first-letter {
+	margin-left: -6px;
+} */
+}
+
+.words {
+	color: $feather;
+	display: block;
+	@extend p;
+	margin: 10px 0;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 10px;
+
+	@media (min-width: 500px) {
+		font-size: 12px;
+		margin: 20px 0;
+	}
+}
+
+

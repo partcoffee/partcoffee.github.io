@@ -1,0 +1,17 @@
+# Site settings
+title: Magnus Skare
+description: The Portfolio of Magnus Skare.
+baseurl: ""
+url: "http://www.magnusskare.com"
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Build settings
+markdown: kramdown
+include: ['_pages']
+
+# Time zone
+timezone: Europe/London

@@ -1,0 +1,636 @@
+---
+---
+/*------------------------------------*\
+    #Dependencies
+\*------------------------------------*/
+
+
+/* Fonts */
+$headline: 'ubuntu', sans-serif;
+$primary: 'proxima-nova', sans-serif;
+$secondary: 'proxima-nova', sans-serif;
+
+
+/* Colours */
+$main-color: #555; /* Grey */
+$highlight-color: #96b45b; /* Green */
+$feather: #888; /* Homepage low contrast */
+$light: #edeeee; /* Super light grey */
+$background: #fafafa; /* Background grey */
+
+/* Could do page-specific colours */
+$green: #96b45b;
+$red: #b34c4f;
+$blue: #2fbcc3;
+
+
+/* Variables */
+$max: 940px;
+$soft: 540px;
+$margins: 30px;
+
+
+/* Import */
+@import 'mixins';
+@import 'typography';
+
+
+
+
+
+/*------------------------------------*\
+    #General and reset
+\*------------------------------------*/
+
+html, body {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	width: 100%;
+}
+
+body {
+	background: $background;
+	color: $main-color;
+	font-size: 100%;
+	font-weight: normal;
+	-webkit-text-size-adjust: 100%; /* Because iPhones are dumb sometimes. */
+	-ms-text-size-adjust: 100%; /* Because Windows Phone.. */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+*, *:after, *:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	width: 100%;
+}
+
+ul, li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Main_Style
+\*------------------------------------*/
+
+main, footer {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer {
+	max-width: 90%;
+}
+
+main {
+	display: block;
+
+	h1, h2, h3, p, ul:not(.show) {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 80%;
+	}
+
+	/* For lazy-loading */
+	img {
+		height: 0;
+		opacity: 0;
+		padding-bottom: 66.7%; /* For a 16:9 aspect ratio. Not always true, but roughly true */
+		transition: opacity .2s ease-in;
+		width: 100%;
+	}
+}
+
+article {
+	display: block;
+	margin: 0 auto;
+	max-width: ($max - 100px);
+
+	ul:not(.show) {
+		margin: $margins auto;
+
+		li {
+			margin-left: 18px;
+			position: relative;
+
+			&:before {
+				bottom: 0;
+				content: '•'; /* Dot */
+				left: -18px;
+				line-height: 1.5;
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 10px;
+			}
+		}
+	}
+
+	img:first-of-type {
+		margin-top: 0;
+	}
+
+	img {
+		display: inline;
+		margin: $margins 0;
+	}
+}
+
+header {
+	display: block;
+	text-align: center;
+	width: 100%;
+
+	.button {
+		color: $feather;
+		margin: 10px auto 0;
+		opacity: .5;
+
+		@media (min-width: 500px) {
+			margin: 20px auto 0;
+		}
+
+		svg {
+			fill: $feather;
+		}
+	}
+}
+
+footer {
+	display: block;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	padding: 20px 0;
+	text-align: center;
+	width: 100%;
+
+	@media (min-width: 760px) {
+		margin-bottom: 12px;
+	}
+}
+
+footer li {
+	display: inline-block;
+	font-size: 10px;
+	padding: 8px 1px;
+	text-transform: uppercase;
+
+	&:nth-of-type(2), &:nth-of-type(4), &:nth-of-type(6), &:nth-of-type(8) {
+		color: $light;
+	}
+
+	&:nth-of-type(5), &:nth-of-type(6) {
+		display: none;
+	}
+
+	&:nth-of-type(n+10) {
+		display: block;
+		font-size: 11px;
+		text-transform: none;
+
+		@media (min-width: 500px) {
+			padding-top: 10px;
+		}
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Element_Style
+\*------------------------------------*/
+
+.logo {
+	color: darken($main-color, 10%);
+	display: inline-block;
+	font: 600 20px/1 $headline;
+	margin-top: 24px;
+	text-transform: uppercase;
+}
+
+.intro {
+	margin: 0 auto;
+	max-width: 80%;
+	padding: 40px 0 50px;
+	text-align: center;
+
+	& *:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.about {
+	padding: 60px 0 50px;
+
+	p, li {
+		color: $feather;
+		font-size: 13px;
+		margin-bottom: 0;
+		max-width: $soft;
+	}
+
+	p {
+		margin: 32px auto;
+		max-width: 380px;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	li:not(:last-of-type) {
+		padding-right: 20px;
+	}
+}
+
+.container {
+	position: relative;
+
+	&:before, span {
+		@include animate(.2s ease-out);
+	}
+
+	&:before {
+		background: rgba(#000, 0);
+		content: '';
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 100%;
+	}
+
+	&:hover, a:focus & {
+
+		&:before {
+			background: rgba(50, 61, 61, .3);
+		}
+
+		span {
+			opacity: 1;
+		}
+	}
+
+	span {
+		@include vertical-align;
+		color: #FFF;
+		font: 700 14px/1 $secondary;
+		left: 0;
+		letter-spacing: 1px;
+		opacity: 0;
+		padding: 0 15px;
+		text-align: center;
+		text-transform: uppercase;
+		width: 100%;
+	}
+}
+
+.button {
+	color: $main-color;
+	display: inline-block;
+	font: 600 11px/1 $secondary;
+	letter-spacing: 1px;
+	margin: $margins 0;
+	padding: 14px 28px 12px 42px;
+	position: relative;
+	text-transform: uppercase;
+	-webkit-transform: translateX(-7px);
+	transform: translateX(-7px);
+	-moz-transition: color .2s ease-out, opacity .2s ease-out;
+	-o-transition: color .2s ease-out, opacity .2s ease-out; /* Can be ignored */
+	-webkit-transition: color .2s ease-out, opacity .2s ease-out;
+	transition: color .2s ease-out, opacity .2s ease-out;
+
+	svg {
+		height: 14px;
+		left: 20px;
+		position: absolute;
+		top: 12px;
+		-moz-transition: .2s ease-out;
+		-o-transition: .2s ease-out; /* Can still be ignored */
+		-webkit-transition: .2s ease-out;
+		transition: .2s ease-out;
+		width: 14px;
+		fill: $main-color;
+	}
+
+	&:hover, &:focus {
+		color: darken($main-color, 10%);
+		opacity: 1;
+
+		svg {
+			left: 10px;
+			fill: darken($main-color, 10%);
+		}
+	}
+}
+
+.pull {
+	position: relative;
+
+	span {
+		border-bottom: 1px solid $light;
+		border-top: 1px solid $light;
+		color: $main-color;
+		display: none;
+		font-size: 17px;
+		font-style: italic;
+		padding: 10px 0;
+		position: absolute;
+		right: -210px;
+		top: 0;
+		width: 170px;
+	}
+}
+
+.show {
+	padding: 0;
+	position: relative;
+
+	img {
+		margin: 0;
+	}
+
+	li {
+		line-height: 0;
+	}
+
+	svg {
+		@include vertical-align;
+		@include animate(.2s ease-out);
+		background: rgba(#000, .2);
+		-webkit-box-sizing: content-box; /* Because Android.. */
+		box-sizing: content-box; /* Because Android.. */
+		cursor: pointer;
+		height: 40px;
+		padding: 10px;
+		width: 20px;
+		z-index: 99;
+		fill: #FFF;
+	}
+}
+
+/* Specific image rules */
+.narrow {
+	display: block;
+	margin: 0 auto;
+	max-width: $soft;
+	padding: $margins 0 !important;
+}
+
+.caption {
+	display: block;
+	padding: $margins 0;
+	position: relative;
+
+	img {
+		margin: 0;
+	}
+
+	strong {
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+
+	span {
+		color: lighten($main-color, 20%);
+		display: block;
+		font: 300 12px/1.6 $secondary;
+		margin: 0 auto;
+		max-width: 80%;
+		padding-top: 10px;
+		width: 100%;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Helper
+\*------------------------------------*/
+
+.first {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.portfolio {
+	margin-bottom: $margins;
+}
+
+.continue {
+	margin: $margins auto;
+	max-width: 90%;
+}
+
+.inside {	
+	span {
+		bottom: 0;
+		color: #FFF;
+		padding: 0 24px 54px 24px;
+		position: absolute;
+	}
+}
+
+.inside.mid {
+	span {
+		left: 0;
+		right: 0;
+	}
+}
+
+.mid {
+	text-align: center;
+}
+
+/* Highlight on-demand */
+.highlight {
+	color: $highlight-color;
+}
+
+/* Divider and on-demand spacing without using <br> or whatever */
+.div {
+	display: block;
+	height: 5px;
+	width: 100%;
+}
+
+/* For several pictures after one another, without awkward spacing between them. Good for PNGs */
+.collection {
+	margin: $margins 0;
+
+	img, &.caption {
+		margin: 0;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Colours
+\*------------------------------------*/
+
+/* .green {
+	.button {
+		background: $green; */
+
+/* }
+
+	.pull span {
+		color: $green; */
+
+/* }
+}
+
+.red {
+	.button {
+		background: $red; */
+
+/* }
+
+	.pull span {
+		color: $red; */
+
+/* }
+}
+
+.blue {
+	.button {
+		background: $blue; */
+
+/* }
+
+	.pull span {
+		color: $blue; */
+
+
+
+
+
+/*------------------------------------*\
+    #Responsive
+\*------------------------------------*/
+
+@media only screen and (min-width: ($max + 50px)) {
+	main, footer {
+		max-width: $max;
+	}
+
+	.continue {
+		max-width: 100%;
+	}
+}
+
+@media only screen and (max-height: 500px) {
+	.intro {
+		padding: 30px 0 50px;
+	}
+}
+
+@media only screen and (min-width: ($soft * 1.2)) {
+	article {
+		h1, h2, h3, p, ul:not(.show), .caption span {
+			max-width: $soft;
+		}
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	.logo {
+		font-size: 27px;
+	}
+
+	.intro {
+		padding: 80px 0 100px;
+	}
+
+	.about {
+		p {
+			font-size: 15px;
+			margin-top: 44px;
+		}
+	}
+
+	.show svg:hover {
+		background: rgba(#000, 0.3);
+	}
+
+	.div {
+		height: 15px;
+	}
+
+	footer {
+		padding: 40px 0;
+	}
+
+	footer li {
+		font-size: 11px;
+		padding: 8px 4px;
+
+		&:nth-of-type(5), &:nth-of-type(6) {
+			display: inline-block;
+		}
+	}
+}
+
+@media only screen and (min-width: 760px) {
+	.continue {
+		margin: 50px auto 0;
+		padding-top: $margins;
+	}
+}
+
+@media only screen and (min-width: (960px + 60px)) {
+	.pull span {
+		display: block;
+	}
+
+	.caption span {
+		max-width: 100%;
+	}
+}
+
+
+
+
+
+/*------------------------------------*\
+    #Animations
+\*------------------------------------*/
+
+@import 'animations';
+
+
+
+
+
+/*------------------------------------*\
+    #Other
+\*------------------------------------*/
+
+@import 'grid';
+@import 'slider';
+@import 'pace';
+@import 'print';
+
+

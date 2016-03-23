@@ -1,0 +1,19 @@
+<head>
+<meta charset="UTF-8">
+<title>{% if page.title %}{{ page.title }} &#124; Magnus Skare{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{% if page.desc %}{{ page.desc }}{% else %}The thoughts and work of Magnus Skare.{% endif %}" />
+<meta content="website" property="og:type" />
+<meta content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" property="og:site_name">
+<meta content="{% if page.title %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}/{% endif %}" property="og:url">
+<meta content="{{ site.url }}/img/show/fos.png" property="og:image" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="../img/assets/favicon.ico">
+<link rel="canonical" href="{% if page.title %}{{ site.url }}{{ page.url }}{% else %}{{ site.url }}/{% endif %}" />
+
+<script src="//use.typekit.net/ujv5zha.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+<link rel="stylesheet" href="../css/main.css" />
+
+{% include analytics.html %}
+</head>
